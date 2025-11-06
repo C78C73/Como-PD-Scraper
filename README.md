@@ -1,13 +1,28 @@
 # Como PD Incident Mapper
 
-Interactive map of Columbia, MO Police Department incidents (6-hour delayed public data).
+Interactive map of Columbia, MO Police Department incidents with real-time severity tracking.
+
+🗺️ **[View Live Map](https://c78c73.github.io/Como-PD-Scraper/)**
 
 ## Features
-- Scrapes incident data from https://www.como.gov/CMS/911dispatch/police.php
-- Geocodes addresses to map coordinates (with intelligent intersection handling)
-- Displays incidents on an interactive Leaflet map
-- Auto-handles 6-hour delay (retries with yesterday's date if no data for today)
-- Caches geocoded addresses to minimize API calls
+
+- 🚨 **Automated scraping** every 6 hours via GitHub Actions
+- 📍 **Interactive map** with color-coded severity markers:
+  - 🔴 Red: Critical/Violent crimes (shots fired, assault, robbery)
+  - 🟠 Orange: Serious incidents (burglary, disturbance, suspicious person)
+  - 🟡 Yellow: Moderate issues (theft, accident, traffic)
+  - 🟢 Green: Low priority (911 checks, assist citizen, parking)
+  - 🔵 Blue: Other/uncategorized
+- 📊 **Real-time statistics** showing incident count by severity
+- 🧭 **Smart geocoding** with intersection support (e.g., "Broadway & Providence")
+- ⚡ **Caching system** to minimize API calls
+- 🕐 **6-hour delay handling** (automatically retries with yesterday's date)
+
+## Live Demo
+
+Visit **https://c78c73.github.io/Como-PD-Scraper/** to view the live incident map.
+
+The map updates automatically every 6 hours via GitHub Actions.
 
 ## Setup
 
@@ -20,7 +35,7 @@ Interactive map of Columbia, MO Police Department incidents (6-hour delayed publ
 
 1. Clone this repo:
 ```bash
-git clone https://github.com/YOUR_USERNAME/Como-PD-Scraper.git
+git clone https://github.com/C78C73/Como-PD-Scraper.git
 cd Como-PD-Scraper
 ```
 
@@ -57,22 +72,39 @@ Then open http://localhost:8000/index.html in your browser.
 
 ## Files
 
-- `run_scraper.py` - Main script (scraping + geocoding)
-- `index.html` - Interactive map viewer
-- `data.json` - Incident data with coordinates (generated)
-- `geocache.json` - Cached geocoding results (generated)
-- `requirements.txt` - Python dependencies
+- `run_scraper.py` - Main script (Selenium scraping + Nominatim geocoding)
+- `index.html` - Interactive Leaflet map with severity-based color coding
+- `.github/workflows/scrape.yml` - GitHub Action for automated updates
+- `data.json` - Incident data with coordinates (auto-generated)
+- `geocache.json` - Cached geocoding results (auto-generated)
+- `requirements.txt` - Python dependencies (selenium, beautifulsoup4, requests)
 
-## GitHub Pages Deployment
+## How It Works
 
-To deploy the map to GitHub Pages:
+1. **Scraping**: Selenium navigates to the Como PD dispatch site, sets date filters, and extracts incident data from all paginated results
+2. **Duplicate Detection**: Tracks incident IDs to prevent scraping the same data when pagination loops
+3. **Geocoding**: Uses Nominatim (OpenStreetMap) API to convert addresses to coordinates
+4. **Intersection Handling**: Detects intersection patterns (e.g., "Broadway/Stadium") and finds the meeting point
+5. **Caching**: Stores geocoded addresses to avoid redundant API calls
+6. **Automation**: GitHub Actions runs the scraper every 6 hours and commits updated data
 
-1. Run the scraper locally to generate `data.json`
-2. Commit `data.json` and `index.html` to your repo
-3. Enable GitHub Pages in repo settings (source: main branch, root folder)
-4. Your map will be available at `https://YOUR_USERNAME.github.io/Como-PD-Scraper/`
+## GitHub Actions Deployment
 
-**Note:** You'll need to run the scraper locally and commit updated `data.json` manually, or set up a GitHub Action to run it automatically.
+This repo includes automated deployment via GitHub Actions:
+
+- **Schedule**: Runs every 6 hours (`0 */6 * * *`)
+- **Manual Trigger**: Can be run manually from the Actions tab
+- **Auto-commit**: Pushes updated `data.json` and `geocache.json` to the repo
+- **GitHub Pages**: Serves the static HTML map at https://c78c73.github.io/Como-PD-Scraper/
+
+No manual intervention needed - the map stays updated automatically!
+
+## Data Source
+
+Data is scraped from the official Columbia, MO Police Department dispatch log:
+https://www.como.gov/CMS/911dispatch/police.php
+
+**Note:** The dispatch site has a 6-hour delay for public data. The scraper automatically handles this by retrying with yesterday's date if today returns no results.
 
 ## License
 

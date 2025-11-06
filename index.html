@@ -116,6 +116,11 @@
       <span class="stat-label">Other</span>
       <span class="stat-count" id="count-blue">0</span>
     </div>
+    <hr style="margin: 10px 0; border: none; border-top: 1px solid #ddd;">
+    <div class="stat-row" style="font-weight: bold;">
+      <span class="stat-label">Total Incidents</span>
+      <span class="stat-count" id="count-total">0</span>
+    </div>
   </div>
   <div id="missing-coords" style="display:none;">
     <h3>⚠️ Incidents Without Coordinates</h3>
@@ -219,6 +224,9 @@
       document.getElementById('count-yellow').textContent = colorCounts.yellow;
       document.getElementById('count-green').textContent = colorCounts.green;
       document.getElementById('count-blue').textContent = colorCounts.blue;
+      
+      const totalMapped = colorCounts.red + colorCounts.orange + colorCounts.yellow + colorCounts.green + colorCounts.blue;
+      document.getElementById('count-total').textContent = totalMapped;
       
       // Show missing coordinates box if there are any
       if (missingCoords.length > 0) {

@@ -1,0 +1,43 @@
+name: Scrape Como PD Incidents
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Install Chrome and ChromeDriver
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y chromium-browser chromium-chromedriver
+    
+    - name: Update ChromeDriver path for Linux
+      run: |
+        sed -i 's/chromedriver.exe/\/usr\/bin\/chromedriver/g' run_scraper.py
+    
+    - name: Run scraper
+      run: |
+        python run_scraper.py
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data.json geocache.json
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update incident data $(date)"
+        git push

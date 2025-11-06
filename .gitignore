@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+
+# ChromeDriver
+chromedriver.exe
+chromedriver
+
+# Debug/temp files
+*.html.bak
+selenium_*.html
+fetched.html
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

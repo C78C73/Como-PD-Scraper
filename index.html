@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Incident Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html,body,#map { height:100%; margin:0; padding:0; }
+    .legend { background:#fff; padding:8px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,0.2); }
+    #missing-coords {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      background: white;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      max-width: 350px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    #missing-coords h3 {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      color: #d63031;
+    }
+    #missing-coords ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 12px;
+    }
+    #missing-coords li {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div id="missing-coords" style="display:none;">
+    <h3>⚠️ Incidents Without Coordinates</h3>
+    <ul id="missing-list"></ul>
+  </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    async function loadData() {
+      const r = await fetch('data.json');
+      return r.json();
+    }
+
+    // map init (center on Columbia, MO by default)
+    const map = L.map('map').setView([38.9517, -92.3341], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Severity-based color mapping
+    const severityColors = {
+      // Critical/Violent (Red)
+      "SHOTS FIRED": "red",
+      "ROBBERY": "red",
+      "ASSAULT": "red",
+      "STABBING": "red",
+      "SHOOTING": "red",
+      
+      // Serious (Orange)
+      "BURGLARY": "orange",
+      "DOMESTIC DISTURBANCE": "orange",
+      "DISTURBANCE": "orange",
+      "SUSPICIOUS PERSON": "orange",
+      
+      // Moderate (Yellow)
+      "THEFT": "yellow",
+      "VANDALISM": "yellow",
+      "TRESPASSING": "yellow",
+      "ACCIDENT": "yellow",
+      "TRAFFIC": "yellow",
+      "TRAFFIC STOP": "yellow",
+      
+      // Low priority (Green)
+      "911 CHECKS": "green",
+      "ASSIST CITIZEN": "green",
+      "KEEP THE PEACE": "green",
+      "PARKING VIOLATION": "green",
+      "LAW ALARM": "green"
+    };
+    
+    function getColorForType(type) {
+      const upper = type.toUpperCase();
+      // Check exact match first
+      if (severityColors[upper]) return severityColors[upper];
+      
+      // Check partial matches for severity
+      if (upper.includes("SHOT") || upper.includes("WEAPON") || upper.includes("GUN")) return "red";
+      if (upper.includes("ASSAULT") || upper.includes("FIGHT") || upper.includes("BATTERY")) return "red";
+      if (upper.includes("BURGLARY") || upper.includes("BREAK") || upper.includes("THEFT")) return "orange";
+      if (upper.includes("ACCIDENT") || upper.includes("CRASH") || upper.includes("TRAFFIC")) return "yellow";
+      if (upper.includes("CHECK") || upper.includes("ASSIST")) return "green";
+      
+      // Default to blue for unknown
+      return "blue";
+    }
+
+    function makeIcon(color) {
+      // use a simple colored circle marker via DivIcon, or use default icon
+      return L.divIcon({
+        className: 'custom-marker',
+        html: `<svg width="20" height="20" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="8" fill="${color}" stroke="#fff" stroke-width="2"/>
+        </svg>`,
+        iconSize: [24,24],
+        iconAnchor: [12,12]
+      });
+    }
+
+    loadData().then(data => {
+      let bounds = [];
+      let missingCoords = [];
+      
+      data.forEach(item => {
+        if (item.lat && item.lon) {
+          const color = getColorForType(item.type);
+          const marker = L.marker([item.lat, item.lon], { icon: makeIcon(color) }).addTo(map);
+          marker.bindPopup(`<b>${item.type}</b><br>${item.location_txt}<br>${item.datetime}<br>Incident #: ${item.incident}`);
+          bounds.push([item.lat, item.lon]);
+        } else {
+          missingCoords.push(item);
+        }
+      });
+      
+      // Show missing coordinates box if there are any
+      if (missingCoords.length > 0) {
+        const missingBox = document.getElementById('missing-coords');
+        const missingList = document.getElementById('missing-list');
+        missingBox.style.display = 'block';
+        
+        missingCoords.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>#${index + 1}: ${item.type}</strong><br>${item.location_txt}<br><small>${item.datetime}</small>`;
+          missingList.appendChild(li);
+        });
+      }
+      
+      if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+    }).catch(err => {
+      console.error(err);
+      alert("Failed to load data.json (open console).");
+    });
+
+  </script>
+</body>
+</html>

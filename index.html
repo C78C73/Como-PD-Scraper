@@ -8,6 +8,44 @@
   <style>
     html,body,#map { height:100%; margin:0; padding:0; }
     .legend { background:#fff; padding:8px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,0.2); }
+    #stats-box {
+      position: absolute;
+      top: 10px;
+      left: 60px;
+      z-index: 1000;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      font-family: Arial, sans-serif;
+      min-width: 200px;
+    }
+    #stats-box h3 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    #stats-box .stat-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    #stats-box .color-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin-right: 8px;
+      border: 2px solid black;
+      flex-shrink: 0;
+    }
+    #stats-box .stat-label {
+      flex: 1;
+    }
+    #stats-box .stat-count {
+      font-weight: bold;
+      margin-left: 8px;
+    }
     #missing-coords {
       position: absolute;
       top: 10px;
@@ -33,10 +71,52 @@
     }
     #missing-coords li {
       margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+    }
+    #missing-coords .missing-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid black;
+      margin-right: 8px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    #missing-coords .missing-content {
+      flex: 1;
     }
   </style>
 </head>
 <body>
+  <div id="stats-box">
+    <h3>📊 Incident Severity</h3>
+    <div class="stat-row">
+      <div class="color-dot" style="background-color: red;"></div>
+      <span class="stat-label">Critical (Violent)</span>
+      <span class="stat-count" id="count-red">0</span>
+    </div>
+    <div class="stat-row">
+      <div class="color-dot" style="background-color: orange;"></div>
+      <span class="stat-label">Serious</span>
+      <span class="stat-count" id="count-orange">0</span>
+    </div>
+    <div class="stat-row">
+      <div class="color-dot" style="background-color: yellow;"></div>
+      <span class="stat-label">Moderate</span>
+      <span class="stat-count" id="count-yellow">0</span>
+    </div>
+    <div class="stat-row">
+      <div class="color-dot" style="background-color: green;"></div>
+      <span class="stat-label">Low Priority</span>
+      <span class="stat-count" id="count-green">0</span>
+    </div>
+    <div class="stat-row">
+      <div class="color-dot" style="background-color: blue;"></div>
+      <span class="stat-label">Other</span>
+      <span class="stat-count" id="count-blue">0</span>
+    </div>
+  </div>
   <div id="missing-coords" style="display:none;">
     <h3>⚠️ Incidents Without Coordinates</h3>
     <ul id="missing-list"></ul>
@@ -109,7 +189,7 @@
       return L.divIcon({
         className: 'custom-marker',
         html: `<svg width="20" height="20" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="8" fill="${color}" stroke="#fff" stroke-width="2"/>
+          <circle cx="12" cy="12" r="8" fill="${color}" stroke="black" stroke-width="2"/>
         </svg>`,
         iconSize: [24,24],
         iconAnchor: [12,12]
@@ -119,10 +199,12 @@
     loadData().then(data => {
       let bounds = [];
       let missingCoords = [];
+      let colorCounts = { red: 0, orange: 0, yellow: 0, green: 0, blue: 0 };
       
       data.forEach(item => {
         if (item.lat && item.lon) {
           const color = getColorForType(item.type);
+          colorCounts[color]++;
           const marker = L.marker([item.lat, item.lon], { icon: makeIcon(color) }).addTo(map);
           marker.bindPopup(`<b>${item.type}</b><br>${item.location_txt}<br>${item.datetime}<br>Incident #: ${item.incident}`);
           bounds.push([item.lat, item.lon]);
@@ -130,6 +212,13 @@
           missingCoords.push(item);
         }
       });
+      
+      // Update color counts in stats box
+      document.getElementById('count-red').textContent = colorCounts.red;
+      document.getElementById('count-orange').textContent = colorCounts.orange;
+      document.getElementById('count-yellow').textContent = colorCounts.yellow;
+      document.getElementById('count-green').textContent = colorCounts.green;
+      document.getElementById('count-blue').textContent = colorCounts.blue;
       
       // Show missing coordinates box if there are any
       if (missingCoords.length > 0) {
@@ -139,7 +228,15 @@
         
         missingCoords.forEach((item, index) => {
           const li = document.createElement('li');
-          li.innerHTML = `<strong>#${index + 1}: ${item.type}</strong><br>${item.location_txt}<br><small>${item.datetime}</small>`;
+          const color = getColorForType(item.type);
+          li.innerHTML = `
+            <div class="missing-dot" style="background-color: ${color};"></div>
+            <div class="missing-content">
+              <strong>#${index + 1}: ${item.type}</strong><br>
+              ${item.location_txt}<br>
+              <small>${item.datetime}</small>
+            </div>
+          `;
           missingList.appendChild(li);
         });
       }

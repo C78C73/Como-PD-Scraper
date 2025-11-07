@@ -18,7 +18,12 @@ from urllib.parse import urlencode
 from datetime import datetime, timedelta
 
 URL = "https://www.como.gov/CMS/911dispatch/police.php"
-CHROMEDRIVER_PATH = "chromedriver.exe"
+import platform
+# Set chromedriver path for Windows (local) or Linux (CI)
+if platform.system() == 'Linux':
+    CHROMEDRIVER_PATH = "/usr/bin/chromedriver"
+else:
+    CHROMEDRIVER_PATH = "chromedriver.exe"
 USER_AGENT = "gageishere53@gmail.com - incident-mapper (respecting Nominatim policy)"
 GEOCACHE_FILE = "geocache.json"
 
@@ -108,9 +113,21 @@ def scrape_incidents(target_date_str):
     """Scrape incidents for a specific date using Selenium."""
     service = Service(CHROMEDRIVER_PATH)
     options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')  # Commented out to see the browser
-    options.add_argument('--disable-gpu')
-    options.add_argument('--no-sandbox')
+    if platform.system() == 'Linux':
+        # Use the correct chromium binary if available
+        if os.path.exists('/usr/bin/chromium-browser'):
+            options.binary_location = '/usr/bin/chromium-browser'
+        elif os.path.exists('/usr/bin/chromium'):
+            options.binary_location = '/usr/bin/chromium'
+        options.add_argument('--headless')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+    else:
+        # Local dev: show browser, but allow headless for silent runs
+        # options.add_argument('--headless')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--no-sandbox')
     driver = webdriver.Chrome(service=service, options=options)
 
     driver.get(URL)

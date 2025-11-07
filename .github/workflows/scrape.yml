@@ -26,9 +26,16 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y chromium-browser chromium-chromedriver
     
-    - name: Update ChromeDriver path for Linux
+
+    - name: Diagnostics - Chrome/Chromedriver
       run: |
-        sed -i 's/chromedriver.exe/\/usr\/bin\/chromedriver/g' run_scraper.py
+        which chromium-browser || true
+        which chromium || true
+        which chromedriver || true
+        chromium-browser --version || chromium --version || true
+        chromedriver --version || true
+        echo "Listing /usr/bin:"
+        ls -l /usr/bin | grep chrom
     
     - name: Run scraper
       run: |

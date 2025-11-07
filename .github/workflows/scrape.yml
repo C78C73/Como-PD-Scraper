@@ -26,18 +26,25 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y chromium-browser chromium-chromedriver
     
-    - name: Update ChromeDriver path for Linux
+
+    - name: Diagnostics - Chrome/Chromedriver
       run: |
-        sed -i 's/chromedriver.exe/\/usr\/bin\/chromedriver/g' run_scraper.py
+        which chromium-browser || true
+        which chromium || true
+        which chromedriver || true
+        chromium-browser --version || chromium --version || true
+        chromedriver --version || true
+        echo "Listing /usr/bin:"
+        ls -l /usr/bin | grep chrom
     
     - name: Run scraper
       run: |
         python run_scraper.py
     
     - name: Commit and push changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add data.json geocache.json
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update incident data $(date)"
-        git push
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: GitHub Action
+        author_email: action@github.com
+        message: "Update incident data"
+        add: 'data.json geocache.json'

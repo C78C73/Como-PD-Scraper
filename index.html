@@ -121,6 +121,14 @@
       <span class="stat-label">Total Incidents</span>
       <span class="stat-count" id="count-total">0</span>
     </div>
+    <div class="stat-row" id="incident-range-row" style="margin-top:8px;">
+      <span class="stat-label">Earliest</span>
+      <span class="stat-count" id="earliest-time">-</span>
+    </div>
+    <div class="stat-row" id="incident-range-row2">
+      <span class="stat-label">Latest</span>
+      <span class="stat-count" id="latest-time">-</span>
+    </div>
   </div>
   <div id="missing-coords" style="display:none;">
     <h3>⚠️ Incidents Without Coordinates</h3>
@@ -206,7 +214,16 @@
       let missingCoords = [];
       let colorCounts = { red: 0, orange: 0, yellow: 0, green: 0, blue: 0 };
       
+      let minTime = null, maxTime = null;
       data.forEach(item => {
+        // Parse datetime for min/max
+        if (item.datetime) {
+          const dt = new Date(item.datetime);
+          if (!isNaN(dt)) {
+            if (!minTime || dt < minTime) minTime = dt;
+            if (!maxTime || dt > maxTime) maxTime = dt;
+          }
+        }
         if (item.lat && item.lon) {
           const color = getColorForType(item.type);
           colorCounts[color]++;
@@ -227,6 +244,13 @@
       
       const totalMapped = colorCounts.red + colorCounts.orange + colorCounts.yellow + colorCounts.green + colorCounts.blue;
       document.getElementById('count-total').textContent = totalMapped;
+      // Show earliest and latest times
+      function formatDT(dt) {
+        if (!dt) return '-';
+        return dt.toLocaleString();
+      }
+      document.getElementById('earliest-time').textContent = formatDT(minTime);
+      document.getElementById('latest-time').textContent = formatDT(maxTime);
       
       // Show missing coordinates box if there are any
       if (missingCoords.length > 0) {

@@ -128,6 +128,8 @@ def scrape_incidents(target_date_str):
         # options.add_argument('--headless')
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
+    # Set a realistic user-agent string for all platforms
+    options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
     driver = webdriver.Chrome(service=service, options=options)
 
     driver.get(URL)
@@ -141,6 +143,12 @@ def scrape_incidents(target_date_str):
         time.sleep(20)  # Extra time for date fields to be ready
     except Exception as e:
         print(f"Date fields did not load: {e}")
+        # Take screenshot for diagnostics
+        try:
+            driver.save_screenshot("date_field_error.png")
+            print("Screenshot saved as date_field_error.png")
+        except Exception as se:
+            print(f"Screenshot failed: {se}")
         driver.quit()
         return []
 

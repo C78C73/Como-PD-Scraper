@@ -135,10 +135,10 @@ def scrape_incidents(target_date_str):
     
     # Wait for the date input field to be present
     try:
-        WebDriverWait(driver, 17).until(
+        WebDriverWait(driver, 20).until(
             EC.presence_of_element_located((By.ID, "Start_Date"))
         )
-        time.sleep(9)  # Extra time for date fields to be ready
+        time.sleep(20)  # Extra time for date fields to be ready
     except Exception as e:
         print(f"Date fields did not load: {e}")
         driver.quit()
@@ -150,7 +150,7 @@ def scrape_incidents(target_date_str):
         driver.execute_script(f"document.querySelector('input[id=\"Start_Date\"]').value = '{target_date_str}';")
         driver.execute_script(f"document.querySelector('input[name=\"Start_Date\"]').value = '{target_date_str}';")
         print("Set Start_Date using JavaScript.")
-        time.sleep(8)  # Let the date value settle
+        time.sleep(20)  # Let the date value settle
     except Exception as e:
         print("Could not set Start_Date: ", e)
         driver.quit()
@@ -158,12 +158,12 @@ def scrape_incidents(target_date_str):
 
     # Click Filter
     try:
-        filter_button = WebDriverWait(driver, 17).until(
+        filter_button = WebDriverWait(driver, 20).until(
             EC.element_to_be_clickable((By.XPATH, "//input[@value='Filter']"))
         )
         filter_button.click()
         print("Clicked Filter button.")
-        time.sleep(27)
+        time.sleep(20)
     except Exception as e:
         print("Could not click Filter button: ", e)
         driver.quit()
@@ -257,11 +257,11 @@ def scrape_incidents(target_date_str):
         
         # Check if there's a "Next >" link to continue
         try:
-            time.sleep(9)  # Wait before checking for Next button
+            time.sleep(20)  # Wait before checking for Next button
             next_link = driver.find_element(By.LINK_TEXT, "Next >")
             next_link.click()
             print(f"Clicked 'Next >' button, waiting for page {page_num + 1} to load...")
-            time.sleep(10)  # Increased wait time for page to fully load
+            time.sleep(20)  # Increased wait time for page to fully load
             page_num += 1
             # Safety check: if we know total pages, stop when we reach it
             if total_pages and page_num > total_pages:

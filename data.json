@@ -1,5 +1,629 @@
 [
   {
+    "datetime": "12/11/2025 1:40:00 PM",
+    "incident": "2025341645",
+    "location_txt": "4000 BLOCK  TREETOP LN",
+    "type": "911 CHECKS",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 1:37:20 PM",
+    "incident": "2025341642",
+    "location_txt": "5400 BLOCK  PEABODY RD",
+    "type": "LEAVING THE SCENE ACCIDENT",
+    "lat": 39.0215553,
+    "lon": -92.2698803
+  },
+  {
+    "datetime": "12/11/2025 1:33:39 PM",
+    "incident": "2025341639",
+    "location_txt": "100 BLOCK  N WILLIAM ST",
+    "type": "CHECK AREA",
+    "lat": 38.952543,
+    "lon": -92.316626
+  },
+  {
+    "datetime": "12/11/2025 1:30:39 PM",
+    "incident": "2025341637",
+    "location_txt": "700 BLOCK  WILKES BLVD",
+    "type": "911 CHECKS",
+    "lat": 38.960372,
+    "lon": -92.329258
+  },
+  {
+    "datetime": "12/11/2025 1:26:51 PM",
+    "incident": "2025341635",
+    "location_txt": "500 BLOCK  N PROVIDENCE RD",
+    "type": "KEEP THE PEACE",
+    "lat": 38.9686687,
+    "lon": -92.3338276
+  },
+  {
+    "datetime": "12/11/2025 1:09:15 PM",
+    "incident": "2025341621",
+    "location_txt": "GRINDSTONE PKWY/ROCK QUARRY RD",
+    "type": "ACCIDENT",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 1:07:58 PM",
+    "incident": "2025341620",
+    "location_txt": "E ASH ST/N FOURTH ST",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 1:06:07 PM",
+    "incident": "2025341619",
+    "location_txt": "PARIS RD/VANDIVER DR",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 1:06:04 PM",
+    "incident": "2025341617",
+    "location_txt": "S PROVIDENCE RD/E STEWART RD",
+    "type": "CIVIL MATTER",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 1:02:32 PM",
+    "incident": "2025341612",
+    "location_txt": "FALLING LEAF CT/FALLING LEAF LN",
+    "type": "DISTURBANCE",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 12:53:16 PM",
+    "incident": "2025341603",
+    "location_txt": "2000 BLOCK  E BROADWAY",
+    "type": "ASSIST CITIZEN",
+    "lat": 38.9483681,
+    "lon": -92.3089643
+  },
+  {
+    "datetime": "12/11/2025 12:46:35 PM",
+    "incident": "2025341594",
+    "location_txt": "0 BLOCK  N FOURTH ST",
+    "type": "ACCIDENT",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 12:44:58 PM",
+    "incident": "2025341593",
+    "location_txt": "100 BLOCK  N TENTH ST",
+    "type": "CHECK BUILDING",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 12:44:56 PM",
+    "incident": "2025341592",
+    "location_txt": "4300 BLOCK  S PROVIDENCE RD",
+    "type": "ASSIST CITIZEN",
+    "lat": 38.9028177,
+    "lon": -92.334926
+  },
+  {
+    "datetime": "12/11/2025 12:42:53 PM",
+    "incident": "2025341589",
+    "location_txt": "BLUE RIDGE RD/NORTHLAND DR",
+    "type": "FOUND PERSON",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 12:23:31 PM",
+    "incident": "2025341572",
+    "location_txt": "200 BLOCK  E BROADWAY",
+    "type": "PARKING VIOLATION",
+    "lat": 38.951568,
+    "lon": -92.334982
+  },
+  {
+    "datetime": "12/11/2025 12:18:39 PM",
+    "incident": "2025341564",
+    "location_txt": "4400 BLOCK  BROWN STATION RD",
+    "type": "ASSIST CITIZEN",
+    "lat": 38.995007,
+    "lon": -92.28933
+  },
+  {
+    "datetime": "12/11/2025 12:16:35 PM",
+    "incident": "2025341561",
+    "location_txt": "CONNECTOR NB/I70 DR SE",
+    "type": "ACCIDENT",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 12:14:41 PM",
+    "incident": "2025341558",
+    "location_txt": "3500 BLOCK  BERRYWOOD DR",
+    "type": "PARKING VIOLATION",
+    "lat": 38.957159,
+    "lon": -92.2850675
+  },
+  {
+    "datetime": "12/11/2025 11:58:26 AM",
+    "incident": "2025341552",
+    "location_txt": "3300 BLOCK  PREMIER LN",
+    "type": "LEAVING THE SCENE ACCIDENT",
+    "lat": 38.9966,
+    "lon": -92.288529
+  },
+  {
+    "datetime": "12/11/2025 11:52:46 AM",
+    "incident": "2025341548",
+    "location_txt": "2100 BLOCK  W BROADWAY",
+    "type": "LEAVING THE SCENE ACCIDENT",
+    "lat": 38.953866,
+    "lon": -92.371565
+  },
+  {
+    "datetime": "12/11/2025 11:50:20 AM",
+    "incident": "2025341543",
+    "location_txt": "500 BLOCK  CLINKSCALES RD",
+    "type": "ASSIST CITIZEN",
+    "lat": 38.9588887,
+    "lon": -92.3621798
+  },
+  {
+    "datetime": "12/11/2025 11:32:26 AM",
+    "incident": "2025341529",
+    "location_txt": "1800 BLOCK  E WALNUT ST",
+    "type": "DISTURBANCE",
+    "lat": 38.952938,
+    "lon": -92.311942
+  },
+  {
+    "datetime": "12/11/2025 11:08:57 AM",
+    "incident": "2025341517",
+    "location_txt": "2500 BLOCK  EASTWOOD DR",
+    "type": "AUTO THEFT",
+    "lat": 38.965146,
+    "lon": -92.301103
+  },
+  {
+    "datetime": "12/11/2025 11:08:23 AM",
+    "incident": "2025341516",
+    "location_txt": "2600 BLOCK  RANGE LINE ST",
+    "type": "911 CHECKS",
+    "lat": 38.9778234,
+    "lon": -92.3262205
+  },
+  {
+    "datetime": "12/11/2025 11:08:00 AM",
+    "incident": "2025341515",
+    "location_txt": "100 BLOCK  N TENTH ST",
+    "type": "SUSPICIOUS PERSON",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 11:05:20 AM",
+    "incident": "2025341512",
+    "location_txt": "100 BLOCK  SWITZLER ST",
+    "type": "CHECK BUILDING",
+    "lat": 38.956518,
+    "lon": -92.337512
+  },
+  {
+    "datetime": "12/11/2025 11:02:25 AM",
+    "incident": "2025341507",
+    "location_txt": "900 BLOCK  VANDIVER DR",
+    "type": "ACCIDENT",
+    "lat": 38.9700216,
+    "lon": -92.3260567
+  },
+  {
+    "datetime": "12/11/2025 10:58:03 AM",
+    "incident": "2025341504",
+    "location_txt": "100 BLOCK  N KEENE ST",
+    "type": "DEATH INVESTIGATION",
+    "lat": 38.9511945,
+    "lon": -92.290422
+  },
+  {
+    "datetime": "12/11/2025 10:54:33 AM",
+    "incident": "2025341500",
+    "location_txt": "3400 BLOCK  CLARK LN",
+    "type": "CHECK SUBJECT",
+    "lat": 38.9634603,
+    "lon": -92.2872274
+  },
+  {
+    "datetime": "12/11/2025 10:53:34 AM",
+    "incident": "2025341498",
+    "location_txt": "200 BLOCK  W BROADWAY",
+    "type": "LAW ALARM",
+    "lat": 38.9514137,
+    "lon": -92.3404707
+  },
+  {
+    "datetime": "12/11/2025 10:53:22 AM",
+    "incident": "2025341497",
+    "location_txt": "1100 BLOCK  I70 DR SW",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 10:47:16 AM",
+    "incident": "2025341495",
+    "location_txt": "500 BLOCK  E WALNUT ST",
+    "type": "911 CHECKS",
+    "lat": 38.9525466,
+    "lon": -92.3255445
+  },
+  {
+    "datetime": "12/11/2025 10:26:09 AM",
+    "incident": "2025341484",
+    "location_txt": "2300 BLOCK  S PROVIDENCE RD",
+    "type": "DEATH INVESTIGATION",
+    "lat": 38.924666,
+    "lon": -92.3390448
+  },
+  {
+    "datetime": "12/11/2025 10:14:27 AM",
+    "incident": "2025341470",
+    "location_txt": "N PROVIDENCE RD/E WORLEY ST",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 10:11:31 AM",
+    "incident": "2025341467",
+    "location_txt": "PATSY LN/CLINKSCALES RD",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 10:07:55 AM",
+    "incident": "2025341462",
+    "location_txt": "4700 BLOCK  RAINBOW TROUT DR",
+    "type": "FRAUD",
+    "lat": 38.945383,
+    "lon": -92.40529
+  },
+  {
+    "datetime": "12/11/2025 9:59:02 AM",
+    "incident": "2025341451",
+    "location_txt": "3300 BLOCK  PARIS RD",
+    "type": "LARCENY",
+    "lat": 38.984898,
+    "lon": -92.287638
+  },
+  {
+    "datetime": "12/11/2025 9:55:20 AM",
+    "incident": "2025341447",
+    "location_txt": "STANLEY PITTS LN/SINCLAIR RD",
+    "type": "ANIMAL COMPLAINT",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 9:53:36 AM",
+    "incident": "2025341445",
+    "location_txt": "600 BLOCK  E WALNUT ST",
+    "type": "ASSIST CITIZEN",
+    "lat": 38.9524286,
+    "lon": -92.3299821
+  },
+  {
+    "datetime": "12/11/2025 9:34:52 AM",
+    "incident": "2025341425",
+    "location_txt": "700 BLOCK  W BUSINESS LOOP 70",
+    "type": "DISTURBANCE",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 9:33:57 AM",
+    "incident": "2025341423",
+    "location_txt": "5300 BLOCK  GODAS CIR",
+    "type": "BURGLARY",
+    "lat": 38.966419,
+    "lon": -92.25585
+  },
+  {
+    "datetime": "12/11/2025 9:22:55 AM",
+    "incident": "2025341413",
+    "location_txt": "1700 BLOCK  HINKSON AVE",
+    "type": "DISTURBANCE",
+    "lat": 38.956528,
+    "lon": -92.314222
+  },
+  {
+    "datetime": "12/11/2025 9:21:21 AM",
+    "incident": "2025341410",
+    "location_txt": "1400 BLOCK  FORUM BLVD",
+    "type": "911 CHECKS",
+    "lat": 38.9371241,
+    "lon": -92.3582898
+  },
+  {
+    "datetime": "12/11/2025 9:16:03 AM",
+    "incident": "2025341405",
+    "location_txt": "500 BLOCK  W SEXTON RD",
+    "type": "FRAUD",
+    "lat": 38.9610759,
+    "lon": -92.3419324
+  },
+  {
+    "datetime": "12/11/2025 9:09:00 AM",
+    "incident": "2025341396",
+    "location_txt": "4100 BLOCK  W VAWTER SCHOOL RD",
+    "type": "LEAVING THE SCENE ACCIDENT",
+    "lat": 38.912253,
+    "lon": -92.396283
+  },
+  {
+    "datetime": "12/11/2025 8:56:47 AM",
+    "incident": "2025341380",
+    "location_txt": "4200 BLOCK  BETHEL ST",
+    "type": "PEACE DISTURBANCE",
+    "lat": 38.9050665,
+    "lon": -92.3433788
+  },
+  {
+    "datetime": "12/11/2025 8:47:11 AM",
+    "incident": "2025341377",
+    "location_txt": "3000 BLOCK  BROWN STATION RD",
+    "type": "ASSIST CITIZEN",
+    "lat": 38.9809109,
+    "lon": -92.2941828
+  },
+  {
+    "datetime": "12/11/2025 8:42:42 AM",
+    "incident": "2025341370",
+    "location_txt": "1000 BLOCK  N FAIRVIEW RD",
+    "type": "CHECK SUBJECT",
+    "lat": 38.966407,
+    "lon": -92.378724
+  },
+  {
+    "datetime": "12/11/2025 8:34:06 AM",
+    "incident": "2025341367",
+    "location_txt": "4900 BLOCK  COCHERO CT",
+    "type": "FRAUD",
+    "lat": 38.895565,
+    "lon": -92.407026
+  },
+  {
+    "datetime": "12/11/2025 8:32:50 AM",
+    "incident": "2025341366",
+    "location_txt": "5300 BLOCK  GODAS CIR",
+    "type": "BURGLARY",
+    "lat": 38.966419,
+    "lon": -92.25585
+  },
+  {
+    "datetime": "12/11/2025 8:31:06 AM",
+    "incident": "2025341364",
+    "location_txt": "CHAPEL HILL RD/FORUM BLVD",
+    "type": "ACCIDENT",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 8:30:31 AM",
+    "incident": "2025341363",
+    "location_txt": "3500 BLOCK  BERRYWOOD DR",
+    "type": "HARASSMENT",
+    "lat": 38.957159,
+    "lon": -92.2850675
+  },
+  {
+    "datetime": "12/11/2025 8:28:12 AM",
+    "incident": "2025341358",
+    "location_txt": "5400 BLOCK  BASELINE PL",
+    "type": "ASSIST OTHER AGENCY",
+    "lat": 39.008841,
+    "lon": -92.336462
+  },
+  {
+    "datetime": "12/11/2025 8:20:41 AM",
+    "incident": "2025341356",
+    "location_txt": "N GARTH AVE/E ASH ST",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 8:18:07 AM",
+    "incident": "2025341355",
+    "location_txt": "0 BLOCK  N SEVENTH ST",
+    "type": "ASSIST FIRE",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 8:16:50 AM",
+    "incident": "2025341352",
+    "location_txt": "1200 BLOCK  AGAIN ST",
+    "type": "SUSPICIOUS PERSON",
+    "lat": 38.9586676,
+    "lon": -92.3558317
+  },
+  {
+    "datetime": "12/11/2025 8:15:01 AM",
+    "incident": "2025341350",
+    "location_txt": "1800 BLOCK  MONROE ST",
+    "type": "LARCENY",
+    "lat": 38.962038,
+    "lon": -92.311432
+  },
+  {
+    "datetime": "12/11/2025 8:12:18 AM",
+    "incident": "2025341347",
+    "location_txt": "1000 BLOCK  N FAIRVIEW RD",
+    "type": "CHECK SUBJECT",
+    "lat": 38.966407,
+    "lon": -92.378724
+  },
+  {
+    "datetime": "12/11/2025 8:11:57 AM",
+    "incident": "2025341346",
+    "location_txt": "0 BLOCK  BRYANT WALKWAY",
+    "type": "911 CHECKS",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 8:06:20 AM",
+    "incident": "2025341344",
+    "location_txt": "1000 BLOCK  COOPER DRIVE NORTH",
+    "type": "HARASSMENT",
+    "lat": 38.9084839,
+    "lon": -92.3285043
+  },
+  {
+    "datetime": "12/11/2025 7:52:17 AM",
+    "incident": "2025341340",
+    "location_txt": "S TENTH ST/A ALY",
+    "type": "CHECK AREA",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 7:50:34 AM",
+    "incident": "2025341339",
+    "location_txt": "E STADIUM BLVD/ASHLAND RD",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 7:49:44 AM",
+    "incident": "2025341338",
+    "location_txt": "3600 BLOCK  ZINNIA DR",
+    "type": "SUSPICIOUS VEHICLE",
+    "lat": 38.972878,
+    "lon": -92.388307
+  },
+  {
+    "datetime": "12/11/2025 7:49:08 AM",
+    "incident": "2025341337",
+    "location_txt": "100 BLOCK  N TENTH ST",
+    "type": "CHECK BUILDING",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 7:39:50 AM",
+    "incident": "2025341328",
+    "location_txt": "1000 BLOCK  CHERRY ST",
+    "type": "CHECK AREA",
+    "lat": 38.9502669,
+    "lon": -92.3260129
+  },
+  {
+    "datetime": "12/11/2025 7:39:08 AM",
+    "incident": "2025341327",
+    "location_txt": "2000 BLOCK  E BROADWAY",
+    "type": "TRAFFIC STOP",
+    "lat": 38.9483681,
+    "lon": -92.3089643
+  },
+  {
+    "datetime": "12/11/2025 7:31:41 AM",
+    "incident": "2025341315",
+    "location_txt": "0 BLOCK  S FIFTH ST",
+    "type": "LAW ALARM",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 7:23:47 AM",
+    "incident": "2025341310",
+    "location_txt": "100 BLOCK  S FOURTH ST",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 7:18:14 AM",
+    "incident": "2025341309",
+    "location_txt": "100 BLOCK  S FOURTH ST",
+    "type": "CHECK AREA",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 7:13:46 AM",
+    "incident": "2025341306",
+    "location_txt": "0 BLOCK  S KEENE ST",
+    "type": "RECOVER PROPERTY",
+    "lat": 38.9475585,
+    "lon": -92.2908812
+  },
+  {
+    "datetime": "12/11/2025 7:13:01 AM",
+    "incident": "2025341305",
+    "location_txt": "W SOUTHAMPTON DR/ROYAL LYTHAM DR",
+    "type": "TRAFFIC STOP",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 7:10:30 AM",
+    "incident": "2025341304",
+    "location_txt": "1700 BLOCK  FORUM BLVD",
+    "type": "TRAFFIC",
+    "lat": 38.9326256,
+    "lon": -92.3602747
+  },
+  {
+    "datetime": "12/11/2025 7:10:28 AM",
+    "incident": "2025341303",
+    "location_txt": "2600 BLOCK  PEBBLE CREEK CT",
+    "type": "FRAUD",
+    "lat": 38.924905,
+    "lon": -92.29932
+  },
+  {
+    "datetime": "12/11/2025 6:59:24 AM",
+    "incident": "2025341295",
+    "location_txt": "E BROADWAY/CAPRI DR",
+    "type": "ACCIDENT",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 6:55:47 AM",
+    "incident": "2025341293",
+    "location_txt": "2000 BLOCK  S OLD 63",
+    "type": "FOOT PATROL",
+    "lat": 38.9287981,
+    "lon": -92.311463
+  },
+  {
+    "datetime": "12/11/2025 6:41:01 AM",
+    "incident": "2025341289",
+    "location_txt": "PARIS RD/MONROE ST",
+    "type": "CHECK THE WELFARE",
+    "lat": null,
+    "lon": null
+  },
+  {
+    "datetime": "12/11/2025 6:37:21 AM",
+    "incident": "2025341287",
+    "location_txt": "N HWY 63 NB/VANDIVER DR OFFR NB",
+    "type": "ACCIDENT",
+    "lat": null,
+    "lon": null
+  },
+  {
     "datetime": "12/11/2025 5:55:49 AM",
     "incident": "2025341277",
     "location_txt": "2300 BLOCK  PRIMROSE DR",
@@ -158,845 +782,5 @@
     "type": "TRESPASSING",
     "lat": 38.9608852,
     "lon": -92.2508359
-  },
-  {
-    "datetime": "12/10/2025 11:56:35 PM",
-    "incident": "2025341160",
-    "location_txt": "500 BLOCK  COLUMBIA DR",
-    "type": "DISTURBANCE",
-    "lat": 38.9454956,
-    "lon": -92.2956595
-  },
-  {
-    "datetime": "12/10/2025 11:56:05 PM",
-    "incident": "2025341159",
-    "location_txt": "4300 BLOCK  S PROVIDENCE RD",
-    "type": "CHECK AREA",
-    "lat": 38.9028177,
-    "lon": -92.334926
-  },
-  {
-    "datetime": "12/10/2025 11:44:22 PM",
-    "incident": "2025341150",
-    "location_txt": "4500 BLOCK  BETHEL ST",
-    "type": "TRESPASS SUBJECT",
-    "lat": 38.9043487,
-    "lon": -92.3448964
-  },
-  {
-    "datetime": "12/10/2025 11:43:32 PM",
-    "incident": "2025341149",
-    "location_txt": "N NINTH ST/E BROADWAY",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 11:39:51 PM",
-    "incident": "2025341145",
-    "location_txt": "VANDIVER DR/N HWY 63 NB",
-    "type": "STALLED VEHICLE",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 11:31:27 PM",
-    "incident": "2025341140",
-    "location_txt": "E BROADWAY/HITT ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 11:29:10 PM",
-    "incident": "2025341139",
-    "location_txt": "5400 BLOCK  S BETHEL CHURCH RD",
-    "type": "DISTURBANCE",
-    "lat": 38.8879253,
-    "lon": -92.345285
-  },
-  {
-    "datetime": "12/10/2025 11:25:07 PM",
-    "incident": "2025341135",
-    "location_txt": "400 BLOCK  E GREEN MEADOWS RD",
-    "type": "DWI",
-    "lat": 38.9141018,
-    "lon": -92.3287566
-  },
-  {
-    "datetime": "12/10/2025 11:24:27 PM",
-    "incident": "2025341134",
-    "location_txt": "1900 BLOCK  BLUE RIDGE RD",
-    "type": "SUSPICIOUS VEHICLE",
-    "lat": 38.9853093,
-    "lon": -92.3098271
-  },
-  {
-    "datetime": "12/10/2025 11:16:26 PM",
-    "incident": "2025341132",
-    "location_txt": "800 BLOCK  MKT TRL",
-    "type": "SUSPICIOUS VEHICLE",
-    "lat": 38.947411,
-    "lon": -92.333685
-  },
-  {
-    "datetime": "12/10/2025 10:59:42 PM",
-    "incident": "2025341128",
-    "location_txt": "1200 BLOCK  I70 W",
-    "type": "LEAVING THE SCENE ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 10:55:30 PM",
-    "incident": "2025341127",
-    "location_txt": "N GARTH AVE/LYNN ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 10:54:39 PM",
-    "incident": "2025341126",
-    "location_txt": "600 BLOCK  HUNTRIDGE DR",
-    "type": "ASSIST CITIZEN",
-    "lat": 38.918008,
-    "lon": -92.332127
-  },
-  {
-    "datetime": "12/10/2025 10:42:53 PM",
-    "incident": "2025341123",
-    "location_txt": "HITT ST/LOCUST ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 10:10:19 PM",
-    "incident": "2025341109",
-    "location_txt": "W BROADWAY/ROCKINGHAM DR",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 10:09:35 PM",
-    "incident": "2025341107",
-    "location_txt": "W BROADWAY/W BRIARWOOD LN",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 10:04:44 PM",
-    "incident": "2025341104",
-    "location_txt": "1300 BLOCK  TURCOTTE CT",
-    "type": "911 CHECKS",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 9:55:08 PM",
-    "incident": "2025341099",
-    "location_txt": "100 BLOCK  S PROVIDENCE RD",
-    "type": "CHECK SUBJECT",
-    "lat": 38.950494,
-    "lon": -92.33404
-  },
-  {
-    "datetime": "12/10/2025 9:35:52 PM",
-    "incident": "2025341092",
-    "location_txt": "5700 BLOCK  FREEDOM DR",
-    "type": "911 CHECKS",
-    "lat": 38.9608852,
-    "lon": -92.2508359
-  },
-  {
-    "datetime": "12/10/2025 9:24:49 PM",
-    "incident": "2025341087",
-    "location_txt": "ALLEN ST/N GARTH AVE",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 9:17:11 PM",
-    "incident": "2025341082",
-    "location_txt": "7500 BLOCK  E ST CHARLES RD",
-    "type": "MISSING PERSON",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 9:15:02 PM",
-    "incident": "2025341081",
-    "location_txt": "N PROVIDENCE RD/ROGERS ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 9:13:07 PM",
-    "incident": "2025341078",
-    "location_txt": "SMILEY LN/DERBY RIDGE DR",
-    "type": "TRAFFIC STOP",
-    "lat": 38.9929951,
-    "lon": -92.3205304
-  },
-  {
-    "datetime": "12/10/2025 9:10:51 PM",
-    "incident": "2025341077",
-    "location_txt": "5100 BLOCK  CLARK LN",
-    "type": "SUSPICIOUS VEHICLE",
-    "lat": 38.963161,
-    "lon": -92.256588
-  },
-  {
-    "datetime": "12/10/2025 9:10:09 PM",
-    "incident": "2025341076",
-    "location_txt": "900 BLOCK  WESTOVER ST",
-    "type": "DISTURBANCE",
-    "lat": 38.943568,
-    "lon": -92.354123
-  },
-  {
-    "datetime": "12/10/2025 9:09:16 PM",
-    "incident": "2025341074",
-    "location_txt": "4400 BLOCK  FAUROT DR",
-    "type": "SUSPICIOUS VEHICLE",
-    "lat": 38.9513143,
-    "lon": -92.3943789
-  },
-  {
-    "datetime": "12/10/2025 9:05:56 PM",
-    "incident": "2025341072",
-    "location_txt": "2700 BLOCK  E BROADWAY",
-    "type": "CHECK OPEN BUSINESS",
-    "lat": 38.9464495,
-    "lon": -92.2936149
-  },
-  {
-    "datetime": "12/10/2025 9:05:53 PM",
-    "incident": "2025341071",
-    "location_txt": "N GARTH AVE/W LESLIE LN",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 9:01:27 PM",
-    "incident": "2025341069",
-    "location_txt": "2000 BLOCK  SHALE RIDGE CT",
-    "type": "FRAUD",
-    "lat": 38.934337,
-    "lon": -92.406225
-  },
-  {
-    "datetime": "12/10/2025 8:59:20 PM",
-    "incident": "2025341067",
-    "location_txt": "PARIS RD/AMMONETTE ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 8:55:28 PM",
-    "incident": "2025341065",
-    "location_txt": "W BUSINESS LOOP 70/N STADIUM BLVD",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 8:53:00 PM",
-    "incident": "2025341064",
-    "location_txt": "E TEXAS AVE/N PROVIDENCE RD",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 8:51:16 PM",
-    "incident": "2025341062",
-    "location_txt": "CLARK LN/CONNECTOR",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 8:49:49 PM",
-    "incident": "2025341060",
-    "location_txt": "400 BLOCK  CONLEY RD",
-    "type": "TRESPASS SUBJECT",
-    "lat": 38.9568306,
-    "lon": -92.2941439
-  },
-  {
-    "datetime": "12/10/2025 8:37:13 PM",
-    "incident": "2025341055",
-    "location_txt": "N PROVIDENCE RD/ROGERS ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 8:33:16 PM",
-    "incident": "2025341052",
-    "location_txt": "W BUSINESS LOOP 70/I70 DR SW",
-    "type": "STALLED VEHICLE",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 8:28:53 PM",
-    "incident": "2025341050",
-    "location_txt": "2400 BLOCK  LONGWOOD DR",
-    "type": "911 CHECKS",
-    "lat": 38.8706166,
-    "lon": -92.3789691
-  },
-  {
-    "datetime": "12/10/2025 8:28:28 PM",
-    "incident": "2025341049",
-    "location_txt": "1300 BLOCK  VANDIVER DR",
-    "type": "TRAFFIC STOP",
-    "lat": 38.9711176,
-    "lon": -92.3203335
-  },
-  {
-    "datetime": "12/10/2025 8:24:46 PM",
-    "incident": "2025341047",
-    "location_txt": "PARIS RD/AMMONETTE ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 8:21:16 PM",
-    "incident": "2025341045",
-    "location_txt": "1500 BLOCK  MCKEE ST",
-    "type": "ASSIST FIRE",
-    "lat": 38.966607,
-    "lon": -92.269215
-  },
-  {
-    "datetime": "12/10/2025 8:16:24 PM",
-    "incident": "2025341044",
-    "location_txt": "500 BLOCK  E GREEN MEADOWS RD",
-    "type": "DISTURBANCE",
-    "lat": 38.9141018,
-    "lon": -92.3287566
-  },
-  {
-    "datetime": "12/10/2025 8:04:22 PM",
-    "incident": "2025341038",
-    "location_txt": "E BUSINESS LOOP 70/RANGE LINE ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 8:03:54 PM",
-    "incident": "2025341036",
-    "location_txt": "2600 BLOCK  S OLD 63",
-    "type": "KEEP THE PEACE",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:55:36 PM",
-    "incident": "2025341033",
-    "location_txt": "W BROADWAY/THISTLEDOWN DR",
-    "type": "CHECK SUBJECT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:55:04 PM",
-    "incident": "2025341031",
-    "location_txt": "N STADIUM BLVD/BERNADETTE DR",
-    "type": "911 CHECKS",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:50:01 PM",
-    "incident": "2025341026",
-    "location_txt": "1200 BLOCK  I70 E",
-    "type": "LEAVING THE SCENE ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:49:20 PM",
-    "incident": "2025341025",
-    "location_txt": "LOCUST ST/S FOURTH ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:43:33 PM",
-    "incident": "2025341023",
-    "location_txt": "3900 BLOCK  SNOWY OWL DR",
-    "type": "ASSAULT",
-    "lat": 38.99043,
-    "lon": -92.334742
-  },
-  {
-    "datetime": "12/10/2025 7:42:41 PM",
-    "incident": "2025341022",
-    "location_txt": "W BROADWAY/SILVEY ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:36:26 PM",
-    "incident": "2025341020",
-    "location_txt": "5100 BLOCK  CLARK LN",
-    "type": "SUSPICIOUS PERSON",
-    "lat": 38.963161,
-    "lon": -92.256588
-  },
-  {
-    "datetime": "12/10/2025 7:35:42 PM",
-    "incident": "2025341019",
-    "location_txt": "600 BLOCK  E WALNUT ST",
-    "type": "ASSIST CITIZEN",
-    "lat": 38.9524286,
-    "lon": -92.3299821
-  },
-  {
-    "datetime": "12/10/2025 7:33:50 PM",
-    "incident": "2025341018",
-    "location_txt": "LOCUST ST/S TENTH ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:32:27 PM",
-    "incident": "2025341017",
-    "location_txt": "2600 BLOCK  BERNADETTE PL",
-    "type": "LAW ALARM",
-    "lat": 38.9673908,
-    "lon": -92.3772244
-  },
-  {
-    "datetime": "12/10/2025 7:31:45 PM",
-    "incident": "2025341016",
-    "location_txt": "1800 BLOCK  SPIROS DR",
-    "type": "LARCENY",
-    "lat": 38.969504,
-    "lon": -92.264339
-  },
-  {
-    "datetime": "12/10/2025 7:30:34 PM",
-    "incident": "2025341015",
-    "location_txt": "S KEENE ST/E BROADWAY",
-    "type": "CHECK THE WELFARE",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:28:12 PM",
-    "incident": "2025341012",
-    "location_txt": "4200 BLOCK  CLARK LN",
-    "type": "HARASSMENT",
-    "lat": 38.963683,
-    "lon": -92.275146
-  },
-  {
-    "datetime": "12/10/2025 7:27:20 PM",
-    "incident": "2025341011",
-    "location_txt": "1800 BLOCK  LOVEJOY LN",
-    "type": "LAW ALARM",
-    "lat": 38.985493,
-    "lon": -92.310274
-  },
-  {
-    "datetime": "12/10/2025 7:19:09 PM",
-    "incident": "2025341005",
-    "location_txt": "CHERRY ST/S EIGHTH ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:17:41 PM",
-    "incident": "2025341004",
-    "location_txt": "E STADIUM BLVD/S HWY 63 SB",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:17:19 PM",
-    "incident": "2025341003",
-    "location_txt": "W BROADWAY/N STADIUM BLVD",
-    "type": "LEAVING THE SCENE ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 7:07:28 PM",
-    "incident": "2025340998",
-    "location_txt": "700 BLOCK  N GARTH AVE",
-    "type": "ASSIST CITIZEN",
-    "lat": 38.9597881,
-    "lon": -92.3386065
-  },
-  {
-    "datetime": "12/10/2025 7:06:52 PM",
-    "incident": "2025340997",
-    "location_txt": "300 BLOCK  N STADIUM BLVD",
-    "type": "911 CHECKS",
-    "lat": 38.9676217,
-    "lon": -92.3712517
-  },
-  {
-    "datetime": "12/10/2025 7:02:09 PM",
-    "incident": "2025340995",
-    "location_txt": "2100 BLOCK  ROLLINS RD",
-    "type": "911 CHECKS",
-    "lat": 38.9464557,
-    "lon": -92.3721328
-  },
-  {
-    "datetime": "12/10/2025 6:57:18 PM",
-    "incident": "2025340990",
-    "location_txt": "WILKES BLVD/FAY ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 6:57:12 PM",
-    "incident": "2025340989",
-    "location_txt": "800 BLOCK  VANDIVER DR",
-    "type": "TRAFFIC STOP",
-    "lat": 38.9707601,
-    "lon": -92.3271637
-  },
-  {
-    "datetime": "12/10/2025 6:56:55 PM",
-    "incident": "2025340988",
-    "location_txt": "500 BLOCK  E GREEN MEADOWS RD",
-    "type": "DISTURBANCE",
-    "lat": 38.9141018,
-    "lon": -92.3287566
-  },
-  {
-    "datetime": "12/10/2025 6:53:25 PM",
-    "incident": "2025340987",
-    "location_txt": "0 BLOCK  BRYANT WALKWAY",
-    "type": "DISTURBANCE",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 6:40:49 PM",
-    "incident": "2025340976",
-    "location_txt": "STATE FARM PKWY/GRINDSTONE PKWY",
-    "type": "ASSIST CITIZEN",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 6:37:15 PM",
-    "incident": "2025340974",
-    "location_txt": "5300 BLOCK  CURRITUCK LN",
-    "type": "DISTURBANCE",
-    "lat": 39.006017,
-    "lon": -92.317937
-  },
-  {
-    "datetime": "12/10/2025 6:35:01 PM",
-    "incident": "2025340971",
-    "location_txt": "N HWY 63 SB/CONNECTOR SB",
-    "type": "TRAFFIC HAZARD",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 6:29:06 PM",
-    "incident": "2025340966",
-    "location_txt": "3800 BLOCK  RANGE LINE ST",
-    "type": "911 CHECKS",
-    "lat": 38.988907,
-    "lon": -92.324576
-  },
-  {
-    "datetime": "12/10/2025 6:08:07 PM",
-    "incident": "2025340960",
-    "location_txt": "600 BLOCK  E WALNUT ST",
-    "type": "ASSIST CITIZEN",
-    "lat": 38.9524286,
-    "lon": -92.3299821
-  },
-  {
-    "datetime": "12/10/2025 5:56:31 PM",
-    "incident": "2025340954",
-    "location_txt": "4100 BLOCK  W VAWTER SCHOOL RD",
-    "type": "911 CHECKS",
-    "lat": 38.912253,
-    "lon": -92.396283
-  },
-  {
-    "datetime": "12/10/2025 5:53:49 PM",
-    "incident": "2025340952",
-    "location_txt": "3100 BLOCK  W BROADWAY",
-    "type": "CHECK SUBJECT",
-    "lat": 38.95439,
-    "lon": -92.38307
-  },
-  {
-    "datetime": "12/10/2025 5:33:10 PM",
-    "incident": "2025340937",
-    "location_txt": "1200 BLOCK  W BUSINESS LOOP 70",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 5:27:33 PM",
-    "incident": "2025340930",
-    "location_txt": "1200 BLOCK  GRINDSTONE PKWY",
-    "type": "LARCENY",
-    "lat": 38.912845,
-    "lon": -92.2950012
-  },
-  {
-    "datetime": "12/10/2025 5:24:18 PM",
-    "incident": "2025340927",
-    "location_txt": "5000 BLOCK  PANORAMA LN",
-    "type": "KEEP THE PEACE",
-    "lat": 39.0036373,
-    "lon": -92.3335824
-  },
-  {
-    "datetime": "12/10/2025 5:22:09 PM",
-    "incident": "2025340923",
-    "location_txt": "E STADIUM BLVD/S HWY 63 SB",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 5:19:41 PM",
-    "incident": "2025340921",
-    "location_txt": "W WORLEY ST/CLINKSCALES RD",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 5:18:50 PM",
-    "incident": "2025340919",
-    "location_txt": "GORDON ST/N OLD 63",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 5:15:12 PM",
-    "incident": "2025340915",
-    "location_txt": "S HWY 63 SB/E STADIUM BLVD",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 5:14:04 PM",
-    "incident": "2025340913",
-    "location_txt": "500 BLOCK  E WALNUT ST",
-    "type": "911 CHECKS",
-    "lat": 38.9525466,
-    "lon": -92.3255445
-  },
-  {
-    "datetime": "12/10/2025 5:09:52 PM",
-    "incident": "2025340912",
-    "location_txt": "100 BLOCK  W BROADWAY",
-    "type": "911 CHECKS",
-    "lat": 38.951499,
-    "lon": -92.339131
-  },
-  {
-    "datetime": "12/10/2025 5:08:48 PM",
-    "incident": "2025340908",
-    "location_txt": "2600 BLOCK  EASTWOOD DR",
-    "type": "ASSIST CITIZEN",
-    "lat": 38.964528,
-    "lon": -92.299056
-  },
-  {
-    "datetime": "12/10/2025 5:08:02 PM",
-    "incident": "2025340906",
-    "location_txt": "S STADIUM BLVD/COLLEGE PARK DR",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 5:07:48 PM",
-    "incident": "2025340905",
-    "location_txt": "0 BLOCK  N EIGHTH ST",
-    "type": "LARCENY",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 5:04:01 PM",
-    "incident": "2025340902",
-    "location_txt": "4700 BLOCK  STAYTON FERRY LOOP",
-    "type": "PEACE DISTURBANCE",
-    "lat": 38.9405802,
-    "lon": -92.2660216
-  },
-  {
-    "datetime": "12/10/2025 5:00:48 PM",
-    "incident": "2025340898",
-    "location_txt": "S EIGHTH ST/CHERRY ST",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 4:59:25 PM",
-    "incident": "2025340896",
-    "location_txt": "S STADIUM BLVD/COLLEGE PARK DR",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 4:47:40 PM",
-    "incident": "2025340884",
-    "location_txt": "1900 BLOCK  E BUSINESS LOOP 70",
-    "type": "TRAFFIC STOP",
-    "lat": 38.962867,
-    "lon": -92.3094366
-  },
-  {
-    "datetime": "12/10/2025 4:22:19 PM",
-    "incident": "2025340865",
-    "location_txt": "600 BLOCK  E WALNUT ST",
-    "type": "ASSIST CITIZEN",
-    "lat": 38.9524286,
-    "lon": -92.3299821
-  },
-  {
-    "datetime": "12/10/2025 4:21:46 PM",
-    "incident": "2025340862",
-    "location_txt": "2500 BLOCK  S HWY 63 NB",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 4:21:01 PM",
-    "incident": "2025340860",
-    "location_txt": "E WALNUT ST/N FOURTH ST",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 4:20:35 PM",
-    "incident": "2025340858",
-    "location_txt": "1600 BLOCK  HIGH QUEST CIR",
-    "type": "DISTURBANCE",
-    "lat": 38.997934,
-    "lon": -92.31406
-  },
-  {
-    "datetime": "12/10/2025 4:19:18 PM",
-    "incident": "2025340854",
-    "location_txt": "BUTTONWOOD DR/COOPER DRIVE NORTH",
-    "type": "TRAFFIC STOP",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 4:09:11 PM",
-    "incident": "2025340850",
-    "location_txt": "2200 BLOCK  BERNADETTE DR",
-    "type": "LARCENY",
-    "lat": 38.966005,
-    "lon": -92.374787
-  },
-  {
-    "datetime": "12/10/2025 4:03:32 PM",
-    "incident": "2025340846",
-    "location_txt": "3700 BLOCK  LENOIR ST",
-    "type": "DISTURBANCE",
-    "lat": 38.9089036,
-    "lon": -92.2928409
-  },
-  {
-    "datetime": "12/10/2025 4:01:25 PM",
-    "incident": "2025340841",
-    "location_txt": "1900 BLOCK  PARK DE VILLE PL",
-    "type": "ASSIST CITIZEN",
-    "lat": 38.9608061,
-    "lon": -92.3826528
-  },
-  {
-    "datetime": "12/10/2025 3:52:40 PM",
-    "incident": "2025340831",
-    "location_txt": "I70 W/N STADIUM BLVD",
-    "type": "ACCIDENT",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 3:51:38 PM",
-    "incident": "2025340829",
-    "location_txt": "2000 BLOCK  W WORLEY ST",
-    "type": "LARCENY",
-    "lat": 38.96073,
-    "lon": -92.3693671
-  },
-  {
-    "datetime": "12/10/2025 3:51:14 PM",
-    "incident": "2025340826",
-    "location_txt": "3000 BLOCK  W BROADWAY",
-    "type": "LARCENY",
-    "lat": 38.9548231,
-    "lon": -92.3821706
-  },
-  {
-    "datetime": "12/10/2025 3:42:13 PM",
-    "incident": "2025340809",
-    "location_txt": "PARIS RD/N COLLEGE AVE",
-    "type": "ASSIST CITIZEN",
-    "lat": null,
-    "lon": null
-  },
-  {
-    "datetime": "12/10/2025 3:39:33 PM",
-    "incident": "2025340804",
-    "location_txt": "2000 BLOCK  W WORLEY ST",
-    "type": "LARCENY",
-    "lat": 38.96073,
-    "lon": -92.3693671
-  },
-  {
-    "datetime": "12/10/2025 3:33:51 PM",
-    "incident": "2025340800",
-    "location_txt": "1700 BLOCK  W ASH ST",
-    "type": "CHECK SUBJECT",
-    "lat": 38.9567418,
-    "lon": -92.3639121
-  },
-  {
-    "datetime": "12/10/2025 3:31:06 PM",
-    "incident": "2025340798",
-    "location_txt": "BEAR CREEK DR/PROCTOR DR",
-    "type": "SUSPICIOUS INCIDENT",
-    "lat": null,
-    "lon": null
   }
 ]

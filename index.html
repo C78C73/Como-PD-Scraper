@@ -7,29 +7,36 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     html,body,#map { height:100%; margin:0; padding:0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
     .legend { background:#fff; padding:8px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,0.2); }
     #stats-box {
       position: absolute;
       top: 10px;
       left: 60px;
       z-index: 1000;
-      background: white;
+      background: rgba(255,255,255,0.88);
       padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
       font-family: Arial, sans-serif;
       min-width: 200px;
     }
     #stats-box h3 {
       margin: 0 0 10px 0;
-      font-size: 16px;
-      color: #333;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #222;
     }
     #stats-box .stat-row {
       display: flex;
       align-items: center;
       margin-bottom: 8px;
-      font-size: 14px;
+      font-size: 13px;
     }
     #stats-box .color-dot {
       width: 16px;
@@ -43,7 +50,7 @@
       flex: 1;
     }
     #stats-box .stat-count {
-      font-weight: bold;
+      font-weight: 600;
       margin-left: 8px;
     }
     #missing-coords {
@@ -51,40 +58,103 @@
       top: 10px;
       right: 10px;
       z-index: 1000;
-      background: white;
-      padding: 12px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.9);
+      padding: 12px 14px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
       max-width: 350px;
       max-height: 400px;
       overflow-y: auto;
     }
     #missing-coords h3 {
       margin: 0 0 8px 0;
-      font-size: 14px;
+      font-size: 13px;
       color: #d63031;
     }
     #missing-coords ul {
       margin: 0;
       padding-left: 20px;
-      font-size: 12px;
+      font-size: 11px;
     }
     #missing-coords li {
       margin-bottom: 6px;
       display: flex;
       align-items: flex-start;
     }
-    #missing-coords .missing-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: 2px solid black;
+    #missing-coords .missing-icon {
+      width: 18px;
+      height: 18px;
       margin-right: 8px;
-      margin-top: 3px;
+      margin-top: 2px;
       flex-shrink: 0;
     }
     #missing-coords .missing-content {
       flex: 1;
+    }
+
+    #layer-controls {
+      position: absolute;
+      top: 10px;
+      left: 340px;
+      z-index: 1000;
+      background: rgba(255,255,255,0.9);
+      padding: 10px 14px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      min-width: 130px;
+    }
+    #layer-controls h3 {
+      margin: 0 0 8px 0;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #222;
+    }
+    #layer-controls label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    #layer-controls input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
+    }
+
+    /* Stack panels on small screens so they never overlap */
+    @media (max-width: 700px) {
+      #stats-box {
+        left: 10px;
+        right: 10px;
+      }
+      #layer-controls {
+        top: 150px;
+        left: 10px;
+      }
+    }
+
+    #footer {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 900;
+      background: rgba(255,255,255,0.9);
+      padding: 6px 12px;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+      font-size: 11px;
+      color: #374151;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -93,7 +163,7 @@
     <h3>📊 Incident Severity</h3>
     <div class="stat-row">
       <div class="color-dot" style="background-color: red;"></div>
-      <span class="stat-label">Critical (Violent)</span>
+      <span class="stat-label">Critical / Life-Threatening</span>
       <span class="stat-count" id="count-red">0</span>
     </div>
     <div class="stat-row">
@@ -121,18 +191,40 @@
       <span class="stat-label">Total Incidents</span>
       <span class="stat-count" id="count-total">0</span>
     </div>
+    <div class="stat-row" id="incident-range-row" style="margin-top:8px;">
+      <span class="stat-label">Earliest</span>
+      <span class="stat-count" id="earliest-time">-</span>
+    </div>
+    <div class="stat-row" id="incident-range-row2">
+      <span class="stat-label">Latest</span>
+      <span class="stat-count" id="latest-time">-</span>
+    </div>
+  </div>
+  <div id="layer-controls">
+    <h3>Layers</h3>
+    <label><input type="checkbox" id="toggle-pd" checked> Police</label>
+    <label><input type="checkbox" id="toggle-fire" checked> Fire/EMS</label>
   </div>
   <div id="missing-coords" style="display:none;">
     <h3>⚠️ Incidents Without Coordinates</h3>
     <ul id="missing-list"></ul>
   </div>
   <div id="map"></div>
+  <div id="footer">Last updated: <span id="last-updated">-</span></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     async function loadData() {
       const r = await fetch('data.json');
       return r.json();
+    }
+
+    function formatInCT(date, withTime = true) {
+      if (!date) return '-';
+      const opts = withTime
+        ? { year: 'numeric', month: '2-digit', day: '2-digit', hour: 'numeric', minute: '2-digit', second: '2-digit' }
+        : { year: 'numeric', month: '2-digit', day: '2-digit' };
+      return new Intl.DateTimeFormat('en-US', { ...opts, timeZone: 'America/Chicago' }).format(date) + ' CT';
     }
 
     // map init (center on Columbia, MO by default)
@@ -142,35 +234,69 @@
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
+    // Separate layers for Police vs Fire/EMS
+    const policeLayer = L.layerGroup().addTo(map);
+    const fireLayer = L.layerGroup().addTo(map);
+
     // Severity-based color mapping
     const severityColors = {
-      // Critical/Violent (Red)
+      // Critical / life-threatening (Red)
       "SHOTS FIRED": "red",
-      "ROBBERY": "red",
-      "ASSAULT": "red",
-      "STABBING": "red",
       "SHOOTING": "red",
-      
+      "STABBING": "red",
+      "ROBBERY": "red",
+      "ARMED SUBJECT": "red",
+      "HOMICIDE": "red",
+      "WEAPONS OFFENSE": "red",
+      // Fire/EMS critical
+      "STRUCTURE FIRE": "red",
+      "BUILDING FIRE": "red",
+      "HOUSE FIRE": "red",
+      "APARTMENT FIRE": "red",
+      "COMMERCIAL FIRE": "red",
+      "WORKING FIRE": "red",
+      "CARDIAC ARREST": "red",
+      "MEDICAL RESPONSE - PRIORITY": "red",
+      "UNCONSCIOUS PERSON": "red",
+      "NOT BREATHING": "red",
+
       // Serious (Orange)
-      "BURGLARY": "orange",
+      "ASSAULT": "orange",
       "DOMESTIC DISTURBANCE": "orange",
-      "DISTURBANCE": "orange",
-      "SUSPICIOUS PERSON": "orange",
-      
+      "DOMESTIC VIOLENCE": "orange",
+      "FIGHT": "orange",
+      "BURGLARY": "orange",
+      "HOME INVASION": "orange",
+      "VEHICLE ACCIDENT - INJURY": "orange",
+      "ACCIDENT - INJURY": "orange",
+      "VEHICLE ACCIDENT - ENTRAPMENT": "orange",
+      "FIRE ALARM": "orange",
+      "SMOKE INVESTIGATION": "orange",
+      "GAS LEAK": "orange",
+
       // Moderate (Yellow)
       "THEFT": "yellow",
+      "LARCENY": "yellow",
+      "SHOPLIFTING": "yellow",
       "VANDALISM": "yellow",
       "TRESPASSING": "yellow",
       "ACCIDENT": "yellow",
+      "CRASH": "yellow",
       "TRAFFIC": "yellow",
       "TRAFFIC STOP": "yellow",
-      
+      "SUSPICIOUS PERSON": "yellow",
+      "SUSPICIOUS VEHICLE": "yellow",
+      "DISORDERLY CONDUCT": "yellow",
+      "NOISE COMPLAINT": "yellow",
+      "HARASSMENT": "yellow",
+
       // Low priority (Green)
       "911 CHECKS": "green",
       "ASSIST CITIZEN": "green",
       "KEEP THE PEACE": "green",
       "PARKING VIOLATION": "green",
-      "LAW ALARM": "green"
+      "CITIZEN ASSIST": "green",
+      "FOLLOW UP": "green"
     };
     
     function getColorForType(type) {
@@ -179,20 +305,44 @@
       if (severityColors[upper]) return severityColors[upper];
       
       // Check partial matches for severity
-      if (upper.includes("SHOT") || upper.includes("WEAPON") || upper.includes("GUN")) return "red";
-      if (upper.includes("ASSAULT") || upper.includes("FIGHT") || upper.includes("BATTERY")) return "red";
-      if (upper.includes("BURGLARY") || upper.includes("BREAK") || upper.includes("THEFT")) return "orange";
+      if (upper.includes("SHOT") || upper.includes("GUN") || upper.includes("WEAPON")) return "red";
+      if (upper.includes("ASSAULT") || upper.includes("STAB") || upper.includes("HOMICIDE") || upper.includes("MURDER") || upper.includes("ROBBERY") || upper.includes("ARMED")) return "red";
+      if (upper.includes("STRUCTURE FIRE") || upper.includes("WORKING FIRE") || upper.includes("BUILDING FIRE") || upper.includes("APARTMENT FIRE")) return "red";
+      if (upper.includes("CARDIAC") || upper.includes("NOT BREATHING") || upper.includes("UNCONSCIOUS") || upper.includes("CPR")) return "red";
+
+      if (upper.includes("DOMESTIC") || upper.includes("FIGHT") || upper.includes("STRANGULATION") || upper.includes("CHILD ABUSE")) return "orange";
+      if (upper.includes("BURGLARY") || upper.includes("BREAK") || upper.includes("HOME INVASION")) return "orange";
+      if ((upper.includes("ACCIDENT") && upper.includes("INJURY")) || upper.includes("ENTRAPMENT")) return "orange";
+      if (upper.includes("FIRE ALARM") || upper.includes("SMOKE") || upper.includes("GAS LEAK")) return "orange";
+
+      if (upper.includes("THEFT") || upper.includes("LARCENY") || upper.includes("SHOPLIFT")) return "yellow";
+      if (upper.includes("SUSPICIOUS")) return "yellow";
       if (upper.includes("ACCIDENT") || upper.includes("CRASH") || upper.includes("TRAFFIC")) return "yellow";
-      if (upper.includes("CHECK") || upper.includes("ASSIST")) return "green";
+      if (upper.includes("DISORDERLY") || upper.includes("NOISE") || upper.includes("HARASS")) return "yellow";
+
+      if (upper.includes("CHECK") || upper.includes("ASSIST") || upper.includes("FOLLOW UP") || upper.includes("CITIZEN ASSIST")) return "green";
       
       // Default to blue for unknown
       return "blue";
     }
 
-    function makeIcon(color) {
-      // use a simple colored circle marker via DivIcon, or use default icon
+    function makeIcon(color, service) {
+      // Different shapes for Police vs Fire/EMS, but same severity colors
+      if (service === 'FIRE_EMS') {
+        // Triangle for Fire/EMS
+        return L.divIcon({
+          className: 'custom-marker-fire',
+          html: `<svg width="22" height="22" viewBox="0 0 24 24">
+            <polygon points="12,2 22,22 2,22" fill="${color}" stroke="black" stroke-width="2"/>
+          </svg>`,
+          iconSize: [24,24],
+          iconAnchor: [12,22]
+        });
+      }
+
+      // Circle for Police
       return L.divIcon({
-        className: 'custom-marker',
+        className: 'custom-marker-pd',
         html: `<svg width="20" height="20" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="8" fill="${color}" stroke="black" stroke-width="2"/>
         </svg>`,
@@ -206,12 +356,32 @@
       let missingCoords = [];
       let colorCounts = { red: 0, orange: 0, yellow: 0, green: 0, blue: 0 };
       
+      let minTime = null, maxTime = null;
+      let lastGenerated = null;
       data.forEach(item => {
+        // Parse datetime for min/max
+        if (item.datetime) {
+          const dt = new Date(item.datetime);
+          if (!isNaN(dt)) {
+            if (!minTime || dt < minTime) minTime = dt;
+            if (!maxTime || dt > maxTime) maxTime = dt;
+          }
+        }
+        if (item.generated_at && !lastGenerated) {
+          // All incidents share the same generated_at, so just grab one
+          lastGenerated = item.generated_at;
+        }
+
+        const color = getColorForType(item.type || '');
+        colorCounts[color]++;
+
         if (item.lat && item.lon) {
-          const color = getColorForType(item.type);
-          colorCounts[color]++;
-          const marker = L.marker([item.lat, item.lon], { icon: makeIcon(color) }).addTo(map);
-          marker.bindPopup(`<b>${item.type}</b><br>${item.location_txt}<br>${item.datetime}<br>Incident #: ${item.incident}`);
+          const service = (item.service || 'PD').toUpperCase();
+          const isFire = (service === 'FIRE_EMS' || service === 'FIRE' || service === 'EMS');
+          const targetLayer = isFire ? fireLayer : policeLayer;
+          const marker = L.marker([item.lat, item.lon], { icon: makeIcon(color, isFire ? 'FIRE_EMS' : 'PD') }).addTo(targetLayer);
+          const agency = item.agency || (isFire ? 'Fire/EMS' : 'Police');
+          marker.bindPopup(`<b>${item.type}</b><br>${item.location_txt}<br>${item.datetime}<br>Incident #: ${item.incident}<br>Agency: ${agency}`);
           bounds.push([item.lat, item.lon]);
         } else {
           missingCoords.push(item);
@@ -227,6 +397,21 @@
       
       const totalMapped = colorCounts.red + colorCounts.orange + colorCounts.yellow + colorCounts.green + colorCounts.blue;
       document.getElementById('count-total').textContent = totalMapped;
+      // Show earliest and latest times
+      document.getElementById('earliest-time').textContent = formatInCT(minTime);
+      document.getElementById('latest-time').textContent = formatInCT(maxTime);
+
+      // Last updated footer
+      const footerSpan = document.getElementById('last-updated');
+      if (footerSpan) {
+        if (lastGenerated) {
+          const genDate = new Date(lastGenerated.replace(' UTC', 'Z'));
+          const dispatchLabel = minTime ? formatInCT(minTime, false) : '-';
+          footerSpan.textContent = `${formatInCT(genDate)} (dispatch date: ${dispatchLabel})`;
+        } else {
+          footerSpan.textContent = formatInCT(new Date());
+        }
+      }
       
       // Show missing coordinates box if there are any
       if (missingCoords.length > 0) {
@@ -236,9 +421,19 @@
         
         missingCoords.forEach((item, index) => {
           const li = document.createElement('li');
-          const color = getColorForType(item.type);
+          const color = getColorForType(item.type || '');
+          const service = (item.service || 'PD').toUpperCase();
+          const isFire = (service === 'FIRE_EMS' || service === 'FIRE' || service === 'EMS');
+          const iconSvg = isFire
+            ? `<svg width="18" height="18" viewBox="0 0 24 24">
+                 <polygon points="12,2 22,22 2,22" fill="${color}" stroke="black" stroke-width="2"/>
+               </svg>`
+            : `<svg width="18" height="18" viewBox="0 0 24 24">
+                 <circle cx="12" cy="12" r="8" fill="${color}" stroke="black" stroke-width="2"/>
+               </svg>`;
+
           li.innerHTML = `
-            <div class="missing-dot" style="background-color: ${color};"></div>
+            <div class="missing-icon">${iconSvg}</div>
             <div class="missing-content">
               <strong>#${index + 1}: ${item.type}</strong><br>
               ${item.location_txt}<br>
@@ -250,6 +445,30 @@
       }
       
       if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+      
+      // Layer visibility controls
+      const togglePd = document.getElementById('toggle-pd');
+      const toggleFire = document.getElementById('toggle-fire');
+
+      if (togglePd) {
+        togglePd.addEventListener('change', () => {
+          if (togglePd.checked) {
+            map.addLayer(policeLayer);
+          } else {
+            map.removeLayer(policeLayer);
+          }
+        });
+      }
+
+      if (toggleFire) {
+        toggleFire.addEventListener('change', () => {
+          if (toggleFire.checked) {
+            map.addLayer(fireLayer);
+          } else {
+            map.removeLayer(fireLayer);
+          }
+        });
+      }
     }).catch(err => {
       console.error(err);
       alert("Failed to load data.json (open console).");

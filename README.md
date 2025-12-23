@@ -1,6 +1,6 @@
-# Como PD Incident Mapper
+# Como PD / Fire & EMS Incident Mapper
 
-Interactive map of Columbia, MO Police Department incidents with real-time severity tracking.
+Interactive map of Columbia, MO Police Department and Fire/EMS incidents with real-time severity tracking.
 
 🗺️ **[View Live Map](https://c78c73.github.io/Como-PD-Scraper/)**
 
@@ -9,11 +9,12 @@ Interactive map of Columbia, MO Police Department incidents with real-time sever
 - 🚨 **Automated scraping** every 6 hours via GitHub Actions
 - 📍 **Interactive map** with color-coded severity markers:
   - 🔴 Red: Critical/Violent crimes (shots fired, assault, robbery)
-  - 🟠 Orange: Serious incidents (burglary, disturbance, suspicious person)
-  - 🟡 Yellow: Moderate issues (theft, accident, traffic)
+  - 🟠 Orange: Serious incidents (burglary, domestic violence, injury crashes, serious fires)
+  - 🟡 Yellow: Moderate issues (suspicious activity, theft, non-injury crashes, property crime)
   - 🟢 Green: Low priority (911 checks, assist citizen, parking)
   - 🔵 Blue: Other/uncategorized
 - 📊 **Real-time statistics** showing incident count by severity
+- 🧯 **Dual layers for Police vs Fire/EMS** with separate marker shapes and a toggle box to view either or both
 - 🧭 **Smart geocoding** with intersection support (e.g., "Broadway & Providence")
 - ⚡ **Caching system** to minimize API calls
 - 🕐 **6-hour delay handling** (automatically retries with yesterday's date)
@@ -59,7 +60,7 @@ python run_scraper.py
 ```
 
 This will:
-- Scrape incidents from the police dispatch site
+- Scrape incidents from the police and Fire/EMS dispatch sites
 - Geocode addresses to lat/lon coordinates
 - Save results to `data.json`
 
@@ -73,7 +74,7 @@ Then open http://localhost:8000/index.html in your browser.
 ## Files
 
 - `run_scraper.py` - Main script (Selenium scraping + Nominatim geocoding)
-- `index.html` - Interactive Leaflet map with severity-based color coding
+- `index.html` - Interactive Leaflet map with severity-based color coding and PD vs Fire/EMS layer controls
 - `.github/workflows/scrape.yml` - GitHub Action for automated updates
 - `data.json` - Incident data with coordinates (auto-generated)
 - `geocache.json` - Cached geocoding results (auto-generated)
@@ -99,10 +100,12 @@ This repo includes automated deployment via GitHub Actions:
 
 No manual intervention needed - the map stays updated automatically!
 
-## Data Source
+## Data Sources
 
-Data is scraped from the official Columbia, MO Police Department dispatch log:
-https://www.como.gov/CMS/911dispatch/police.php
+Data is scraped from the official Columbia, MO dispatch logs:
+
+- Police: https://www.como.gov/CMS/911dispatch/police.php
+- Fire & Rescue / EMS: https://www.como.gov/CMS/911dispatch/fire.php
 
 **Note:** The dispatch site has a 6-hour delay for public data. The scraper automatically handles this by retrying with yesterday's date if today returns no results.
 

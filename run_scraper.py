@@ -17,7 +17,8 @@ import requests
 from urllib.parse import urlencode
 from datetime import datetime, timedelta
 
-URL = "https://www.como.gov/CMS/911dispatch/police.php"
+POLICE_URL = "https://www.como.gov/CMS/911dispatch/police.php"
+FIRE_URL = "https://www.como.gov/CMS/911dispatch/fire.php"
 import platform
 # Set chromedriver path for Windows (local) or Linux (CI)
 if platform.system() == 'Linux':
@@ -74,18 +75,70 @@ def geocode_address(address, cache, sleep_time=1.0):
     # If not found, try intersection handling
     if latlon == (None, None):
         a2 = address.replace("BLOCK", "").replace(" OF ", " ").strip()
-        
+
+        def normalize_street_name(raw: str) -> str:
+            """Expand common abbreviations (HWY, RD, ST, BLVD, etc.) and directions.
+            This often helps Nominatim resolve tricky intersections.
+            """
+            mapping = {
+                "HWY": "Highway",
+                "RD": "Road",
+                "ST": "Street",
+                "BLVD": "Boulevard",
+                "AVE": "Avenue",
+                "AV": "Avenue",
+                "CT": "Court",
+                "DR": "Drive",
+                "LN": "Lane",
+                "PL": "Place",
+                "PKWY": "Parkway",
+                "PKY": "Parkway",
+                "SQ": "Square",
+                "EXPY": "Expressway",
+                "EXPRESS": "Expressway",
+            }
+            directions = {
+                "N": "North",
+                "S": "South",
+                "E": "East",
+                "W": "West",
+                "NE": "Northeast",
+                "NW": "Northwest",
+                "SE": "Southeast",
+                "SW": "Southwest",
+            }
+            drop_tokens = {"NB", "SB", "EB", "WB", "OFFR", "OFF", "RAMP"}
+
+            tokens = raw.replace("-", " ").split()
+            norm = []
+            for t in tokens:
+                up = t.upper()
+                if up in drop_tokens:
+                    continue
+                if up in directions:
+                    norm.append(directions[up])
+                elif up in mapping:
+                    norm.append(mapping[up])
+                else:
+                    norm.append(t)
+            return " ".join(norm)
+
         # Detect intersection patterns: "/" or multiple street indicators
         seps = ["/", " & ", " AND ", " @ ", " AT "]
         for sep in seps:
             if sep in a2:
                 parts = [p.strip() for p in a2.split(sep) if p.strip()]
                 if len(parts) >= 2:
-                    # Try multiple intersection formats
+                    p1, p2 = parts[0], parts[1]
+                    p1n, p2n = normalize_street_name(p1), normalize_street_name(p2)
+                    # Try multiple intersection formats, including normalized street names
                     queries = [
-                        f"{parts[0]} & {parts[1]}",
-                        f"{parts[0]} and {parts[1]}",
-                        f"intersection of {parts[0]} and {parts[1]}"
+                        f"{p1} & {p2}",
+                        f"{p1} and {p2}",
+                        f"intersection of {p1} and {p2}",
+                        f"{p1n} & {p2n}",
+                        f"{p1n} and {p2n}",
+                        f"intersection of {p1n} and {p2n}",
                     ]
                     for inter in queries:
                         try:
@@ -109,8 +162,12 @@ def geocode_address(address, cache, sleep_time=1.0):
     time.sleep(sleep_time)
     return latlon
 
-def scrape_incidents(target_date_str):
-    """Scrape incidents for a specific date using Selenium."""
+def scrape_incidents_for_url(url, is_fire_ems, target_date_str):
+    """Scrape incidents for a specific date from a specific dispatch URL.
+
+    When is_fire_ems is True, parse the extra AGENCY column and tag service
+    as FIRE/EMS; otherwise assume Police.
+    """
     service = Service(CHROMEDRIVER_PATH)
     options = webdriver.ChromeOptions()
     if platform.system() == 'Linux':
@@ -132,7 +189,7 @@ def scrape_incidents(target_date_str):
     options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
     driver = webdriver.Chrome(service=service, options=options)
 
-    driver.get(URL)
+    driver.get(url)
     print("Waiting for page to load...")
     
     # Wait for the date input field to be present
@@ -226,24 +283,34 @@ def scrape_incidents(target_date_str):
         
         for tr in rows:
             cols = [c.get_text(strip=True) for c in tr.find_all(["td", "th"])]
-            if len(cols) >= 4:
+            # Police: DATE/TIME, INCIDENT #, LOCATION, TYPE
+            # Fire/EMS: DATE/TIME, INCIDENT #, AGENCY, LOCATION, TYPE
+            if is_fire_ems and len(cols) >= 5:
+                dt, inc, agency, loc, typ = cols[0], cols[1], cols[2], cols[3], cols[4]
+            elif not is_fire_ems and len(cols) >= 4:
                 dt, inc, loc, typ = cols[0], cols[1], cols[2], cols[3]
-                if dt.lower().startswith("date") or dt == "":
-                    continue
-                
-                # Check for duplicate incident ID (means we've looped back)
-                if inc in seen_incidents:
-                    duplicates_found = True
-                    print(f"  Duplicate incident {inc} detected - pagination loop, stopping.")
-                    break
-                
-                seen_incidents.add(inc)
-                page_items.append({
-                    "datetime": dt,
-                    "incident": inc,
-                    "location_txt": loc,
-                    "type": typ
-                })
+                agency = "Columbia Police Department"
+            else:
+                continue
+
+            if dt.lower().startswith("date") or dt == "":
+                continue
+
+            # Check for duplicate incident ID (means we've looped back)
+            if inc in seen_incidents:
+                duplicates_found = True
+                print(f"  Duplicate incident {inc} detected - pagination loop, stopping.")
+                break
+
+            seen_incidents.add(inc)
+            page_items.append({
+                "datetime": dt,
+                "incident": inc,
+                "agency": agency,
+                "location_txt": loc,
+                "type": typ,
+                "service": "FIRE_EMS" if is_fire_ems else "PD"
+            })
         
         print(f"  Found {len(page_items)} new incidents on page {page_num}")
         
@@ -284,17 +351,24 @@ def scrape_incidents(target_date_str):
     driver.quit()
     return all_items
 
-def main():
-    # Try today first
-    today_str = datetime.now().strftime("%Y-%m-%d")
-    print(f"Scraping incidents for {today_str}...")
-    items = scrape_incidents(today_str)
 
-    # If no data, retry with yesterday (6-hour delay handling)
-    if len(items) == 0:
-        print("No data found for today. Trying yesterday (6-hour delay)...")
-        yesterday_str = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
-        items = scrape_incidents(yesterday_str)
+def main():
+    # Decide which date to use based on PD data (handles 6-hour delay)
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    print(f"Scraping Police incidents for {today_str}...")
+    pd_items = scrape_incidents_for_url(POLICE_URL, False, today_str)
+
+    if len(pd_items) == 0:
+        print("No Police incidents found for today. Trying yesterday (6-hour delay)...")
+        target_date_str = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+        pd_items = scrape_incidents_for_url(POLICE_URL, False, target_date_str)
+    else:
+        target_date_str = today_str
+
+    print(f"Scraping Fire/EMS incidents for {target_date_str}...")
+    fire_items = scrape_incidents_for_url(FIRE_URL, True, target_date_str)
+
+    items = pd_items + fire_items
 
     if len(items) == 0:
         print("No incidents found.")
@@ -317,6 +391,13 @@ def main():
         print(f"{i+1}/{len(items)}: {addr} -> {lat},{lon}")
         item["lat"] = lat
         item["lon"] = lon
+
+    # Stamp metadata so the map can show when this dataset was generated
+    generated_at = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    for item in items:
+        item["generated_at"] = generated_at
+        # Also record which dispatch date we scraped
+        item["dispatch_date"] = target_date_str
 
     save_geocache(geocache)
     with open("data.json", "w", encoding="utf-8") as f:

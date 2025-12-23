@@ -504,15 +504,15 @@ def scrape_incidents_for_url(url, is_fire_ems, target_date_str):
             time.sleep(20)  # Increased wait time for page to fully load
             page_num += 1
             # Safety check: if we know total pages, stop when we reach it
-                if total_pages and page_num > total_pages:
+            if total_pages and page_num > total_pages:
                 print(f"[HTML] Reached total page count ({total_pages}), stopping.")
                 break
-            except:
-                print("[HTML] No more pages (no Next > link found).")
-                break
+        except:
+            print("[HTML] No more pages (no Next > link found).")
+            break
 
-            print(f"[HTML] Total unique incidents collected: {len(all_items)}")
-    
+    print(f"[HTML] Total unique incidents collected: {len(all_items)}")
+
     driver.quit()
     return all_items
 

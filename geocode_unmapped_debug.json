@@ -1,8 +1,76 @@
 {
-  "generated_at": "2025-12-24 05:34:35 UTC",
+  "generated_at": "2025-12-24 07:02:20 UTC",
   "dispatch_date": "2025-12-23",
-  "unmapped_count": 13,
+  "unmapped_count": 15,
   "items": [
+    {
+      "incident": "2025352747",
+      "datetime": "12/23/2025 5:06:01 PM",
+      "type": "PARKING VIOLATION",
+      "agency": "Columbia Police Department",
+      "location_txt": "PARK AVE/BRYANT WALKWAY",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "PARK AVE/BRYANT WALKWAY",
+        "cache_key": "PARK AVE/BRYANT WALKWAY",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "PARK AVE/BRYANT WALKWAY"
+          },
+          {
+            "label": "expanded",
+            "q": "PARK Avenue / BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK AVE & BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK AVE and BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK AVE at BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK AVE / BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK Avenue & BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK Avenue and BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK Avenue at BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK Avenue / BRYANT WALKWAY"
+          },
+          {
+            "label": "simplified",
+            "q": "PARK Avenue / BRYANT WALKWAY"
+          },
+          {
+            "label": "final_trim",
+            "q": "PARK Avenue / BRYANT WALKWAY"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
     {
       "incident": "2025352678",
       "datetime": "12/23/2025 3:36:34 PM",
@@ -469,6 +537,74 @@
           {
             "label": "final_trim",
             "q": "VANDIVER Drive / North Highway 63"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352980",
+      "datetime": "12/23/2025 11:10:37 PM",
+      "type": "Outside Smoke Investigation",
+      "agency": "CFD",
+      "location_txt": "N PROVIDENCE RD/BEAR CREEK",
+      "service": "FIRE_EMS",
+      "geocode_debug": {
+        "raw": "N PROVIDENCE RD/BEAR CREEK",
+        "cache_key": "N PROVIDENCE RD/BEAR CREEK",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "N PROVIDENCE RD/BEAR CREEK"
+          },
+          {
+            "label": "expanded",
+            "q": "North PROVIDENCE Road / BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "N PROVIDENCE RD & BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "N PROVIDENCE RD and BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "N PROVIDENCE RD at BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "N PROVIDENCE RD / BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "North PROVIDENCE Road & BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "North PROVIDENCE Road and BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "North PROVIDENCE Road at BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "North PROVIDENCE Road / BEAR CREEK"
+          },
+          {
+            "label": "simplified",
+            "q": "North PROVIDENCE Road / BEAR CREEK"
+          },
+          {
+            "label": "final_trim",
+            "q": "North PROVIDENCE Road / BEAR CREEK"
           }
         ],
         "used_query": null,

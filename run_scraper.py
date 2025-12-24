@@ -616,28 +616,33 @@ def geocode_address(address, cache, sleep_time=1.0, debug=None, retry_failed_cac
 
     latlon = (None, None)
 
+    # Intersections are rarely resolvable via raw free-text; skip the early
+    # raw/strip/expand steps and go straight to intersection handling.
+    import re
+    is_intersection_like = bool(re.search(r"\s*/\s*|\s+AT\s+|\s+AND\s+|\s*&\s*|\s*@\s*", raw_address, flags=re.IGNORECASE))
+
     # 1) Try raw address
-    latlon = try_query("raw", raw_address)
+    if not is_intersection_like:
+        latlon = try_query("raw", raw_address)
 
     # 1b) Try normalized dispatch format
-    if latlon == (None, None) and normalized_dispatch and normalized_dispatch != raw_address:
+    if (not is_intersection_like) and latlon == (None, None) and normalized_dispatch and normalized_dispatch != raw_address:
         latlon = try_query("normalized_dispatch", normalized_dispatch)
 
     # 2) Try stripping unit fragments
-    if latlon == (None, None):
+    if (not is_intersection_like) and latlon == (None, None):
         stripped = _strip_unit(raw_address)
         if stripped != raw_address:
             latlon = try_query("strip_unit", stripped)
 
     # 3) Try expanding abbreviations/directions
-    if latlon == (None, None):
+    if (not is_intersection_like) and latlon == (None, None):
         expanded = _normalize_street_text(normalized_dispatch or raw_address)
         if expanded and expanded != raw_address:
             latlon = try_query("expanded", expanded)
 
     # 3b) Try removing "BLOCK" word entirely (Google-style)
-    if latlon == (None, None):
-        import re
+    if (not is_intersection_like) and latlon == (None, None):
 
         no_block = re.sub(r"\bBLOCK\b", " ", normalized_dispatch or raw_address, flags=re.IGNORECASE)
         no_block = _clean_whitespace(no_block)
@@ -645,8 +650,7 @@ def geocode_address(address, cache, sleep_time=1.0, debug=None, retry_failed_cac
             latlon = try_query("no_block", no_block)
 
     # 3c) If this looks like a street address, try US Census geocoding.
-    if latlon == (None, None):
-        import re
+    if (not is_intersection_like) and latlon == (None, None):
 
         addrish = (normalized_dispatch or raw_address)
         if re.match(r"^\s*\d{1,6}\s+\S+", addrish):
@@ -813,8 +817,9 @@ def geocode_address(address, cache, sleep_time=1.0, debug=None, retry_failed_cac
                             seen.add(qn)
                             deduped.append(qn)
 
-                    # Cap attempts to respect Nominatim usage
-                    for inter in deduped[:8]:
+                    # Cap attempts to respect Nominatim usage and keep runs fast.
+                    # We fall back to Overpass quickly for intersections.
+                    for inter in deduped[:4]:
                         latlon = try_query("intersection", inter)
                         if latlon != (None, None):
                             print(f"  Found intersection: {inter}")
@@ -1320,6 +1325,23 @@ def main():
 
     log_subsection(f"Geocoding {len(items)} incidents")
     geocache = load_geocache()
+    # Per-run memoization: many incidents repeat the same location string.
+    # This avoids re-hitting Nominatim/Overpass/Census for duplicates.
+    local_geocode_cache: dict[str, tuple[float | None, float | None]] = {}
+    local_debug_cache: dict[str, dict] = {}
+
+    # Keep Nominatim friendly by default, but allow overrides if you want.
+    # Nominatim policy generally expects ~1 request/second.
+    try:
+        sleep_time = float(os.getenv("GEOCODE_SLEEP_SECONDS", "1.0"))
+    except Exception:
+        sleep_time = 1.0
+
+    # For iterative runs: you can skip re-trying already-failed cached lookups.
+    # This speeds things up a lot when you're just regenerating data.json.
+    # Set RETRY_FAILED_CACHE=0 to disable.
+    retry_failed_cache_env = os.getenv("RETRY_FAILED_CACHE", "1").strip().lower()
+    retry_failed_cache = retry_failed_cache_env not in {"0", "false", "no", "off"}
     geocoded = 0
     skipped = 0
     unmapped_debug = []
@@ -1327,7 +1349,24 @@ def main():
     for i, item in enumerate(items):
         addr = item.get("location_txt", "")
         dbg = {}
-        lat, lon = geocode_address(addr, geocache, sleep_time=1.0, debug=dbg, retry_failed_cache=True)
+        addr_key = _clean_whitespace(addr).upper()
+        if addr_key in local_geocode_cache:
+            lat, lon = local_geocode_cache[addr_key]
+            # Reuse debug (best-effort) so unmapped report stays helpful.
+            try:
+                dbg.update(local_debug_cache.get(addr_key) or {})
+            except Exception:
+                pass
+        else:
+            lat, lon = geocode_address(
+                addr,
+                geocache,
+                sleep_time=sleep_time,
+                debug=dbg,
+                retry_failed_cache=retry_failed_cache,
+            )
+            local_geocode_cache[addr_key] = (lat, lon)
+            local_debug_cache[addr_key] = dict(dbg)
         if lat is not None and lon is not None:
             geocoded += 1
         else:

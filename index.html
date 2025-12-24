@@ -53,19 +53,14 @@
       font-weight: 600;
       margin-left: 8px;
     }
+    /* Missing coords list lives inside stats box */
     #missing-coords {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 1000;
-      background: rgba(255,255,255,0.9);
-      padding: 12px 14px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      backdrop-filter: blur(6px);
-      max-width: 350px;
-      max-height: 400px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+      max-height: 240px;
       overflow-y: auto;
+      display: none;
     }
     #missing-coords h3 {
       margin: 0 0 8px 0;
@@ -93,33 +88,52 @@
       flex: 1;
     }
 
+    .split-count {
+      display: inline-flex;
+      gap: 8px;
+      align-items: baseline;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .split-count small {
+      font-weight: 600;
+      color: #374151;
+    }
+    .split-count .total {
+      font-weight: 700;
+    }
+
     #layer-controls {
-      position: absolute;
-      top: 10px;
-      left: 340px;
-      z-index: 1000;
-      background: rgba(255,255,255,0.9);
-      padding: 10px 14px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      backdrop-filter: blur(6px);
+      margin: 6px 0 10px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
       font-family: Arial, sans-serif;
       font-size: 13px;
-      min-width: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
     }
     #layer-controls h3 {
-      margin: 0 0 8px 0;
+      margin: 0;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.03em;
       text-transform: uppercase;
       color: #222;
     }
+    #layer-controls .layer-toggles {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
     #layer-controls label {
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 4px;
+      margin-bottom: 0;
       cursor: pointer;
       font-size: 13px;
     }
@@ -134,10 +148,6 @@
       #stats-box {
         left: 10px;
         right: 10px;
-      }
-      #layer-controls {
-        top: 150px;
-        left: 10px;
       }
     }
 
@@ -160,36 +170,33 @@
 </head>
 <body>
   <div id="stats-box">
+    <div id="layer-controls">
+      <h3>Layers</h3>
+      <div class="layer-toggles">
+        <label><input type="checkbox" id="toggle-pd" checked> Police</label>
+        <label><input type="checkbox" id="toggle-fire" checked> Fire/EMS</label>
+      </div>
+    </div>
     <h3>📊 Incident Severity</h3>
     <div class="stat-row">
       <div class="color-dot" style="background-color: red;"></div>
-      <span class="stat-label">Critical / Life-Threatening</span>
-      <span class="stat-count" id="count-red">0</span>
+      <span class="stat-label">High Severity</span>
+      <span class="stat-count split-count"><span class="total" id="count-red">0</span> <small>(PD <span id="count-red-pd">0</span> / Fire <span id="count-red-fire">0</span>)</small></span>
     </div>
     <div class="stat-row">
       <div class="color-dot" style="background-color: orange;"></div>
-      <span class="stat-label">Serious</span>
-      <span class="stat-count" id="count-orange">0</span>
-    </div>
-    <div class="stat-row">
-      <div class="color-dot" style="background-color: yellow;"></div>
-      <span class="stat-label">Moderate</span>
-      <span class="stat-count" id="count-yellow">0</span>
+      <span class="stat-label">Medium Severity</span>
+      <span class="stat-count split-count"><span class="total" id="count-orange">0</span> <small>(PD <span id="count-orange-pd">0</span> / Fire <span id="count-orange-fire">0</span>)</small></span>
     </div>
     <div class="stat-row">
       <div class="color-dot" style="background-color: green;"></div>
-      <span class="stat-label">Low Priority</span>
-      <span class="stat-count" id="count-green">0</span>
-    </div>
-    <div class="stat-row">
-      <div class="color-dot" style="background-color: blue;"></div>
-      <span class="stat-label">Other</span>
-      <span class="stat-count" id="count-blue">0</span>
+      <span class="stat-label">Low Severity</span>
+      <span class="stat-count split-count"><span class="total" id="count-green">0</span> <small>(PD <span id="count-green-pd">0</span> / Fire <span id="count-green-fire">0</span>)</small></span>
     </div>
     <hr style="margin: 10px 0; border: none; border-top: 1px solid #ddd;">
     <div class="stat-row" style="font-weight: bold;">
       <span class="stat-label">Total Incidents</span>
-      <span class="stat-count" id="count-total">0</span>
+      <span class="stat-count split-count"><span class="total" id="count-total">0</span> <small>(PD <span id="count-total-pd">0</span> / Fire <span id="count-total-fire">0</span>)</small></span>
     </div>
     <div class="stat-row" id="incident-range-row" style="margin-top:8px;">
       <span class="stat-label">Earliest</span>
@@ -199,15 +206,11 @@
       <span class="stat-label">Latest</span>
       <span class="stat-count" id="latest-time">-</span>
     </div>
-  </div>
-  <div id="layer-controls">
-    <h3>Layers</h3>
-    <label><input type="checkbox" id="toggle-pd" checked> Police</label>
-    <label><input type="checkbox" id="toggle-fire" checked> Fire/EMS</label>
-  </div>
-  <div id="missing-coords" style="display:none;">
-    <h3>⚠️ Incidents Without Coordinates</h3>
-    <ul id="missing-list"></ul>
+
+    <div id="missing-coords">
+      <h3>⚠️ Incidents Without Coordinates (<span id="missing-count">0</span>)</h3>
+      <ul id="missing-list"></ul>
+    </div>
   </div>
   <div id="map"></div>
   <div id="footer">Last updated: <span id="last-updated">-</span></div>
@@ -224,106 +227,218 @@
       const opts = withTime
         ? { year: 'numeric', month: '2-digit', day: '2-digit', hour: 'numeric', minute: '2-digit', second: '2-digit' }
         : { year: 'numeric', month: '2-digit', day: '2-digit' };
-      return new Intl.DateTimeFormat('en-US', { ...opts, timeZone: 'America/Chicago' }).format(date) + ' CT';
+      return new Intl.DateTimeFormat('en-US', { ...opts, timeZone: 'America/Chicago' }).format(date) + ' CST';
     }
 
     // map init (center on Columbia, MO by default)
     const map = L.map('map').setView([38.9517, -92.3341], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const streetsLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+    });
+
+    const satelliteLayer = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      {
+        maxZoom: 19,
+        attribution: 'Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
+      }
+    );
+
+    // Default basemap: Satellite
+    satelliteLayer.addTo(map);
+
+    L.control.layers(
+      { 'Streets': streetsLayer, 'Satellite': satelliteLayer },
+      {},
+      { position: 'bottomright' }
+    ).addTo(map);
 
     // Separate layers for Police vs Fire/EMS
     const policeLayer = L.layerGroup().addTo(map);
     const fireLayer = L.layerGroup().addTo(map);
 
-    // Severity-based color mapping
-    const severityColors = {
-      // Critical / life-threatening (Red)
-      "SHOTS FIRED": "red",
-      "SHOOTING": "red",
-      "STABBING": "red",
-      "ROBBERY": "red",
-      "ARMED SUBJECT": "red",
-      "HOMICIDE": "red",
-      "WEAPONS OFFENSE": "red",
-      // Fire/EMS critical
-      "STRUCTURE FIRE": "red",
-      "BUILDING FIRE": "red",
-      "HOUSE FIRE": "red",
-      "APARTMENT FIRE": "red",
-      "COMMERCIAL FIRE": "red",
-      "WORKING FIRE": "red",
-      "CARDIAC ARREST": "red",
-      "MEDICAL RESPONSE - PRIORITY": "red",
-      "UNCONSCIOUS PERSON": "red",
-      "NOT BREATHING": "red",
+    function canonicalType(type) {
+      return String(type || '')
+        .toUpperCase()
+        .replace(/[\u2013\u2014]/g, '-')
+        .replace(/\s*\/\s*/g, '/')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
 
-      // Serious (Orange)
-      "ASSAULT": "orange",
-      "DOMESTIC DISTURBANCE": "orange",
-      "DOMESTIC VIOLENCE": "orange",
-      "FIGHT": "orange",
-      "BURGLARY": "orange",
-      "HOME INVASION": "orange",
-      "VEHICLE ACCIDENT - INJURY": "orange",
-      "ACCIDENT - INJURY": "orange",
-      "VEHICLE ACCIDENT - ENTRAPMENT": "orange",
-      "FIRE ALARM": "orange",
-      "SMOKE INVESTIGATION": "orange",
-      "GAS LEAK": "orange",
+    function setFromList(list) {
+      return new Set((list || []).map(canonicalType));
+    }
 
-      // Moderate (Yellow)
-      "THEFT": "yellow",
-      "LARCENY": "yellow",
-      "SHOPLIFTING": "yellow",
-      "VANDALISM": "yellow",
-      "TRESPASSING": "yellow",
-      "ACCIDENT": "yellow",
-      "CRASH": "yellow",
-      "TRAFFIC": "yellow",
-      "TRAFFIC STOP": "yellow",
-      "SUSPICIOUS PERSON": "yellow",
-      "SUSPICIOUS VEHICLE": "yellow",
-      "DISORDERLY CONDUCT": "yellow",
-      "NOISE COMPLAINT": "yellow",
-      "HARASSMENT": "yellow",
+    // PD severity lists
+    const PD_HIGH = setFromList([
+      'ABANDON CHILD',
+      'ARSON',
+      'ASSAULT',
+      'AUTO THEFT',
+      'BURGLARY',
+      'DEATH INVESTIGATION',
+      'DWI',
+      'KIDNAPPING',
+      'MEDICAL EMERGENCY',
+      'MISSING PERSON',
+      'OVERDOSE',
+      'ROBBERY',
+      'SHOTS FIRED',
+      'SHOTS HEARD',
+      'VEHICLE IN FLOODWATER',
+      'WARRANT',
+    ]);
 
-      // Low priority (Green)
-      "911 CHECKS": "green",
-      "ASSIST CITIZEN": "green",
-      "KEEP THE PEACE": "green",
-      "PARKING VIOLATION": "green",
-      "CITIZEN ASSIST": "green",
-      "FOLLOW UP": "green"
-    };
-    
-    function getColorForType(type) {
-      const upper = type.toUpperCase();
-      // Check exact match first
-      if (severityColors[upper]) return severityColors[upper];
-      
-      // Check partial matches for severity
-      if (upper.includes("SHOT") || upper.includes("GUN") || upper.includes("WEAPON")) return "red";
-      if (upper.includes("ASSAULT") || upper.includes("STAB") || upper.includes("HOMICIDE") || upper.includes("MURDER") || upper.includes("ROBBERY") || upper.includes("ARMED")) return "red";
-      if (upper.includes("STRUCTURE FIRE") || upper.includes("WORKING FIRE") || upper.includes("BUILDING FIRE") || upper.includes("APARTMENT FIRE")) return "red";
-      if (upper.includes("CARDIAC") || upper.includes("NOT BREATHING") || upper.includes("UNCONSCIOUS") || upper.includes("CPR")) return "red";
+    const PD_MEDIUM = setFromList([
+      '911 CHECKS',
+      'ABANDON BIKE',
+      'ABANDONED VEHICLE',
+      'ACCIDENT',
+      'ANIMAL BITE',
+      'ANIMAL COMPLAINT',
+      'ANNOYING PHONE CALLS',
+      'ASSIST CITIZEN',
+      'ASSIST FIRE',
+      'ASSIST MEDICS',
+      'ASSIST OFFICER',
+      'ASSIST OTHER AGENCY',
+      'BICYCLE STOP',
+      'BURGALRY',
+      'C&I DRIVING',
+      'CHECK AREA',
+      'CHECK BUILDING',
+      'CHECK OPEN BUSINESS',
+      'CHECK STATUS OF OFFICER',
+      'CHECK SUBJECT',
+      'CHECK THE WELFARE',
+      'CIVIL MATTER',
+      'DISTURBANCE',
+      'EXHIBITIONIST',
+      'FORGERY',
+      'FOUND PERSON',
+      'FRAUD',
+      'HARASSMENT',
+      'KEEP THE PEACE',
+      'LARCENY',
+      'LAW ALARM',
+      'LEAVING THE SCENE ACCIDENT',
+      'LIQUOR LAW VIOLATION',
+      'LOCKOUT',
+      'LOST PERSON',
+      'MISCHIEF',
+      'MISSING VEHICLE',
+      'OTHER OFFENSE',
+      'PARKING VIOLATION',
+      'PEACE DISTURBANCE',
+      'PEACE DISTURBAUNCE',
+      'PROSTITUTION',
+      'RECOVER PROPERTY',
+      'SHOPLIFTING',
+      'SUSPICIOUS INCIDENT',
+      'SUSPICIOUS PERSON',
+      'SUSPICIOUS VEHICLE',
+      'TRAFFIC STOP',
+      'TRESPASS SUBJECT',
+      'TRESPASS VEHICLE',
+      'TRESPASSING',
+      'UNKNOWN PROBLEM',
+      'VANDALISM',
+      'VEH REPO',
+    ]);
 
-      if (upper.includes("DOMESTIC") || upper.includes("FIGHT") || upper.includes("STRANGULATION") || upper.includes("CHILD ABUSE")) return "orange";
-      if (upper.includes("BURGLARY") || upper.includes("BREAK") || upper.includes("HOME INVASION")) return "orange";
-      if ((upper.includes("ACCIDENT") && upper.includes("INJURY")) || upper.includes("ENTRAPMENT")) return "orange";
-      if (upper.includes("FIRE ALARM") || upper.includes("SMOKE") || upper.includes("GAS LEAK")) return "orange";
+    const PD_LOW = setFromList([
+      'CHECK TRAFFIC LIGHTS',
+      'FIREWORKS',
+      'FOOT PATROL',
+      'INFORMATION',
+      'LITTERING',
+      'ORDINANCE VIOLATION',
+      'OVE',
+      'SOLICITOR',
+      'SPECIAL ASSIGNMENT',
+      'STALLED VEHICLE',
+      'TRAFFIC',
+      'TRAFFIC CONTROL',
+      'TRAFFIC HAZARD',
+      'TRAFFIC OBSERVATION',
+      'WEATHER EVENT',
+    ]);
 
-      if (upper.includes("THEFT") || upper.includes("LARCENY") || upper.includes("SHOPLIFT")) return "yellow";
-      if (upper.includes("SUSPICIOUS")) return "yellow";
-      if (upper.includes("ACCIDENT") || upper.includes("CRASH") || upper.includes("TRAFFIC")) return "yellow";
-      if (upper.includes("DISORDERLY") || upper.includes("NOISE") || upper.includes("HARASS")) return "yellow";
+    // Fire/EMS severity lists
+    const FIRE_HIGH = setFromList([
+      'AIRCRAFT EMERGENCY',
+      'ARSON',
+      'AUTOMATIC CRASH NOTIFICATION',
+      'CONFINED SPACE / STRUCTURE COLLAPSE',
+      'CONFINED SPACE RESCUE',
+      'EMERGENCY TRANSPORT',
+      'EXPLOSION',
+      'EXTRICATION / ENTRAPPED',
+      'GAS LEAK / GAS ODOR',
+      'HAZMAT / CARBON MONOXIDE',
+      'MEDICAL RESPONSE',
+      'RESIDENTIAL STRUCTURE FIRE',
+      'SEARCH & RESCUE',
+      'STRUCTURE FIRE',
+      'TRAIN INCIDENT',
+      'VEHICLE COLLISION WITH INJURIES',
+      'VEHICLE FIRE',
+      'WATER RESCUE',
+      'WATERCRAFT IN DISTRESS',
+    ]);
 
-      if (upper.includes("CHECK") || upper.includes("ASSIST") || upper.includes("FOLLOW UP") || upper.includes("CITIZEN ASSIST")) return "green";
-      
-      // Default to blue for unknown
-      return "blue";
+    const FIRE_MEDIUM = setFromList([
+      'ALARM',
+      'ASSIST OFFICER',
+      'CARBON MONOXIDE ALARM',
+      'CITIZEN ASSIST / SERVICE CALL',
+      'CODE ASSIST',
+      'ELECTRICAL HAZARD',
+      'ELEVATOR / ESCALATOR RESCUE',
+      'FIRE ALARM',
+      'FUEL SPILL / FUEL ODOR',
+      'INVESTIGATION',
+      'KNOX ASSIST',
+      'MOTOR VEHICLE COLLISION',
+      'MUTUAL AID',
+      'OUTSIDE FIRE',
+      'OUTSIDE SMOKE INVESTIGATION',
+      'SMOKE ALARM',
+      'VEHICLE ACCIDENT',
+      'VEHICLE COLLISION',
+      'VEHICLE COLLISION FLUID LEAK',
+    ]);
+
+    const FIRE_LOW = setFromList([
+      'FIRE INSPECTION',
+      'FIRE VIOLATION CHECK',
+      'FOLLOW UP INVESTIGATION',
+      'PUBLIC RELATIONS',
+      'ROUTINE TRANSPORT',
+      'SPECIAL EVENT',
+      'STAND BY',
+      'UNDEFINED',
+      'UNKNOWN ODOR',
+      'UNKNOWN PROBLEM',
+      'WATERFLOW ALARM',
+    ]);
+
+    function getColorForType(type, isFire) {
+      const t = canonicalType(type);
+
+      if (isFire) {
+        if (FIRE_HIGH.has(t)) return 'red';
+        if (FIRE_MEDIUM.has(t)) return 'orange';
+        if (FIRE_LOW.has(t)) return 'green';
+        return 'green';
+      }
+
+      if (PD_HIGH.has(t)) return 'red';
+      if (PD_MEDIUM.has(t)) return 'orange';
+      if (PD_LOW.has(t)) return 'green';
+      return 'green';
     }
 
     function makeIcon(color, service) {
@@ -353,122 +468,158 @@
 
     loadData().then(data => {
       let bounds = [];
-      let missingCoords = [];
-      let colorCounts = { red: 0, orange: 0, yellow: 0, green: 0, blue: 0 };
-      
-      let minTime = null, maxTime = null;
       let lastGenerated = null;
-      data.forEach(item => {
-        // Parse datetime for min/max
-        if (item.datetime) {
-          const dt = new Date(item.datetime);
-          if (!isNaN(dt)) {
-            if (!minTime || dt < minTime) minTime = dt;
-            if (!maxTime || dt > maxTime) maxTime = dt;
-          }
-        }
-        if (item.generated_at && !lastGenerated) {
-          // All incidents share the same generated_at, so just grab one
-          lastGenerated = item.generated_at;
-        }
 
-        const color = getColorForType(item.type || '');
-        colorCounts[color]++;
+      const togglePd = document.getElementById('toggle-pd');
+      const toggleFire = document.getElementById('toggle-fire');
+
+      function isFireService(item) {
+        const service = (item.service || 'PD').toUpperCase();
+        return (service === 'FIRE_EMS' || service === 'FIRE' || service === 'EMS');
+      }
+
+      // Build markers once; stats will be recomputed based on toggles.
+      const normalized = data.map(item => {
+        if (item.generated_at && !lastGenerated) lastGenerated = item.generated_at;
+        const dt = item.datetime ? new Date(item.datetime) : null;
+        const isFire = isFireService(item);
+        const color = getColorForType(item.type || '', isFire);
 
         if (item.lat && item.lon) {
-          const service = (item.service || 'PD').toUpperCase();
-          const isFire = (service === 'FIRE_EMS' || service === 'FIRE' || service === 'EMS');
           const targetLayer = isFire ? fireLayer : policeLayer;
           const marker = L.marker([item.lat, item.lon], { icon: makeIcon(color, isFire ? 'FIRE_EMS' : 'PD') }).addTo(targetLayer);
           const agency = item.agency || (isFire ? 'Fire/EMS' : 'Police');
           marker.bindPopup(`<b>${item.type}</b><br>${item.location_txt}<br>${item.datetime}<br>Incident #: ${item.incident}<br>Agency: ${agency}`);
           bounds.push([item.lat, item.lon]);
-        } else {
-          missingCoords.push(item);
         }
-      });
-      
-      // Update color counts in stats box
-      document.getElementById('count-red').textContent = colorCounts.red;
-      document.getElementById('count-orange').textContent = colorCounts.orange;
-      document.getElementById('count-yellow').textContent = colorCounts.yellow;
-      document.getElementById('count-green').textContent = colorCounts.green;
-      document.getElementById('count-blue').textContent = colorCounts.blue;
-      
-      const totalMapped = colorCounts.red + colorCounts.orange + colorCounts.yellow + colorCounts.green + colorCounts.blue;
-      document.getElementById('count-total').textContent = totalMapped;
-      // Show earliest and latest times
-      document.getElementById('earliest-time').textContent = formatInCT(minTime);
-      document.getElementById('latest-time').textContent = formatInCT(maxTime);
 
-      // Last updated footer
-      const footerSpan = document.getElementById('last-updated');
-      if (footerSpan) {
-        if (lastGenerated) {
-          const genDate = new Date(lastGenerated.replace(' UTC', 'Z'));
-          const dispatchLabel = minTime ? formatInCT(minTime, false) : '-';
-          footerSpan.textContent = `${formatInCT(genDate)} (dispatch date: ${dispatchLabel})`;
-        } else {
-          footerSpan.textContent = formatInCT(new Date());
-        }
+        return { item, dt, color, isFire };
+      });
+
+      function isIncluded(n) {
+        if (n.isFire) return !toggleFire || toggleFire.checked;
+        return !togglePd || togglePd.checked;
       }
-      
-      // Show missing coordinates box if there are any
-      if (missingCoords.length > 0) {
+
+      function recomputeStats() {
+        let colorCountsPd = { red: 0, orange: 0, green: 0 };
+        let colorCountsFire = { red: 0, orange: 0, green: 0 };
+        let minTime = null, maxTime = null;
+        let missingCoords = [];
+
+        normalized.forEach(n => {
+          if (!isIncluded(n)) return;
+          if (n.dt && !isNaN(n.dt)) {
+            if (!minTime || n.dt < minTime) minTime = n.dt;
+            if (!maxTime || n.dt > maxTime) maxTime = n.dt;
+          }
+
+          if (n.isFire) colorCountsFire[n.color] = (colorCountsFire[n.color] || 0) + 1;
+          else colorCountsPd[n.color] = (colorCountsPd[n.color] || 0) + 1;
+
+          if (!(n.item.lat && n.item.lon)) missingCoords.push(n.item);
+        });
+
+        // Update per-severity totals + breakdown
+        const totals = {
+          red: colorCountsPd.red + colorCountsFire.red,
+          orange: colorCountsPd.orange + colorCountsFire.orange,
+          green: colorCountsPd.green + colorCountsFire.green,
+        };
+
+        document.getElementById('count-red').textContent = totals.red;
+        document.getElementById('count-red-pd').textContent = colorCountsPd.red;
+        document.getElementById('count-red-fire').textContent = colorCountsFire.red;
+
+        document.getElementById('count-orange').textContent = totals.orange;
+        document.getElementById('count-orange-pd').textContent = colorCountsPd.orange;
+        document.getElementById('count-orange-fire').textContent = colorCountsFire.orange;
+
+        document.getElementById('count-green').textContent = totals.green;
+        document.getElementById('count-green-pd').textContent = colorCountsPd.green;
+        document.getElementById('count-green-fire').textContent = colorCountsFire.green;
+
+        const totalIncidentsPd = colorCountsPd.red + colorCountsPd.orange + colorCountsPd.green;
+        const totalIncidentsFire = colorCountsFire.red + colorCountsFire.orange + colorCountsFire.green;
+        const totalIncidents = totalIncidentsPd + totalIncidentsFire;
+        document.getElementById('count-total').textContent = totalIncidents;
+        document.getElementById('count-total-pd').textContent = totalIncidentsPd;
+        document.getElementById('count-total-fire').textContent = totalIncidentsFire;
+
+        document.getElementById('earliest-time').textContent = formatInCT(minTime);
+        document.getElementById('latest-time').textContent = formatInCT(maxTime);
+
+        // Update missing list (under chart)
         const missingBox = document.getElementById('missing-coords');
         const missingList = document.getElementById('missing-list');
-        missingBox.style.display = 'block';
-        
-        missingCoords.forEach((item, index) => {
-          const li = document.createElement('li');
-          const color = getColorForType(item.type || '');
-          const service = (item.service || 'PD').toUpperCase();
-          const isFire = (service === 'FIRE_EMS' || service === 'FIRE' || service === 'EMS');
-          const iconSvg = isFire
-            ? `<svg width="18" height="18" viewBox="0 0 24 24">
-                 <polygon points="12,2 22,22 2,22" fill="${color}" stroke="black" stroke-width="2"/>
-               </svg>`
-            : `<svg width="18" height="18" viewBox="0 0 24 24">
-                 <circle cx="12" cy="12" r="8" fill="${color}" stroke="black" stroke-width="2"/>
-               </svg>`;
+        const missingCount = document.getElementById('missing-count');
+        if (missingList) missingList.innerHTML = '';
 
-          li.innerHTML = `
-            <div class="missing-icon">${iconSvg}</div>
-            <div class="missing-content">
-              <strong>#${index + 1}: ${item.type}</strong><br>
-              ${item.location_txt}<br>
-              <small>${item.datetime}</small>
-            </div>
-          `;
-          missingList.appendChild(li);
-        });
+        if (missingCoords.length > 0) {
+          if (missingBox) missingBox.style.display = 'block';
+          if (missingCount) missingCount.textContent = String(missingCoords.length);
+
+          missingCoords.forEach((item, index) => {
+            const li = document.createElement('li');
+            const isFire = isFireService(item);
+            const color = getColorForType(item.type || '', isFire);
+            const iconSvg = isFire
+              ? `<svg width="18" height="18" viewBox="0 0 24 24">
+                   <polygon points="12,2 22,22 2,22" fill="${color}" stroke="black" stroke-width="2"/>
+                 </svg>`
+              : `<svg width="18" height="18" viewBox="0 0 24 24">
+                   <circle cx="12" cy="12" r="8" fill="${color}" stroke="black" stroke-width="2"/>
+                 </svg>`;
+
+            li.innerHTML = `
+              <div class="missing-icon">${iconSvg}</div>
+              <div class="missing-content">
+                <strong>#${index + 1}: ${item.type}</strong><br>
+                ${item.location_txt}<br>
+                <small>${item.datetime}</small>
+              </div>
+            `;
+            if (missingList) missingList.appendChild(li);
+          });
+        } else {
+          if (missingBox) missingBox.style.display = 'none';
+          if (missingCount) missingCount.textContent = '0';
+        }
+
+        // Last updated footer
+        const footerSpan = document.getElementById('last-updated');
+        if (footerSpan) {
+          if (lastGenerated) {
+            const genDate = new Date(lastGenerated.replace(' UTC', 'Z'));
+            const dispatchLabel = minTime ? formatInCT(minTime, false) : '-';
+            footerSpan.textContent = `${formatInCT(genDate)} (dispatch date: ${dispatchLabel})`;
+          } else {
+            footerSpan.textContent = formatInCT(new Date());
+          }
+        }
       }
-      
-      if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
-      
-      // Layer visibility controls
-      const togglePd = document.getElementById('toggle-pd');
-      const toggleFire = document.getElementById('toggle-fire');
 
+      if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+
+      // Layer visibility controls + chart stats tied together
       if (togglePd) {
         togglePd.addEventListener('change', () => {
-          if (togglePd.checked) {
-            map.addLayer(policeLayer);
-          } else {
-            map.removeLayer(policeLayer);
-          }
+          if (togglePd.checked) map.addLayer(policeLayer);
+          else map.removeLayer(policeLayer);
+          recomputeStats();
         });
       }
 
       if (toggleFire) {
         toggleFire.addEventListener('change', () => {
-          if (toggleFire.checked) {
-            map.addLayer(fireLayer);
-          } else {
-            map.removeLayer(fireLayer);
-          }
+          if (toggleFire.checked) map.addLayer(fireLayer);
+          else map.removeLayer(fireLayer);
+          recomputeStats();
         });
       }
+
+      // Initial stat render
+      recomputeStats();
     }).catch(err => {
       console.error(err);
       alert("Failed to load data.json (open console).");

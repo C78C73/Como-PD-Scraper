@@ -32,6 +32,426 @@ else:
 USER_AGENT = "gageishere53@gmail.com - incident-mapper (respecting Nominatim policy)"
 CSV_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 GEOCACHE_FILE = "geocache.json"
+GEOCODE_UNMAPPED_DEBUG_FILE = "geocode_unmapped_debug.json"
+
+# Nominatim can return better results if bounded to the local area.
+# Bounding box used to constrain results to the Columbia, MO area.
+# viewbox format: left,top,right,bottom (lon,lat)
+# Note: slightly wider than the immediate city core to reduce false negatives
+# on edge-of-city streets while still enforcing that results fall in this bbox.
+NOMINATIM_VIEWBOX = (-92.55, 39.15, -92.15, 38.80)
+
+# Some street intersections are not resolvable via Nominatim free-text.
+# Overpass can return the actual shared node(s) between two named ways.
+OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+
+
+def _overpass_escape_regex(text: str) -> str:
+    import re
+
+    return re.escape(_clean_whitespace(text))
+
+
+def _overpass_find_intersection(street_a: str, street_b: str, timeout=25):
+    """Return (lat, lon) for the intersection of two streets within Columbia bbox.
+
+    Best-effort: tries exact name match first, then relaxed substring match.
+    """
+    import re
+
+    a = _clean_whitespace(street_a)
+    b = _clean_whitespace(street_b)
+    if not a or not b:
+        return None, None
+
+    def build_patterns(s: str) -> list[str]:
+        """Return a few Overpass regex patterns for name/ref matching."""
+        s0 = _clean_whitespace(s)
+        if not s0:
+            return []
+
+        pats: list[str] = []
+
+        # Exact name/ref
+        pats.append("^" + _overpass_escape_regex(s0) + "$")
+
+        # Drop leading direction words
+        s1 = re.sub(r"^(North|South|East|West)\s+", "", s0, flags=re.IGNORECASE)
+        s1 = _clean_whitespace(s1)
+        if s1 and s1 != s0:
+            pats.append("^" + _overpass_escape_regex(s1) + "$")
+
+        # Normalized (expands abbreviations like Dr -> Drive)
+        try:
+            s2 = _clean_whitespace(_normalize_street_text(s0))
+        except Exception:
+            s2 = ""
+        if s2 and s2 not in [s0, s1]:
+            pats.append("^" + _overpass_escape_regex(s2) + "$")
+
+        # Contains-style fallbacks (more forgiving)
+        for v in [s1, s2, s0]:
+            v = _clean_whitespace(v)
+            if v:
+                pat = _overpass_escape_regex(v)
+                if pat and pat not in pats:
+                    pats.append(pat)
+
+        # Street-type-stripped token pattern.
+        # Helps when OSM has a longer official name (e.g. "Mick Deaver Memorial Drive")
+        # but dispatch uses a shortened form (e.g. "Mick Deaver Dr").
+        street_type_re = re.compile(
+            r"\b(?:ROAD|RD|DRIVE|DR|STREET|ST|AVENUE|AVE|BOULEVARD|BLVD|LANE|LN|COURT|CT|CIRCLE|CIR|PARKWAY|PKWY|TRAIL|TRL|WAY|WY|TERRACE|TER|PLACE|PL)\b\.?\s*$",
+            re.IGNORECASE,
+        )
+        base = street_type_re.sub("", s1 or s0)
+        base = _clean_whitespace(base)
+        if base and base not in [s0, s1, s2]:
+            base_pat = _overpass_escape_regex(base)
+            if base_pat and base_pat not in pats:
+                pats.append(base_pat)
+
+        # If this looks like a highway/route with a number, add ref-friendly regex.
+        m = re.search(r"\b(\d{1,3})\b", s0)
+        if m:
+            num = m.group(1)
+            pats.append(r"\\b(?:US\\s*)?" + num + r"\\b")
+
+        # Keep it small to avoid heavy queries
+        return pats[:6]
+
+    a_pats = build_patterns(a)
+    b_pats = build_patterns(b)
+    if not a_pats or not b_pats:
+        return None, None
+
+    south, west, north, east = NOMINATIM_VIEWBOX[3], NOMINATIM_VIEWBOX[0], NOMINATIM_VIEWBOX[1], NOMINATIM_VIEWBOX[2]
+
+    def run_query(a_pat: str, b_pat: str):
+        q = f"""
+[out:json][timeout:{int(timeout)}];
+(
+    way[highway][name~\"{a_pat}\",i]({south},{west},{north},{east});
+    way[highway][ref~\"{a_pat}\",i]({south},{west},{north},{east});
+)->.wa;
+(
+    way[highway][name~\"{b_pat}\",i]({south},{west},{north},{east});
+    way[highway][ref~\"{b_pat}\",i]({south},{west},{north},{east});
+)->.wb;
+node(w.wa)(w.wb);
+out 1;
+""".strip()
+
+        r = requests.get(
+            OVERPASS_URL,
+            params={"data": q},
+            headers={"User-Agent": USER_AGENT},
+            timeout=timeout + 5,
+        )
+        r.raise_for_status()
+        data = r.json()
+        els = data.get("elements") or []
+        for el in els:
+            if el.get("type") == "node" and "lat" in el and "lon" in el:
+                return float(el["lat"]), float(el["lon"])
+        return None, None
+
+    # Try a small cartesian of candidate patterns
+    for ap in a_pats:
+        for bp in b_pats:
+            try:
+                latlon = run_query(ap, bp)
+                if latlon != (None, None):
+                    return latlon
+            except Exception:
+                continue
+
+    return None, None
+
+
+def _overpass_find_way_center(street_name: str, timeout=25):
+    """Return an approximate (lat, lon) for a named street within Columbia bbox.
+
+    Useful for BLOCK-type locations when a specific house number can't be resolved.
+    """
+    import re
+
+    name = _clean_whitespace(street_name)
+    if not name:
+        return None, None
+
+    exact = "^" + _overpass_escape_regex(name) + "$"
+
+    # Substring-style fallbacks (more forgiving about Dr/Drive, Blvd/Boulevard, etc.)
+    directionless = re.sub(r"^(North|South|East|West)\s+", "", name, flags=re.IGNORECASE)
+    contains_1 = _overpass_escape_regex(directionless) if directionless else _overpass_escape_regex(name)
+    try:
+        normalized = _normalize_street_text(name)
+    except Exception:
+        normalized = ""
+    contains_2 = _overpass_escape_regex(normalized) if normalized else ""
+
+    south, west, north, east = NOMINATIM_VIEWBOX[3], NOMINATIM_VIEWBOX[0], NOMINATIM_VIEWBOX[1], NOMINATIM_VIEWBOX[2]
+
+    def run_query(pat: str):
+        q = f"""
+[out:json][timeout:{int(timeout)}];
+way[highway][name~\"{pat}\",i]({south},{west},{north},{east});
+out center 1;
+""".strip()
+        r = requests.get(
+            OVERPASS_URL,
+            params={"data": q},
+            headers={"User-Agent": USER_AGENT},
+            timeout=timeout + 5,
+        )
+        r.raise_for_status()
+        data = r.json()
+        els = data.get("elements") or []
+        for el in els:
+            if el.get("type") == "way":
+                c = el.get("center")
+                if c and "lat" in c and "lon" in c:
+                    return float(c["lat"]), float(c["lon"])
+        return None, None
+
+    try:
+        latlon = run_query(exact)
+        if latlon != (None, None):
+            return latlon
+    except Exception:
+        pass
+
+    for pat in [contains_1, contains_2]:
+        if not pat:
+            continue
+        try:
+            latlon = run_query(pat)
+            if latlon != (None, None):
+                return latlon
+        except Exception:
+            pass
+
+    return None, None
+
+
+def _overpass_find_address(house_num: str, street_name: str, timeout=25):
+    """Return (lat, lon) for an address (addr:housenumber + addr:street) within Columbia bbox."""
+    import re
+
+    num = _clean_whitespace(house_num)
+    street = _clean_whitespace(street_name)
+    if not num or not street:
+        return None, None
+
+    south, west, north, east = NOMINATIM_VIEWBOX[3], NOMINATIM_VIEWBOX[0], NOMINATIM_VIEWBOX[1], NOMINATIM_VIEWBOX[2]
+
+    # Build a few street patterns: exact-ish and forgiving.
+    patterns: list[str] = []
+    patterns.append("^" + _overpass_escape_regex(street) + "$")
+
+    directionless = re.sub(r"^(North|South|East|West)\s+", "", street, flags=re.IGNORECASE)
+    directionless = _clean_whitespace(directionless)
+    if directionless and directionless != street:
+        patterns.append("^" + _overpass_escape_regex(directionless) + "$")
+
+    try:
+        normalized = _clean_whitespace(_normalize_street_text(street))
+    except Exception:
+        normalized = ""
+    if normalized and normalized not in [street, directionless]:
+        patterns.append("^" + _overpass_escape_regex(normalized) + "$")
+
+    # Contains fallbacks
+    for v in [directionless, normalized, street]:
+        v = _clean_whitespace(v)
+        if v:
+            pat = _overpass_escape_regex(v)
+            if pat and pat not in patterns:
+                patterns.append(pat)
+
+    patterns = patterns[:6]
+
+    def run_query(street_pat: str):
+        q = f"""
+[out:json][timeout:{int(timeout)}];
+nwr["addr:housenumber"="{num}"]["addr:street"~"{street_pat}",i]({south},{west},{north},{east});
+out center 1;
+""".strip()
+
+        r = requests.get(
+            OVERPASS_URL,
+            params={"data": q},
+            headers={"User-Agent": USER_AGENT},
+            timeout=timeout + 5,
+        )
+        r.raise_for_status()
+        data = r.json()
+        els = data.get("elements") or []
+        for el in els:
+            if el.get("type") == "node" and "lat" in el and "lon" in el:
+                return float(el["lat"]), float(el["lon"])
+            c = el.get("center")
+            if c and "lat" in c and "lon" in c:
+                return float(c["lat"]), float(c["lon"])
+        return None, None
+
+    for pat in patterns:
+        try:
+            latlon = run_query(pat)
+            if latlon != (None, None):
+                return latlon
+        except Exception:
+            continue
+
+    return None, None
+
+
+def _clean_whitespace(text: str) -> str:
+    return " ".join((text or "").strip().split())
+
+
+def _normalize_street_text(raw: str) -> str:
+    """Normalize common tokens/abbreviations used in Como dispatch locations."""
+    if not raw:
+        return ""
+
+    mapping = {
+        "HWY": "Highway",
+        "RD": "Road",
+        "ST": "Street",
+        "BLVD": "Boulevard",
+        "AVE": "Avenue",
+        "AV": "Avenue",
+        "CT": "Court",
+        "DR": "Drive",
+        "LN": "Lane",
+        "PL": "Place",
+        "PKWY": "Parkway",
+        "PKY": "Parkway",
+        "SQ": "Square",
+        "CIR": "Circle",
+        "TER": "Terrace",
+        "TR": "Trail",
+        "TRL": "Trail",
+        "WAY": "Way",
+        "EXPY": "Expressway",
+        "EXPRESS": "Expressway",
+        "I70": "I-70",
+    }
+    directions = {
+        "N": "North",
+        "S": "South",
+        "E": "East",
+        "W": "West",
+        "NE": "Northeast",
+        "NW": "Northwest",
+        "SE": "Southeast",
+        "SW": "Southwest",
+    }
+    drop_tokens = {
+        # travel-direction / ramp tokens that tend to confuse geocoders
+        "NB",
+        "SB",
+        "EB",
+        "WB",
+        "OFFR",
+        "OFF",
+        "ONR",
+        "RAMP",
+        "EXIT",
+    }
+
+    # Ensure separators don't get glued to tokens (e.g., "RD/FOO" -> "RD / FOO")
+    text = raw
+    text = text.replace("/", " / ")
+    text = text.replace("&", " & ")
+    text = text.replace("@", " @ ")
+    text = text.replace("-", " ")
+    text = _clean_whitespace(text)
+    tokens = text.split()
+    normalized_tokens: list[str] = []
+    for token in tokens:
+        up = token.upper()
+        if up in drop_tokens:
+            continue
+        if up in directions:
+            normalized_tokens.append(directions[up])
+            continue
+        if up in mapping:
+            normalized_tokens.append(mapping[up])
+            continue
+        normalized_tokens.append(token)
+    return " ".join(normalized_tokens)
+
+
+def _normalize_dispatch_location(raw: str) -> str:
+    """Normalize common dispatch-only formats before geocoding.
+
+    Examples:
+    - "610-BLK CLAUDELL LN" -> "610 BLOCK CLAUDELL LN"
+    - "109-336 N KEENE ST" -> "109 N KEENE ST"
+    - "0 BLOCK FOURTH AVE" -> "0 BLOCK 4TH AVE"
+    """
+    import re
+
+    text = _clean_whitespace(raw)
+    if not text:
+        return ""
+
+    # Convert "123-BLK" or "123-BLK" variants into "123 BLOCK"
+    text = re.sub(r"\b(\d{1,6})\s*-\s*BLK\b", r"\1 BLOCK", text, flags=re.IGNORECASE)
+    text = re.sub(r"\b(\d{1,6})\s*BLK\b", r"\1 BLOCK", text, flags=re.IGNORECASE)
+
+    # Convert numeric ranges to the first number: "109-336 N KEENE ST" -> "109 N KEENE ST"
+    text = re.sub(r"\b(\d{1,6})\s*-\s*(\d{1,6})\b", r"\1", text)
+
+    # Convert common ordinal words to numeric ordinals (helps Nominatim)
+    ordinal_map = {
+        "FIRST": "1ST",
+        "SECOND": "2ND",
+        "THIRD": "3RD",
+        "FOURTH": "4TH",
+        "FIFTH": "5TH",
+        "SIXTH": "6TH",
+        "SEVENTH": "7TH",
+        "EIGHTH": "8TH",
+        "NINTH": "9TH",
+        "TENTH": "10TH",
+    }
+    for word, ordnum in ordinal_map.items():
+        text = re.sub(rf"\b{word}\b", ordnum, text, flags=re.IGNORECASE)
+
+    return _clean_whitespace(text)
+
+
+def _strip_unit(raw: str) -> str:
+    """Strip apartment/unit/suite fragments (often breaks geocoding)."""
+    import re
+
+    if not raw:
+        return ""
+    text = _clean_whitespace(raw)
+    # Remove common trailing unit patterns
+    text = re.sub(r"\s+(APT|APARTMENT|UNIT|STE|SUITE)\s+[^,]+$", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s+#\s*[^,]+$", "", text)
+    return _clean_whitespace(text)
+
+
+def _is_failed_latlon(latlon) -> bool:
+    try:
+        lat, lon = latlon
+        return lat is None or lon is None
+    except Exception:
+        return True
+
+
+def _in_viewbox(lat: float, lon: float) -> bool:
+    try:
+        left, top, right, bottom = NOMINATIM_VIEWBOX
+        return (bottom <= float(lat) <= top) and (left <= float(lon) <= right)
+    except Exception:
+        return False
 
 
 def log_section(title: str) -> None:
@@ -59,122 +479,414 @@ def save_geocache(cache):
     except Exception:
         pass
 
-def geocode_address(address, cache, sleep_time=1.0):
+def geocode_address(address, cache, sleep_time=1.0, debug=None, retry_failed_cache=True):
     """Geocode an address using Nominatim with caching.
     Handles intersections by finding where two streets meet.
     """
     if not address:
         return None, None
 
-    key = address.strip().upper()
-    if key in cache:
-        return cache[key]
+    raw_address = _clean_whitespace(address)
+    normalized_dispatch = _normalize_dispatch_location(raw_address)
+    key = raw_address.upper()
+    cached = cache.get(key)
+    if cached is not None and (not retry_failed_cache or not _is_failed_latlon(cached)):
+        return cached
+
+    attempts = []
+    errors = []
+    used_query = None
 
     def nominatim_query(q):
         base = "https://nominatim.openstreetmap.org/search?"
-        params = {"q": q + ", Columbia, MO, USA", "format": "json", "limit": 1}
+        q_clean = _clean_whitespace(q)
+        if not q_clean:
+            return None, None
+
+        # Only append city/state if caller didn't already specify a place.
+        q_full = q_clean
+        if "COLUMBIA" not in q_clean.upper() and "MO" not in q_clean.upper() and "MISSOURI" not in q_clean.upper():
+            q_full = q_clean + ", Columbia, MO, USA"
+
+        # 1) Preferred: bounded to the local viewbox.
+        params = {
+            "q": q_full,
+            "format": "json",
+            "limit": 1,
+            "viewbox": f"{NOMINATIM_VIEWBOX[0]},{NOMINATIM_VIEWBOX[1]},{NOMINATIM_VIEWBOX[2]},{NOMINATIM_VIEWBOX[3]}",
+            "bounded": 1,
+        }
         url = base + urlencode(params)
-        r = requests.get(url, headers={"User-Agent": USER_AGENT})
+        r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=20)
         r.raise_for_status()
         data = r.json()
         if data:
-            return float(data[0]["lat"]), float(data[0]["lon"])
+            lat = float(data[0]["lat"])
+            lon = float(data[0]["lon"])
+            return (lat, lon) if _in_viewbox(lat, lon) else (None, None)
+
+        # 2) Fallback: unbounded search (Nominatim sometimes returns nothing when bounded),
+        # but still strictly accept only results inside our viewbox.
+        params2 = {
+            "q": q_full,
+            "format": "json",
+            "limit": 1,
+            "countrycodes": "us",
+        }
+        url2 = base + urlencode(params2)
+        r2 = requests.get(url2, headers={"User-Agent": USER_AGENT}, timeout=20)
+        r2.raise_for_status()
+        data2 = r2.json()
+        if data2:
+            lat = float(data2[0]["lat"])
+            lon = float(data2[0]["lon"])
+            return (lat, lon) if _in_viewbox(lat, lon) else (None, None)
+
         return None, None
 
-    # Try raw address first
-    try:
-        latlon = nominatim_query(address)
-    except Exception:
-        latlon = (None, None)
+    def census_query(q: str):
+        """US Census Geocoder fallback for address-like inputs.
+
+        This uses TIGER/Line-derived data and can succeed for newer/less-mapped
+        streets where OSM/Nominatim doesn't.
+        """
+        q_clean = _clean_whitespace(q)
+        if not q_clean:
+            return None, None
+
+        q_full = q_clean
+        if "COLUMBIA" not in q_clean.upper() and "MO" not in q_clean.upper() and "MISSOURI" not in q_clean.upper():
+            q_full = q_clean + ", Columbia, MO"
+
+        url = "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress"
+        params = {
+            "address": q_full,
+            "benchmark": "Public_AR_Current",
+            "format": "json",
+        }
+        r = requests.get(url, params=params, headers={"User-Agent": USER_AGENT}, timeout=20)
+        r.raise_for_status()
+        data = r.json() or {}
+        matches = ((data.get("result") or {}).get("addressMatches")) or []
+        if not matches:
+            return None, None
+
+        coords = (matches[0].get("coordinates") or {})
+        if "x" not in coords or "y" not in coords:
+            return None, None
+        lon = float(coords["x"])
+        lat = float(coords["y"])
+        return (lat, lon) if _in_viewbox(lat, lon) else (None, None)
+
+    def try_query(label: str, q: str):
+        nonlocal used_query
+        q_norm = _clean_whitespace(q)
+        if not q_norm:
+            return None, None
+
+        attempts.append({"label": label, "q": q_norm})
+        try:
+            latlon = nominatim_query(q_norm)
+            # Respect Nominatim rate limit between requests
+            time.sleep(max(0.0, float(sleep_time)))
+            if latlon != (None, None):
+                used_query = q_norm
+            return latlon
+        except Exception as e:
+            errors.append({"label": label, "q": q_norm, "error": str(e)})
+            time.sleep(max(0.0, float(sleep_time)))
+            return None, None
+
+    def try_census(label: str, q: str):
+        nonlocal used_query
+        q_norm = _clean_whitespace(q)
+        if not q_norm:
+            return None, None
+        attempts.append({"label": label, "q": q_norm})
+        try:
+            latlon = census_query(q_norm)
+            time.sleep(max(0.0, float(sleep_time)))
+            if latlon != (None, None):
+                used_query = q_norm
+            return latlon
+        except Exception as e:
+            errors.append({"label": label, "q": q_norm, "error": str(e)})
+            time.sleep(max(0.0, float(sleep_time)))
+            return None, None
+
+    latlon = (None, None)
+
+    # 1) Try raw address
+    latlon = try_query("raw", raw_address)
+
+    # 1b) Try normalized dispatch format
+    if latlon == (None, None) and normalized_dispatch and normalized_dispatch != raw_address:
+        latlon = try_query("normalized_dispatch", normalized_dispatch)
+
+    # 2) Try stripping unit fragments
+    if latlon == (None, None):
+        stripped = _strip_unit(raw_address)
+        if stripped != raw_address:
+            latlon = try_query("strip_unit", stripped)
+
+    # 3) Try expanding abbreviations/directions
+    if latlon == (None, None):
+        expanded = _normalize_street_text(normalized_dispatch or raw_address)
+        if expanded and expanded != raw_address:
+            latlon = try_query("expanded", expanded)
+
+    # 3b) Try removing "BLOCK" word entirely (Google-style)
+    if latlon == (None, None):
+        import re
+
+        no_block = re.sub(r"\bBLOCK\b", " ", normalized_dispatch or raw_address, flags=re.IGNORECASE)
+        no_block = _clean_whitespace(no_block)
+        if no_block and no_block != raw_address:
+            latlon = try_query("no_block", no_block)
+
+    # 3c) If this looks like a street address, try US Census geocoding.
+    if latlon == (None, None):
+        import re
+
+        addrish = (normalized_dispatch or raw_address)
+        if re.match(r"^\s*\d{1,6}\s+\S+", addrish):
+            latlon = try_census("census_address", addrish)
 
     # If not found, try intersection handling
     if latlon == (None, None):
-        a2 = address.replace("BLOCK", "").replace(" OF ", " ").strip()
+        import re
 
-        def normalize_street_name(raw: str) -> str:
-            """Expand common abbreviations (HWY, RD, ST, BLVD, etc.) and directions.
-            This often helps Nominatim resolve tricky intersections.
-            """
-            mapping = {
-                "HWY": "Highway",
-                "RD": "Road",
-                "ST": "Street",
-                "BLVD": "Boulevard",
-                "AVE": "Avenue",
-                "AV": "Avenue",
-                "CT": "Court",
-                "DR": "Drive",
-                "LN": "Lane",
-                "PL": "Place",
-                "PKWY": "Parkway",
-                "PKY": "Parkway",
-                "SQ": "Square",
-                "EXPY": "Expressway",
-                "EXPRESS": "Expressway",
-            }
-            directions = {
-                "N": "North",
-                "S": "South",
-                "E": "East",
-                "W": "West",
-                "NE": "Northeast",
-                "NW": "Northwest",
-                "SE": "Southeast",
-                "SW": "Southwest",
-            }
-            drop_tokens = {"NB", "SB", "EB", "WB", "OFFR", "OFF", "RAMP"}
+        a2 = normalized_dispatch or raw_address
 
-            tokens = raw.replace("-", " ").split()
-            norm = []
-            for t in tokens:
-                up = t.upper()
-                if up in drop_tokens:
-                    continue
-                if up in directions:
-                    norm.append(directions[up])
-                elif up in mapping:
-                    norm.append(mapping[up])
-                else:
-                    norm.append(t)
-            return " ".join(norm)
+        # 4) Handle "#### BLOCK (OF) ..." by trying a real house-number query
+        m = re.match(r"^\s*(\d{1,6})\s*BLOCK\s+(?:OF\s+)?(.+?)\s*$", a2, flags=re.IGNORECASE)
+        if m:
+            block_num = int(m.group(1))
+            street = _clean_whitespace(m.group(2))
+            street_expanded = _normalize_street_text(street)
 
-        # Detect intersection patterns: "/" or multiple street indicators
-        seps = ["/", " & ", " AND ", " @ ", " AT "]
-        for sep in seps:
-            if sep in a2:
-                parts = [p.strip() for p in a2.split(sep) if p.strip()]
-                if len(parts) >= 2:
-                    p1, p2 = parts[0], parts[1]
-                    p1n, p2n = normalize_street_name(p1), normalize_street_name(p2)
-                    # Try multiple intersection formats, including normalized street names
-                    queries = [
-                        f"{p1} & {p2}",
-                        f"{p1} and {p2}",
-                        f"intersection of {p1} and {p2}",
-                        f"{p1n} & {p2n}",
-                        f"{p1n} and {p2n}",
-                        f"intersection of {p1n} and {p2n}",
-                    ]
-                    for inter in queries:
-                        try:
-                            latlon = nominatim_query(inter)
-                            if latlon != (None, None):
-                                print(f"  Found intersection: {inter}")
-                                break
-                        except Exception:
-                            continue
+            street_name_variants = []
+            for v in [street_expanded, street]:
+                v = _clean_whitespace(v)
+                if v and v not in street_name_variants:
+                    street_name_variants.append(v)
+
+            if block_num == 0:
+                # "0 BLOCK" usually means near the street start; try street-only.
+                for v in street_name_variants:
+                    latlon = try_query("block_0_street_only", v)
+                    if latlon != (None, None):
+                        break
+            else:
+                # Try a few representative numbers within the block.
+                candidates = [block_num, block_num + 50, block_num + 99]
+                for n in candidates:
+                    for v in street_name_variants:
+                        latlon = try_query("block_to_address", f"{n} {v}")
+                        if latlon != (None, None):
+                            break
                     if latlon != (None, None):
                         break
 
-        # Final fallback: try trimmed version
+                # If OSM search still couldn't resolve a derived address, try Census.
+                if latlon == (None, None):
+                    for n in candidates:
+                        for v in street_name_variants:
+                            latlon = try_census("census_block_to_address", f"{n} {v}")
+                            if latlon != (None, None):
+                                break
+                        if latlon != (None, None):
+                            break
+
+                # If Nominatim couldn't resolve the derived address, try Overpass
+                # addr:housenumber + addr:street (often succeeds when search fails).
+                if latlon == (None, None):
+                    for n in candidates:
+                        for v in street_name_variants:
+                            try:
+                                attempts.append({"label": "overpass_addr", "q": f"{n} {v}"})
+                                latlon = _overpass_find_address(str(n), v)
+                                if latlon != (None, None):
+                                    used_query = f"overpass_addr: {n} {v}"
+                                    break
+                            except Exception as e:
+                                errors.append({"label": "overpass_addr", "q": f"{n} {v}", "error": str(e)})
+                        if latlon != (None, None):
+                            break
+
+            # Last ditch for block: street-only
+            if latlon == (None, None):
+                for v in street_name_variants:
+                    latlon = try_query("block_street_only", v)
+                    if latlon != (None, None):
+                        break
+
+            # If Nominatim still can't place the street, use Overpass to pick
+            # an approximate center for the named way.
+            if latlon == (None, None):
+                try:
+                    candidates = []
+                    if street:
+                        candidates.append(street)
+                    if street_expanded and street_expanded != street:
+                        candidates.append(street_expanded)
+
+                    for cand in candidates:
+                        attempts.append({"label": "overpass_way_center", "q": cand})
+                        latlon = _overpass_find_way_center(cand)
+                        if latlon != (None, None):
+                            used_query = f"overpass_center: {cand}"
+                            break
+                except Exception as e:
+                    errors.append({"label": "overpass_way_center", "q": street_expanded or street, "error": str(e)})
+
+            a2 = street_expanded or street
+
+        # 5) Detect intersection patterns
         if latlon == (None, None):
-            try:
-                latlon = nominatim_query(a2)
-            except Exception:
-                latlon = (None, None)
+            # Normalize common separators to a single token for splitting.
+            normalized_for_split = a2
+            normalized_for_split = normalized_for_split.replace(" AT ", " & ").replace(" @ ", " & ")
+            normalized_for_split = normalized_for_split.replace(" AND ", " & ")
+            normalized_for_split = normalized_for_split.replace("/", " & ")
+            if "&" in normalized_for_split:
+                parts = [p.strip() for p in normalized_for_split.split("&") if p.strip()]
+                if len(parts) >= 2:
+                    p1, p2 = parts[0], parts[1]
+
+                    def street_variants(s: str) -> list[str]:
+                        import re
+
+                        base_s = _clean_whitespace(s)
+                        variants = []
+                        if base_s:
+                            variants.append(base_s)
+                        expanded_s = _normalize_street_text(base_s)
+                        if expanded_s and expanded_s not in variants:
+                            variants.append(expanded_s)
+
+                        # Directionless variants (sometimes OSM omits N/S/E/W)
+                        for v in list(variants):
+                            v2 = re.sub(r"^(North|South|East|West)\s+", "", v, flags=re.IGNORECASE)
+                            v2 = _clean_whitespace(v2)
+                            if v2 and v2 not in variants:
+                                variants.append(v2)
+
+                        # Highway variants: "Highway 63" often resolves better as "US 63"
+                        hw_re = re.compile(r"\b(?:US\s+)?(?:HIGHWAY|HWY)\s*(\d+)\b", re.IGNORECASE)
+                        for v in list(variants):
+                            m = hw_re.search(v)
+                            if m:
+                                num = m.group(1)
+                                for rep in [f"US {num}", f"US Highway {num}", f"Route {num}"]:
+                                    v3 = hw_re.sub(rep, v)
+                                    v3 = _clean_whitespace(v3)
+                                    if v3 and v3 not in variants:
+                                        variants.append(v3)
+
+                        # Keep variants small to avoid too many API calls,
+                        # but include highway variants like "US 63".
+                        return variants[:5]
+
+                    v1s = street_variants(p1)
+                    v2s = street_variants(p2)
+
+                    # Generate a small set of intersection query patterns
+                    queries = []
+                    for a in v1s:
+                        for b in v2s:
+                            queries.extend(
+                                [
+                                    f"{a} & {b}",
+                                    f"{a} and {b}",
+                                    f"{a} at {b}",
+                                    f"{a} / {b}",
+                                ]
+                            )
+
+                    # Deduplicate while preserving order
+                    seen = set()
+                    deduped = []
+                    for q in queries:
+                        qn = _clean_whitespace(q)
+                        if qn and qn not in seen:
+                            seen.add(qn)
+                            deduped.append(qn)
+
+                    # Cap attempts to respect Nominatim usage
+                    for inter in deduped[:8]:
+                        latlon = try_query("intersection", inter)
+                        if latlon != (None, None):
+                            print(f"  Found intersection: {inter}")
+                            break
+
+                    # If Nominatim can't resolve this intersection at all,
+                    # fall back to Overpass to find the shared node.
+                    if latlon == (None, None):
+                        try:
+                            # Try a few street variants (including highway substitutions)
+                            # to better match OSM naming.
+                            best = (None, None)
+                            best_q = None
+                            for a_cand in v1s[:3]:
+                                for b_cand in v2s[:3]:
+                                    best = _overpass_find_intersection(a_cand, b_cand)
+                                    best_q = f"{a_cand} & {b_cand}"
+                                    if best != (None, None):
+                                        break
+                                if best != (None, None):
+                                    break
+
+                            latlon = best
+                            if latlon != (None, None):
+                                attempts.append({"label": "overpass_intersection", "q": best_q})
+                                used_query = f"overpass: {best_q}"
+                        except Exception as e:
+                            errors.append({"label": "overpass_intersection", "q": f"{p1} & {p2}", "error": str(e)})
+
+        # 6) Ramp/off-ramp style strings: try stripping ramp tokens and geocoding remaining
+        if latlon == (None, None):
+            simplified = _normalize_street_text(a2)
+            if simplified and simplified != a2:
+                latlon = try_query("simplified", simplified)
+
+        # 7) Final fallback: remove literal words that often appear in dispatch strings
+        if latlon == (None, None):
+            trimmed = re.sub(r"\b(BLOCK|OF)\b", " ", raw_address, flags=re.IGNORECASE)
+            trimmed = _clean_whitespace(trimmed)
+            trimmed = _normalize_street_text(trimmed)
+            latlon = try_query("final_trim", trimmed)
+
+        # 8) If this still looks like a real address, try Overpass addr tags.
+        if latlon == (None, None):
+            m_addr = re.match(r"^\s*(\d{1,6})(?:-[A-Z0-9]+)?\s+(.+?)\s*$", normalized_dispatch or raw_address, flags=re.IGNORECASE)
+            if m_addr:
+                hn = m_addr.group(1)
+                st = _clean_whitespace(m_addr.group(2))
+                st = _strip_unit(st) or st
+                try:
+                    attempts.append({"label": "overpass_addr", "q": f"{hn} {st}"})
+                    latlon = _overpass_find_address(hn, st)
+                    if latlon != (None, None):
+                        used_query = f"overpass_addr: {hn} {st}"
+                except Exception as e:
+                    errors.append({"label": "overpass_addr", "q": f"{hn} {st}", "error": str(e)})
 
     cache[key] = latlon
-    time.sleep(sleep_time)
+    if debug is not None:
+        try:
+            debug.update(
+                {
+                    "raw": raw_address,
+                    "cache_key": key,
+                    "attempts": attempts,
+                    "used_query": used_query,
+                    "result": {"lat": latlon[0], "lon": latlon[1]},
+                    "errors": errors,
+                }
+            )
+        except Exception:
+            pass
     return latlon
 
 
@@ -610,14 +1322,27 @@ def main():
     geocache = load_geocache()
     geocoded = 0
     skipped = 0
+    unmapped_debug = []
 
     for i, item in enumerate(items):
         addr = item.get("location_txt", "")
-        lat, lon = geocode_address(addr, geocache, sleep_time=1.0)
+        dbg = {}
+        lat, lon = geocode_address(addr, geocache, sleep_time=1.0, debug=dbg, retry_failed_cache=True)
         if lat is not None and lon is not None:
             geocoded += 1
         else:
             skipped += 1
+            unmapped_debug.append(
+                {
+                    "incident": item.get("incident"),
+                    "datetime": item.get("datetime"),
+                    "type": item.get("type"),
+                    "agency": item.get("agency"),
+                    "location_txt": addr,
+                    "service": item.get("service"),
+                    "geocode_debug": dbg,
+                }
+            )
         print(f"[GEO] {i+1}/{len(items)}: {addr} -> {lat},{lon}")
         item["lat"] = lat
         item["lon"] = lon
@@ -630,6 +1355,29 @@ def main():
         item["dispatch_date"] = target_date_str
 
     save_geocache(geocache)
+
+    # Write a debug report for anything that couldn't be mapped
+    try:
+        if unmapped_debug:
+            with open(GEOCODE_UNMAPPED_DEBUG_FILE, "w", encoding="utf-8") as f:
+                json.dump(
+                    {
+                        "generated_at": generated_at,
+                        "dispatch_date": target_date_str,
+                        "unmapped_count": len(unmapped_debug),
+                        "items": unmapped_debug,
+                    },
+                    f,
+                    indent=2,
+                )
+            print(f"Wrote {GEOCODE_UNMAPPED_DEBUG_FILE} with {len(unmapped_debug)} unmapped incidents.")
+        else:
+            # Keep the previous file from going stale/misleading
+            if os.path.exists(GEOCODE_UNMAPPED_DEBUG_FILE):
+                os.remove(GEOCODE_UNMAPPED_DEBUG_FILE)
+    except Exception as e:
+        print(f"Could not write unmapped debug report: {e}")
+
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(items, f, indent=2)
     print(f"\nSaved data.json. Geocoded: {geocoded}, Skipped: {skipped}")

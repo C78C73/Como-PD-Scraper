@@ -1,0 +1,871 @@
+{
+  "generated_at": "2025-12-24 07:02:20 UTC",
+  "dispatch_date": "2025-12-23",
+  "unmapped_count": 15,
+  "items": [
+    {
+      "incident": "2025352747",
+      "datetime": "12/23/2025 5:06:01 PM",
+      "type": "PARKING VIOLATION",
+      "agency": "Columbia Police Department",
+      "location_txt": "PARK AVE/BRYANT WALKWAY",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "PARK AVE/BRYANT WALKWAY",
+        "cache_key": "PARK AVE/BRYANT WALKWAY",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "PARK AVE/BRYANT WALKWAY"
+          },
+          {
+            "label": "expanded",
+            "q": "PARK Avenue / BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK AVE & BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK AVE and BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK AVE at BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK AVE / BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK Avenue & BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK Avenue and BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK Avenue at BRYANT WALKWAY"
+          },
+          {
+            "label": "intersection",
+            "q": "PARK Avenue / BRYANT WALKWAY"
+          },
+          {
+            "label": "simplified",
+            "q": "PARK Avenue / BRYANT WALKWAY"
+          },
+          {
+            "label": "final_trim",
+            "q": "PARK Avenue / BRYANT WALKWAY"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352678",
+      "datetime": "12/23/2025 3:36:34 PM",
+      "type": "CHECK SUBJECT",
+      "agency": "Columbia Police Department",
+      "location_txt": "BEAR CREEK TRL/NORTHLAND DR",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "BEAR CREEK TRL/NORTHLAND DR",
+        "cache_key": "BEAR CREEK TRL/NORTHLAND DR",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "BEAR CREEK TRL/NORTHLAND DR"
+          },
+          {
+            "label": "expanded",
+            "q": "BEAR CREEK Trail / NORTHLAND Drive"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL & NORTHLAND DR"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL and NORTHLAND DR"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL at NORTHLAND DR"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL / NORTHLAND DR"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL & NORTHLAND Drive"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL and NORTHLAND Drive"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL at NORTHLAND Drive"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL / NORTHLAND Drive"
+          },
+          {
+            "label": "simplified",
+            "q": "BEAR CREEK Trail / NORTHLAND Drive"
+          },
+          {
+            "label": "final_trim",
+            "q": "BEAR CREEK Trail / NORTHLAND Drive"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352657",
+      "datetime": "12/23/2025 3:03:14 PM",
+      "type": "SUSPICIOUS VEHICLE",
+      "agency": "Columbia Police Department",
+      "location_txt": "BEAR CREEK TRL/N PROVIDENCE RD",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "BEAR CREEK TRL/N PROVIDENCE RD",
+        "cache_key": "BEAR CREEK TRL/N PROVIDENCE RD",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "BEAR CREEK TRL/N PROVIDENCE RD"
+          },
+          {
+            "label": "expanded",
+            "q": "BEAR CREEK Trail / North PROVIDENCE Road"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL & N PROVIDENCE RD"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL and N PROVIDENCE RD"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL at N PROVIDENCE RD"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL / N PROVIDENCE RD"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL & North PROVIDENCE Road"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL and North PROVIDENCE Road"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL at North PROVIDENCE Road"
+          },
+          {
+            "label": "intersection",
+            "q": "BEAR CREEK TRL / North PROVIDENCE Road"
+          },
+          {
+            "label": "simplified",
+            "q": "BEAR CREEK Trail / North PROVIDENCE Road"
+          },
+          {
+            "label": "final_trim",
+            "q": "BEAR CREEK Trail / North PROVIDENCE Road"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352626",
+      "datetime": "12/23/2025 2:20:46 PM",
+      "type": "ACCIDENT",
+      "agency": "Columbia Police Department",
+      "location_txt": "N KEENE ST/I70 DR SE",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "N KEENE ST/I70 DR SE",
+        "cache_key": "N KEENE ST/I70 DR SE",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "N KEENE ST/I70 DR SE"
+          },
+          {
+            "label": "expanded",
+            "q": "North KEENE Street / I-70 Drive Southeast"
+          },
+          {
+            "label": "intersection",
+            "q": "N KEENE ST & I70 DR SE"
+          },
+          {
+            "label": "intersection",
+            "q": "N KEENE ST and I70 DR SE"
+          },
+          {
+            "label": "intersection",
+            "q": "N KEENE ST at I70 DR SE"
+          },
+          {
+            "label": "intersection",
+            "q": "N KEENE ST / I70 DR SE"
+          },
+          {
+            "label": "intersection",
+            "q": "N KEENE ST & I-70 Drive Southeast"
+          },
+          {
+            "label": "intersection",
+            "q": "N KEENE ST and I-70 Drive Southeast"
+          },
+          {
+            "label": "intersection",
+            "q": "N KEENE ST at I-70 Drive Southeast"
+          },
+          {
+            "label": "intersection",
+            "q": "N KEENE ST / I-70 Drive Southeast"
+          },
+          {
+            "label": "simplified",
+            "q": "North KEENE Street / I-70 Drive Southeast"
+          },
+          {
+            "label": "final_trim",
+            "q": "North KEENE Street / I-70 Drive Southeast"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352604",
+      "datetime": "12/23/2025 1:52:43 PM",
+      "type": "TRAFFIC STOP",
+      "agency": "Columbia Police Department",
+      "location_txt": "RANGE LINE ST/I70 E",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "RANGE LINE ST/I70 E",
+        "cache_key": "RANGE LINE ST/I70 E",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "RANGE LINE ST/I70 E"
+          },
+          {
+            "label": "expanded",
+            "q": "RANGE LINE Street / I-70 East"
+          },
+          {
+            "label": "intersection",
+            "q": "RANGE LINE ST & I70 E"
+          },
+          {
+            "label": "intersection",
+            "q": "RANGE LINE ST and I70 E"
+          },
+          {
+            "label": "intersection",
+            "q": "RANGE LINE ST at I70 E"
+          },
+          {
+            "label": "intersection",
+            "q": "RANGE LINE ST / I70 E"
+          },
+          {
+            "label": "intersection",
+            "q": "RANGE LINE ST & I-70 East"
+          },
+          {
+            "label": "intersection",
+            "q": "RANGE LINE ST and I-70 East"
+          },
+          {
+            "label": "intersection",
+            "q": "RANGE LINE ST at I-70 East"
+          },
+          {
+            "label": "intersection",
+            "q": "RANGE LINE ST / I-70 East"
+          },
+          {
+            "label": "simplified",
+            "q": "RANGE LINE Street / I-70 East"
+          },
+          {
+            "label": "final_trim",
+            "q": "RANGE LINE Street / I-70 East"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352401",
+      "datetime": "12/23/2025 10:31:30 AM",
+      "type": "TRAFFIC STOP",
+      "agency": "Columbia Police Department",
+      "location_txt": "CHAPEL HILL RD/COLONY DR",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "CHAPEL HILL RD/COLONY DR",
+        "cache_key": "CHAPEL HILL RD/COLONY DR",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "CHAPEL HILL RD/COLONY DR"
+          },
+          {
+            "label": "expanded",
+            "q": "CHAPEL HILL Road / COLONY Drive"
+          },
+          {
+            "label": "intersection",
+            "q": "CHAPEL HILL RD & COLONY DR"
+          },
+          {
+            "label": "intersection",
+            "q": "CHAPEL HILL RD and COLONY DR"
+          },
+          {
+            "label": "intersection",
+            "q": "CHAPEL HILL RD at COLONY DR"
+          },
+          {
+            "label": "intersection",
+            "q": "CHAPEL HILL RD / COLONY DR"
+          },
+          {
+            "label": "intersection",
+            "q": "CHAPEL HILL RD & COLONY Drive"
+          },
+          {
+            "label": "intersection",
+            "q": "CHAPEL HILL RD and COLONY Drive"
+          },
+          {
+            "label": "intersection",
+            "q": "CHAPEL HILL RD at COLONY Drive"
+          },
+          {
+            "label": "intersection",
+            "q": "CHAPEL HILL RD / COLONY Drive"
+          },
+          {
+            "label": "simplified",
+            "q": "CHAPEL HILL Road / COLONY Drive"
+          },
+          {
+            "label": "final_trim",
+            "q": "CHAPEL HILL Road / COLONY Drive"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352385",
+      "datetime": "12/23/2025 10:17:37 AM",
+      "type": "CHECK TRAFFIC LIGHTS",
+      "agency": "Columbia Police Department",
+      "location_txt": "E BROADWAY/S HWY 63 NB",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "E BROADWAY/S HWY 63 NB",
+        "cache_key": "E BROADWAY/S HWY 63 NB",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "E BROADWAY/S HWY 63 NB"
+          },
+          {
+            "label": "expanded",
+            "q": "East BROADWAY / South Highway 63"
+          },
+          {
+            "label": "intersection",
+            "q": "E BROADWAY & S HWY 63 NB"
+          },
+          {
+            "label": "intersection",
+            "q": "E BROADWAY and S HWY 63 NB"
+          },
+          {
+            "label": "intersection",
+            "q": "E BROADWAY at S HWY 63 NB"
+          },
+          {
+            "label": "intersection",
+            "q": "E BROADWAY / S HWY 63 NB"
+          },
+          {
+            "label": "intersection",
+            "q": "E BROADWAY & South Highway 63"
+          },
+          {
+            "label": "intersection",
+            "q": "E BROADWAY and South Highway 63"
+          },
+          {
+            "label": "intersection",
+            "q": "E BROADWAY at South Highway 63"
+          },
+          {
+            "label": "intersection",
+            "q": "E BROADWAY / South Highway 63"
+          },
+          {
+            "label": "simplified",
+            "q": "East BROADWAY / South Highway 63"
+          },
+          {
+            "label": "final_trim",
+            "q": "East BROADWAY / South Highway 63"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352347",
+      "datetime": "12/23/2025 9:43:31 AM",
+      "type": "STALLED VEHICLE",
+      "agency": "Columbia Police Department",
+      "location_txt": "VANDIVER DR/N HWY 63 NB",
+      "service": "PD",
+      "geocode_debug": {
+        "raw": "VANDIVER DR/N HWY 63 NB",
+        "cache_key": "VANDIVER DR/N HWY 63 NB",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "VANDIVER DR/N HWY 63 NB"
+          },
+          {
+            "label": "expanded",
+            "q": "VANDIVER Drive / North Highway 63"
+          },
+          {
+            "label": "intersection",
+            "q": "VANDIVER DR & N HWY 63 NB"
+          },
+          {
+            "label": "intersection",
+            "q": "VANDIVER DR and N HWY 63 NB"
+          },
+          {
+            "label": "intersection",
+            "q": "VANDIVER DR at N HWY 63 NB"
+          },
+          {
+            "label": "intersection",
+            "q": "VANDIVER DR / N HWY 63 NB"
+          },
+          {
+            "label": "intersection",
+            "q": "VANDIVER DR & North Highway 63"
+          },
+          {
+            "label": "intersection",
+            "q": "VANDIVER DR and North Highway 63"
+          },
+          {
+            "label": "intersection",
+            "q": "VANDIVER DR at North Highway 63"
+          },
+          {
+            "label": "intersection",
+            "q": "VANDIVER DR / North Highway 63"
+          },
+          {
+            "label": "simplified",
+            "q": "VANDIVER Drive / North Highway 63"
+          },
+          {
+            "label": "final_trim",
+            "q": "VANDIVER Drive / North Highway 63"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352980",
+      "datetime": "12/23/2025 11:10:37 PM",
+      "type": "Outside Smoke Investigation",
+      "agency": "CFD",
+      "location_txt": "N PROVIDENCE RD/BEAR CREEK",
+      "service": "FIRE_EMS",
+      "geocode_debug": {
+        "raw": "N PROVIDENCE RD/BEAR CREEK",
+        "cache_key": "N PROVIDENCE RD/BEAR CREEK",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "N PROVIDENCE RD/BEAR CREEK"
+          },
+          {
+            "label": "expanded",
+            "q": "North PROVIDENCE Road / BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "N PROVIDENCE RD & BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "N PROVIDENCE RD and BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "N PROVIDENCE RD at BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "N PROVIDENCE RD / BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "North PROVIDENCE Road & BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "North PROVIDENCE Road and BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "North PROVIDENCE Road at BEAR CREEK"
+          },
+          {
+            "label": "intersection",
+            "q": "North PROVIDENCE Road / BEAR CREEK"
+          },
+          {
+            "label": "simplified",
+            "q": "North PROVIDENCE Road / BEAR CREEK"
+          },
+          {
+            "label": "final_trim",
+            "q": "North PROVIDENCE Road / BEAR CREEK"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352840",
+      "datetime": "12/23/2025 6:57:12 PM",
+      "type": "Medical Response",
+      "agency": "BCFD",
+      "location_txt": "4814-A E SCHOONER RD",
+      "service": "FIRE_EMS",
+      "geocode_debug": {
+        "raw": "4814-A E SCHOONER RD",
+        "cache_key": "4814-A E SCHOONER RD",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "4814-A E SCHOONER RD"
+          },
+          {
+            "label": "expanded",
+            "q": "4814 A East SCHOONER Road"
+          },
+          {
+            "label": "simplified",
+            "q": "4814 A East SCHOONER Road"
+          },
+          {
+            "label": "final_trim",
+            "q": "4814 A East SCHOONER Road"
+          },
+          {
+            "label": "overpass_addr",
+            "q": "4814 E SCHOONER RD"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352641",
+      "datetime": "12/23/2025 2:46:39 PM",
+      "type": "Medical Response",
+      "agency": "BCFD",
+      "location_txt": "14800 N HWY 124",
+      "service": "FIRE_EMS",
+      "geocode_debug": {
+        "raw": "14800 N HWY 124",
+        "cache_key": "14800 N HWY 124",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "14800 N HWY 124"
+          },
+          {
+            "label": "expanded",
+            "q": "14800 North Highway 124"
+          },
+          {
+            "label": "census_address",
+            "q": "14800 N HWY 124"
+          },
+          {
+            "label": "simplified",
+            "q": "14800 North Highway 124"
+          },
+          {
+            "label": "final_trim",
+            "q": "14800 North Highway 124"
+          },
+          {
+            "label": "overpass_addr",
+            "q": "14800 N HWY 124"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352439",
+      "datetime": "12/23/2025 11:05:02 AM",
+      "type": "Medical Response",
+      "agency": "CFD",
+      "location_txt": "1600-8D HANOVER BLVD",
+      "service": "FIRE_EMS",
+      "geocode_debug": {
+        "raw": "1600-8D HANOVER BLVD",
+        "cache_key": "1600-8D HANOVER BLVD",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "1600-8D HANOVER BLVD"
+          },
+          {
+            "label": "expanded",
+            "q": "1600 8D HANOVER Boulevard"
+          },
+          {
+            "label": "simplified",
+            "q": "1600 8D HANOVER Boulevard"
+          },
+          {
+            "label": "final_trim",
+            "q": "1600 8D HANOVER Boulevard"
+          },
+          {
+            "label": "overpass_addr",
+            "q": "1600 HANOVER BLVD"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352338",
+      "datetime": "12/23/2025 9:28:38 AM",
+      "type": "Medical Response",
+      "agency": "CFD",
+      "location_txt": "4 E BUSINESS LOOP 70",
+      "service": "FIRE_EMS",
+      "geocode_debug": {
+        "raw": "4 E BUSINESS LOOP 70",
+        "cache_key": "4 E BUSINESS LOOP 70",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "4 E BUSINESS LOOP 70"
+          },
+          {
+            "label": "expanded",
+            "q": "4 East BUSINESS LOOP 70"
+          },
+          {
+            "label": "census_address",
+            "q": "4 E BUSINESS LOOP 70"
+          },
+          {
+            "label": "simplified",
+            "q": "4 East BUSINESS LOOP 70"
+          },
+          {
+            "label": "final_trim",
+            "q": "4 East BUSINESS LOOP 70"
+          },
+          {
+            "label": "overpass_addr",
+            "q": "4 E BUSINESS LOOP 70"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352239",
+      "datetime": "12/23/2025 7:59:30 AM",
+      "type": "Medical Response",
+      "agency": "SBFD",
+      "location_txt": "5751 COMPASSION CIR",
+      "service": "FIRE_EMS",
+      "geocode_debug": {
+        "raw": "5751 COMPASSION CIR",
+        "cache_key": "5751 COMPASSION CIR",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "5751 COMPASSION CIR"
+          },
+          {
+            "label": "expanded",
+            "q": "5751 COMPASSION Circle"
+          },
+          {
+            "label": "census_address",
+            "q": "5751 COMPASSION CIR"
+          },
+          {
+            "label": "simplified",
+            "q": "5751 COMPASSION Circle"
+          },
+          {
+            "label": "final_trim",
+            "q": "5751 COMPASSION Circle"
+          },
+          {
+            "label": "overpass_addr",
+            "q": "5751 COMPASSION CIR"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    },
+    {
+      "incident": "2025352193",
+      "datetime": "12/23/2025 6:10:47 AM",
+      "type": "Medical Response",
+      "agency": "CFD",
+      "location_txt": "1601-9C HANOVER BLVD",
+      "service": "FIRE_EMS",
+      "geocode_debug": {
+        "raw": "1601-9C HANOVER BLVD",
+        "cache_key": "1601-9C HANOVER BLVD",
+        "attempts": [
+          {
+            "label": "raw",
+            "q": "1601-9C HANOVER BLVD"
+          },
+          {
+            "label": "expanded",
+            "q": "1601 9C HANOVER Boulevard"
+          },
+          {
+            "label": "simplified",
+            "q": "1601 9C HANOVER Boulevard"
+          },
+          {
+            "label": "final_trim",
+            "q": "1601 9C HANOVER Boulevard"
+          },
+          {
+            "label": "overpass_addr",
+            "q": "1601 HANOVER BLVD"
+          }
+        ],
+        "used_query": null,
+        "result": {
+          "lat": null,
+          "lon": null
+        },
+        "errors": []
+      }
+    }
+  ]
+}

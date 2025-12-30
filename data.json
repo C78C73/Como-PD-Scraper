@@ -1,5 +1,233 @@
 [
   {
+    "datetime": "12/30/2025 6:15:33 AM",
+    "incident": "2025357730",
+    "agency": "Columbia Police Department",
+    "location_txt": "0 BLOCK  E BUSINESS LOOP 70",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9650344,
+    "lon": -92.3370616,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 6:10:21 AM",
+    "incident": "2025357728",
+    "agency": "Columbia Police Department",
+    "location_txt": "1700 BLOCK  AMELIA ST",
+    "type": "VEH REPO",
+    "service": "PD",
+    "lat": 38.958246,
+    "lon": -92.314213,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 6:04:47 AM",
+    "incident": "2025357727",
+    "agency": "Columbia Police Department",
+    "location_txt": "2300 BLOCK  LIVE OAK LN",
+    "type": "VEH REPO",
+    "service": "PD",
+    "lat": 38.985893,
+    "lon": -92.3043123,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 4:33:22 AM",
+    "incident": "2025357696",
+    "agency": "Columbia Police Department",
+    "location_txt": "2700 BLOCK  PARIS RD",
+    "type": "CHECK SUBJECT",
+    "service": "PD",
+    "lat": 38.97765,
+    "lon": -92.297514,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 3:58:13 AM",
+    "incident": "2025357685",
+    "agency": "Columbia Police Department",
+    "location_txt": "300 BLOCK  MCBAINE AVE",
+    "type": "PARKING VIOLATION",
+    "service": "PD",
+    "lat": 38.9562724,
+    "lon": -92.3423642,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 3:14:41 AM",
+    "incident": "2025357676",
+    "agency": "Columbia Police Department",
+    "location_txt": "4400 BLOCK  BROWN STATION RD",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.995007,
+    "lon": -92.28933,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 3:10:52 AM",
+    "incident": "2025357675",
+    "agency": "Columbia Police Department",
+    "location_txt": "7500 BLOCK  E ST CHARLES RD",
+    "type": "SUSPICIOUS VEHICLE",
+    "service": "PD",
+    "lat": 38.968824070804,
+    "lon": -92.222740114359,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 3:07:26 AM",
+    "incident": "2025357674",
+    "agency": "Columbia Police Department",
+    "location_txt": "7500 BLOCK  E ST CHARLES RD",
+    "type": "SUSPICIOUS VEHICLE",
+    "service": "PD",
+    "lat": 38.968824070804,
+    "lon": -92.222740114359,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 2:35:06 AM",
+    "incident": "2025357663",
+    "agency": "Columbia Police Department",
+    "location_txt": "1900 BLOCK  BLUE RIDGE RD",
+    "type": "SUSPICIOUS VEHICLE",
+    "service": "PD",
+    "lat": 38.9853093,
+    "lon": -92.3098271,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 2:34:00 AM",
+    "incident": "2025357661",
+    "agency": "Columbia Police Department",
+    "location_txt": "4700 BLOCK  S PROVIDENCE RD",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.8983178,
+    "lon": -92.3349874,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 2:21:52 AM",
+    "incident": "2025357654",
+    "agency": "Columbia Police Department",
+    "location_txt": "W WORLEY ST/TIGER LN",
+    "type": "STALLED VEHICLE",
+    "service": "PD",
+    "lat": 38.9610865,
+    "lon": -92.3700415,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 2:05:47 AM",
+    "incident": "2025357647",
+    "agency": "Columbia Police Department",
+    "location_txt": "1600 BLOCK  N PROVIDENCE RD",
+    "type": "PEACE DISTURBANCE",
+    "service": "PD",
+    "lat": 38.970324,
+    "lon": -92.333498,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 2:04:13 AM",
+    "incident": "2025357646",
+    "agency": "Columbia Police Department",
+    "location_txt": "N HWY 63 NB/PARIS RD",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 1:54:11 AM",
+    "incident": "2025357642",
+    "agency": "Columbia Police Department",
+    "location_txt": "2200 BLOCK  OAKWOOD DR",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.940238,
+    "lon": -92.306342,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 1:53:21 AM",
+    "incident": "2025357641",
+    "agency": "Columbia Police Department",
+    "location_txt": "100 BLOCK  E NORTH CEDAR LAKE DR",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.897221109575,
+    "lon": -92.33786520235,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 1:47:47 AM",
+    "incident": "2025357637",
+    "agency": "Columbia Police Department",
+    "location_txt": "N HWY 63 NB/CONNECTOR SB",
+    "type": "C&I DRIVING",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 1:27:51 AM",
+    "incident": "2025357629",
+    "agency": "Columbia Police Department",
+    "location_txt": "1500 BLOCK  CITADEL DR",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 39.001627,
+    "lon": -92.317324,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 1:19:40 AM",
+    "incident": "2025357624",
+    "agency": "Columbia Police Department",
+    "location_txt": "800 BLOCK  W STADIUM BLVD",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9375459,
+    "lon": -92.3324362,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 1:01:01 AM",
+    "incident": "2025357609",
+    "agency": "Columbia Police Department",
+    "location_txt": "E BROADWAY/N FIRST ST",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9516698,
+    "lon": -92.3362691,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
     "datetime": "12/30/2025 12:10:06 AM",
     "incident": "2025357586",
     "agency": "Columbia Police Department",
@@ -8,7 +236,7 @@
     "service": "PD",
     "lat": 38.966407,
     "lon": -92.378724,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   },
   {
@@ -20,7 +248,187 @@
     "service": "PD",
     "lat": 38.9621312,
     "lon": -92.3648579,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 12:21:23 PM",
+    "incident": "2025358055",
+    "agency": "CFD",
+    "location_txt": "503 N PROVIDENCE RD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9576833,
+    "lon": -92.3343762,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 11:29:34 AM",
+    "incident": "2025358003",
+    "agency": "CFD",
+    "location_txt": "2205 N STADIUM BLVD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9780598,
+    "lon": -92.3710866,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 11:16:59 AM",
+    "incident": "2025357988",
+    "agency": "CFD",
+    "location_txt": "705 W BUSINESS LOOP 70",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 10:22:57 AM",
+    "incident": "2025357935",
+    "agency": "BCFD",
+    "location_txt": "1800-9 E PRATHERSVILLE RD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 39.0151203,
+    "lon": -92.314887,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 9:33:05 AM",
+    "incident": "2025357883",
+    "agency": "CFD",
+    "location_txt": "N HWY 63 SB/E BROADWAY",
+    "type": "Vehicle Collision",
+    "service": "FIRE_EMS",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 9:27:51 AM",
+    "incident": "2025357876",
+    "agency": "CFD",
+    "location_txt": "702-TP WILKES BLVD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 9:10:48 AM",
+    "incident": "2025357853",
+    "agency": "CFD",
+    "location_txt": "1201 PAQUIN ST",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.94773,
+    "lon": -92.32315,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 8:58:40 AM",
+    "incident": "2025357841",
+    "agency": "CFD",
+    "location_txt": "4506 I70 DR SE",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.959289721959,
+    "lon": -92.270469204961,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 8:58:16 AM",
+    "incident": "2025357839",
+    "agency": "CFD",
+    "location_txt": "4506 I70 DR SE",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.959289721959,
+    "lon": -92.270469204961,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 8:35:54 AM",
+    "incident": "2025357818",
+    "agency": "CFD",
+    "location_txt": "4416 OAK VIEW DR",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9787201,
+    "lon": -92.2703239,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 8:24:17 AM",
+    "incident": "2025357804",
+    "agency": "CFD",
+    "location_txt": "1018 COLBY DR",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.941296,
+    "lon": -92.3642613,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 8:09:34 AM",
+    "incident": "2025357785",
+    "agency": "CFD",
+    "location_txt": "3710 WOODRAIL ON THE GREEN",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9120024,
+    "lon": -92.3644344,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 7:58:11 AM",
+    "incident": "2025357773",
+    "agency": "CFD",
+    "location_txt": "1509 ASHLEY ST",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9673994,
+    "lon": -92.318785,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 7:56:00 AM",
+    "incident": "2025357770",
+    "agency": "CFD",
+    "location_txt": "200 PORTLAND ST",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9534472,
+    "lon": -92.2878107,
+    "generated_at": "2025-12-30 18:50:19 UTC",
+    "dispatch_date": "2025-12-30"
+  },
+  {
+    "datetime": "12/30/2025 7:31:00 AM",
+    "incident": "2025357755",
+    "agency": "BCFD",
+    "location_txt": "4200-18 S BEARFIELD RD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9103316,
+    "lon": -92.3040206,
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   },
   {
@@ -32,7 +440,7 @@
     "service": "FIRE_EMS",
     "lat": 38.963724,
     "lon": -92.276676,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   },
   {
@@ -44,7 +452,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9680319,
     "lon": -92.3760902,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   },
   {
@@ -56,7 +464,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9653559,
     "lon": -92.371105,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   },
   {
@@ -68,7 +476,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9482834,
     "lon": -92.2987268,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   },
   {
@@ -80,7 +488,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9512414,
     "lon": -92.3722317,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   },
   {
@@ -92,7 +500,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9680319,
     "lon": -92.3760902,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   },
   {
@@ -104,7 +512,7 @@
     "service": "FIRE_EMS",
     "lat": 38.94773,
     "lon": -92.32315,
-    "generated_at": "2025-12-30 12:47:23 UTC",
+    "generated_at": "2025-12-30 18:50:19 UTC",
     "dispatch_date": "2025-12-30"
   }
 ]

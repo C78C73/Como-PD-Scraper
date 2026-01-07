@@ -1,5 +1,797 @@
 [
   {
+    "datetime": "1/6/2026 6:27:09 PM",
+    "incident": "2026004879",
+    "agency": "Columbia Police Department",
+    "location_txt": "3300 BLOCK  PARIS RD",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.984898,
+    "lon": -92.287638,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 6:23:33 PM",
+    "incident": "2026004878",
+    "agency": "Columbia Police Department",
+    "location_txt": "5200 BLOCK  FLURRY DR",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 39.005892,
+    "lon": -92.332901,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 6:21:24 PM",
+    "incident": "2026004877",
+    "agency": "Columbia Police Department",
+    "location_txt": "4100 BLOCK  HIDDEN CREEK CT",
+    "type": "SUSPICIOUS INCIDENT",
+    "service": "PD",
+    "lat": 38.971525,
+    "lon": -92.275922,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 6:15:05 PM",
+    "incident": "2026004876",
+    "agency": "Columbia Police Department",
+    "location_txt": "3200 BLOCK  PIONEER DR",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.978148,
+    "lon": -92.289602,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 6:14:33 PM",
+    "incident": "2026004874",
+    "agency": "Columbia Police Department",
+    "location_txt": "300 BLOCK  GLENSTONE DR",
+    "type": "PEACE DISTURBANCE",
+    "service": "PD",
+    "lat": 38.957528,
+    "lon": -92.2786147,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 6:09:47 PM",
+    "incident": "2026004869",
+    "agency": "Columbia Police Department",
+    "location_txt": "N COLLEGE AVE/E BROADWAY",
+    "type": "STALLED VEHICLE",
+    "service": "PD",
+    "lat": 38.9514211,
+    "lon": -92.3218946,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 6:08:08 PM",
+    "incident": "2026004867",
+    "agency": "Columbia Police Department",
+    "location_txt": "200 BLOCK  E BUSINESS LOOP 70",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9650344,
+    "lon": -92.3370616,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:56:37 PM",
+    "incident": "2026004862",
+    "agency": "Columbia Police Department",
+    "location_txt": "0 BLOCK  HOSPITAL DR",
+    "type": "BURGLARY",
+    "service": "PD",
+    "lat": 38.9375846,
+    "lon": -92.3278448,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:56:34 PM",
+    "incident": "2026004860",
+    "agency": "Columbia Police Department",
+    "location_txt": "CONNECTOR OFFR EB/CONNECTOR",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9530355,
+    "lon": -92.2777865,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:52:32 PM",
+    "incident": "2026004856",
+    "agency": "Columbia Police Department",
+    "location_txt": "3300 BLOCK  LEMONE INDUSTRIAL BLVD",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.9170461,
+    "lon": -92.291605,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:44:03 PM",
+    "incident": "2026004853",
+    "agency": "Columbia Police Department",
+    "location_txt": "1700 BLOCK  JACKSON ST",
+    "type": "KEEP THE PEACE",
+    "service": "PD",
+    "lat": 38.969982,
+    "lon": -92.346401,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:33:25 PM",
+    "incident": "2026004847",
+    "agency": "Columbia Police Department",
+    "location_txt": "ROCK QUARRY RD/ROLLING ROCK DR",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9201751,
+    "lon": -92.3171181,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:33:20 PM",
+    "incident": "2026004846",
+    "agency": "Columbia Police Department",
+    "location_txt": "1200 BLOCK  I70 E",
+    "type": "TRAFFIC HAZARD",
+    "service": "PD",
+    "lat": 38.9650373,
+    "lon": -92.3376479,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:18:21 PM",
+    "incident": "2026004837",
+    "agency": "Columbia Police Department",
+    "location_txt": "400 BLOCK  PECAN ST",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.9600268,
+    "lon": -92.3322122,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:11:32 PM",
+    "incident": "2026004830",
+    "agency": "Columbia Police Department",
+    "location_txt": "1200 BLOCK  INTERNATIONAL DR",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 39.0057423,
+    "lon": -92.3226576,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:10:25 PM",
+    "incident": "2026004829",
+    "agency": "Columbia Police Department",
+    "location_txt": "3900 BLOCK  CLARK LN",
+    "type": "CHECK THE WELFARE",
+    "service": "PD",
+    "lat": 38.963724,
+    "lon": -92.276676,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:07:47 PM",
+    "incident": "2026004827",
+    "agency": "Columbia Police Department",
+    "location_txt": "5700 BLOCK  SALTON CT",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.890584,
+    "lon": -92.418276,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:05:26 PM",
+    "incident": "2026004825",
+    "agency": "Columbia Police Department",
+    "location_txt": "ROCK QUARRY RD/GRINDSTONE PKWY",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9133765,
+    "lon": -92.3133936,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:03:51 PM",
+    "incident": "2026004822",
+    "agency": "Columbia Police Department",
+    "location_txt": "BROWN STATION RD/PARIS RD",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9815054,
+    "lon": -92.2916617,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 5:00:34 PM",
+    "incident": "2026004819",
+    "agency": "Columbia Police Department",
+    "location_txt": "100 BLOCK  N OLD 63",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.956433,
+    "lon": -92.3120166,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:59:07 PM",
+    "incident": "2026004816",
+    "agency": "Columbia Police Department",
+    "location_txt": "2200 BLOCK  W ASH ST",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.957281,
+    "lon": -92.3719363,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:54:07 PM",
+    "incident": "2026004813",
+    "agency": "Columbia Police Department",
+    "location_txt": "4600 BLOCK  BRANDON WOODS ST",
+    "type": "LARCENY",
+    "service": "PD",
+    "lat": 38.900135,
+    "lon": -92.343177,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:34:28 PM",
+    "incident": "2026004801",
+    "agency": "Columbia Police Department",
+    "location_txt": "S TENTH ST/LOCUST ST",
+    "type": "PEACE DISTURBANCE",
+    "service": "PD",
+    "lat": 38.949445,
+    "lon": -92.3265342,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:31:38 PM",
+    "incident": "2026004798",
+    "agency": "Columbia Police Department",
+    "location_txt": "1600 BLOCK  W BUSINESS LOOP 70",
+    "type": "ASSIST FIRE",
+    "service": "PD",
+    "lat": 38.964714093787,
+    "lon": -92.359819726439,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:28:08 PM",
+    "incident": "2026004794",
+    "agency": "Columbia Police Department",
+    "location_txt": "1600 BLOCK  N PROVIDENCE RD",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.970324,
+    "lon": -92.333498,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:27:28 PM",
+    "incident": "2026004792",
+    "agency": "Columbia Police Department",
+    "location_txt": "N RTE B/PARIS RD",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:25:14 PM",
+    "incident": "2026004790",
+    "agency": "Columbia Police Department",
+    "location_txt": "3900 BLOCK  BRADBURY DR",
+    "type": "FRAUD",
+    "service": "PD",
+    "lat": 38.94625,
+    "lon": -92.278929,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:20:15 PM",
+    "incident": "2026004785",
+    "agency": "Columbia Police Department",
+    "location_txt": "600 BLOCK  NORTH BROOKLINE DR",
+    "type": "SUSPICIOUS PERSON",
+    "service": "PD",
+    "lat": 38.913269,
+    "lon": -92.3476062,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:18:38 PM",
+    "incident": "2026004783",
+    "agency": "Columbia Police Department",
+    "location_txt": "3500 BLOCK  ELEPHANT DR",
+    "type": "ASSIST FIRE",
+    "service": "PD",
+    "lat": 38.987594,
+    "lon": -92.343811,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:17:22 PM",
+    "incident": "2026004782",
+    "agency": "Columbia Police Department",
+    "location_txt": "1000 BLOCK  E BROADWAY",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.951423,
+    "lon": -92.326276,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:16:40 PM",
+    "incident": "2026004780",
+    "agency": "Columbia Police Department",
+    "location_txt": "600 BLOCK  E WALNUT ST",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.9524286,
+    "lon": -92.3299821,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:12:12 PM",
+    "incident": "2026004776",
+    "agency": "Columbia Police Department",
+    "location_txt": "1100 BLOCK  N PROVIDENCE RD",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.964002,
+    "lon": -92.333751,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:07:16 PM",
+    "incident": "2026004773",
+    "agency": "Columbia Police Department",
+    "location_txt": "3000 BLOCK  PARIS RD",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9805917,
+    "lon": -92.2940775,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 4:02:25 PM",
+    "incident": "2026004767",
+    "agency": "Columbia Police Department",
+    "location_txt": "700 BLOCK  HUNT AVE",
+    "type": "ABANDONED  VEHICLE",
+    "service": "PD",
+    "lat": 38.9624747,
+    "lon": -92.3603535,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:59:05 PM",
+    "incident": "2026004762",
+    "agency": "Columbia Police Department",
+    "location_txt": "W BUSINESS LOOP 70/JEWELL AVE",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9654599,
+    "lon": -92.3408459,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:58:34 PM",
+    "incident": "2026004761",
+    "agency": "Columbia Police Department",
+    "location_txt": "1000 BLOCK  CLAUDELL LN",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.9621312,
+    "lon": -92.3648579,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:50:49 PM",
+    "incident": "2026004753",
+    "agency": "Columbia Police Department",
+    "location_txt": "1500 BLOCK  ASHLEY ST",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.9672345,
+    "lon": -92.3187503,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:50:43 PM",
+    "incident": "2026004752",
+    "agency": "Columbia Police Department",
+    "location_txt": "4100 BLOCK  MEXICO GRAVEL RD",
+    "type": "TRAFFIC OBSERVATION",
+    "service": "PD",
+    "lat": 38.9830589,
+    "lon": -92.2768107,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:35:24 PM",
+    "incident": "2026004740",
+    "agency": "Columbia Police Department",
+    "location_txt": "N NINTH ST/E WALNUT ST",
+    "type": "CHECK SUBJECT",
+    "service": "PD",
+    "lat": 38.9525923,
+    "lon": -92.3275161,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:30:28 PM",
+    "incident": "2026004736",
+    "agency": "Columbia Police Department",
+    "location_txt": "3600 BLOCK  CHIPPEWA DR",
+    "type": "CHECK AREA",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:28:38 PM",
+    "incident": "2026004734",
+    "agency": "Columbia Police Department",
+    "location_txt": "1600 BLOCK  E BROADWAY",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.9489112,
+    "lon": -92.3157216,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:22:11 PM",
+    "incident": "2026004732",
+    "agency": "Columbia Police Department",
+    "location_txt": "3500 BLOCK  ASPEN HEIGHTS PKWY",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.911056,
+    "lon": -92.298123,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:21:39 PM",
+    "incident": "2026004731",
+    "agency": "Columbia Police Department",
+    "location_txt": "500 BLOCK  ARBOR DR",
+    "type": "HARASSMENT",
+    "service": "PD",
+    "lat": 38.9544098,
+    "lon": -92.2833993,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:21:36 PM",
+    "incident": "2026004730",
+    "agency": "Columbia Police Department",
+    "location_txt": "N KEENE ST/WINGATE CT",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.9576065,
+    "lon": -92.2895669,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:18:03 PM",
+    "incident": "2026004722",
+    "agency": "Columbia Police Department",
+    "location_txt": "2500 BLOCK  MAYFLOWER DR",
+    "type": "ABANDONED  VEHICLE",
+    "service": "PD",
+    "lat": 38.981077,
+    "lon": -92.376139,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 3:10:31 PM",
+    "incident": "2026004716",
+    "agency": "Columbia Police Department",
+    "location_txt": "E WALNUT ST/N ANN ST",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9523972,
+    "lon": -92.3143568,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:47:57 PM",
+    "incident": "2026004697",
+    "agency": "Columbia Police Department",
+    "location_txt": "2000 BLOCK  WYNFIELD DR",
+    "type": "FRAUD",
+    "service": "PD",
+    "lat": 38.92848,
+    "lon": -92.369824,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:35:35 PM",
+    "incident": "2026004691",
+    "agency": "Columbia Police Department",
+    "location_txt": "CLARK LN/CREEKWOOD PKWY",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9638663,
+    "lon": -92.2872873,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:30:57 PM",
+    "incident": "2026004687",
+    "agency": "Columbia Police Department",
+    "location_txt": "BCJ",
+    "type": "WARRANT",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:22:59 PM",
+    "incident": "2026004683",
+    "agency": "Columbia Police Department",
+    "location_txt": "3300 BLOCK  CLARK LN",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.9638001,
+    "lon": -92.290352,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:21:43 PM",
+    "incident": "2026004681",
+    "agency": "Columbia Police Department",
+    "location_txt": "N STADIUM BLVD/I70 DR SW",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:17:29 PM",
+    "incident": "2026004676",
+    "agency": "Columbia Police Department",
+    "location_txt": "900 BLOCK  W WORLEY ST",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.959164,
+    "lon": -92.350931,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:15:08 PM",
+    "incident": "2026004673",
+    "agency": "Columbia Police Department",
+    "location_txt": "700 BLOCK  CLAYTON ST",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.961092,
+    "lon": -92.349821,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:12:17 PM",
+    "incident": "2026004670",
+    "agency": "Columbia Police Department",
+    "location_txt": "1400 BLOCK  COACHLAMP CT",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.9364691,
+    "lon": -92.3704546,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:09:36 PM",
+    "incident": "2026004668",
+    "agency": "Columbia Police Department",
+    "location_txt": "2100 BLOCK  NELWOOD DR",
+    "type": "CHECK AREA",
+    "service": "PD",
+    "lat": 38.973143,
+    "lon": -92.296954,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:06:25 PM",
+    "incident": "2026004666",
+    "agency": "Columbia Police Department",
+    "location_txt": "200 BLOCK  E BUSINESS LOOP 70",
+    "type": "WARRANT",
+    "service": "PD",
+    "lat": 38.9650344,
+    "lon": -92.3370616,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:03:58 PM",
+    "incident": "2026004663",
+    "agency": "Columbia Police Department",
+    "location_txt": "900 BLOCK  GRAY OAK DR",
+    "type": "TRESPASS SUBJECT",
+    "service": "PD",
+    "lat": 38.9135664,
+    "lon": -92.3250524,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 2:01:10 PM",
+    "incident": "2026004661",
+    "agency": "Columbia Police Department",
+    "location_txt": "400 BLOCK  CONLEY RD",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.9568306,
+    "lon": -92.2941439,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 1:59:35 PM",
+    "incident": "2026004660",
+    "agency": "Columbia Police Department",
+    "location_txt": "1500 BLOCK  ANTHONY ST",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.947757,
+    "lon": -92.318263,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 1:58:43 PM",
+    "incident": "2026004659",
+    "agency": "Columbia Police Department",
+    "location_txt": "3800 BLOCK  RANGE LINE ST",
+    "type": "CHECK OPEN BUSINESS",
+    "service": "PD",
+    "lat": 38.988907,
+    "lon": -92.324576,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 1:58:02 PM",
+    "incident": "2026004658",
+    "agency": "Columbia Police Department",
+    "location_txt": "1800 BLOCK  LAKE RIDGEWAY RD",
+    "type": "CHECK AREA",
+    "service": "PD",
+    "lat": 38.969123866798,
+    "lon": -92.295037364127,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 1:54:53 PM",
+    "incident": "2026004652",
+    "agency": "Columbia Police Department",
+    "location_txt": "2100 BLOCK  LAKE RIDGEWAY RD",
+    "type": "LARCENY",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 1:53:52 PM",
+    "incident": "2026004651",
+    "agency": "Columbia Police Department",
+    "location_txt": "1800 BLOCK  NELWOOD DR",
+    "type": "CHECK AREA",
+    "service": "PD",
+    "lat": 38.9701897,
+    "lon": -92.296934,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 1:51:11 PM",
+    "incident": "2026004648",
+    "agency": "Columbia Police Department",
+    "location_txt": "E RIVIERA DR/LANGHAM DR",
+    "type": "ABANDONED  VEHICLE",
+    "service": "PD",
+    "lat": 38.995585,
+    "lon": -92.311014,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 1:51:10 PM",
+    "incident": "2026004647",
+    "agency": "Columbia Police Department",
+    "location_txt": "GRAND AVE/E FOREST AVE",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9630471,
+    "lon": -92.3364501,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 1:50:39 PM",
+    "incident": "2026004646",
+    "agency": "Columbia Police Department",
+    "location_txt": "100 BLOCK  N WILLIAM ST",
+    "type": "TRESPASS SUBJECT",
+    "service": "PD",
+    "lat": 38.952543,
+    "lon": -92.316626,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
     "datetime": "1/6/2026 1:40:32 PM",
     "incident": "2026004636",
     "agency": "Columbia Police Department",
@@ -8,7 +800,7 @@
     "service": "PD",
     "lat": 38.9562538,
     "lon": -92.3342229,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -20,7 +812,7 @@
     "service": "PD",
     "lat": 38.9602114,
     "lon": -92.3266587,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -32,7 +824,7 @@
     "service": "PD",
     "lat": 38.9650373,
     "lon": -92.3376479,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -44,7 +836,7 @@
     "service": "PD",
     "lat": 38.9659,
     "lon": -92.3451302,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -56,7 +848,7 @@
     "service": "PD",
     "lat": 38.9653528,
     "lon": -92.3712777,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -68,7 +860,7 @@
     "service": "PD",
     "lat": 38.9536621,
     "lon": -92.3317855,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -80,7 +872,7 @@
     "service": "PD",
     "lat": 38.9516364,
     "lon": -92.3341411,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -92,7 +884,7 @@
     "service": "PD",
     "lat": 38.961095,
     "lon": -92.371451,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -104,7 +896,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -116,7 +908,7 @@
     "service": "PD",
     "lat": 38.9669396,
     "lon": -92.287667,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -128,7 +920,7 @@
     "service": "PD",
     "lat": 38.9676217,
     "lon": -92.3712517,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -140,7 +932,7 @@
     "service": "PD",
     "lat": 38.9483681,
     "lon": -92.3089643,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -152,7 +944,7 @@
     "service": "PD",
     "lat": 38.9512274,
     "lon": -92.2935648,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -164,7 +956,7 @@
     "service": "PD",
     "lat": 38.971987167545,
     "lon": -92.372771933636,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -176,7 +968,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -188,7 +980,7 @@
     "service": "PD",
     "lat": 38.9927492,
     "lon": -92.3232174,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -200,7 +992,7 @@
     "service": "PD",
     "lat": 38.9854318,
     "lon": -92.2941364,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -212,7 +1004,7 @@
     "service": "PD",
     "lat": 38.9524286,
     "lon": -92.3299821,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -224,7 +1016,7 @@
     "service": "PD",
     "lat": 38.899357,
     "lon": -92.346196,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -236,7 +1028,7 @@
     "service": "PD",
     "lat": 38.8675901,
     "lon": -92.3881506,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -248,7 +1040,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -260,7 +1052,7 @@
     "service": "PD",
     "lat": 38.93822,
     "lon": -92.3220857,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -272,7 +1064,7 @@
     "service": "PD",
     "lat": 38.9584828,
     "lon": -92.324744,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -284,7 +1076,7 @@
     "service": "PD",
     "lat": 38.9506614,
     "lon": -92.3170472,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -296,7 +1088,7 @@
     "service": "PD",
     "lat": 38.9674796,
     "lon": -92.3223104,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -308,7 +1100,7 @@
     "service": "PD",
     "lat": 38.9571394,
     "lon": -92.3369461,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -320,7 +1112,7 @@
     "service": "PD",
     "lat": 38.9319715,
     "lon": -92.3115188,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -332,7 +1124,7 @@
     "service": "PD",
     "lat": 38.980349,
     "lon": -92.326087,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -344,7 +1136,7 @@
     "service": "PD",
     "lat": 38.9568306,
     "lon": -92.2941439,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -356,7 +1148,7 @@
     "service": "PD",
     "lat": 38.964714093787,
     "lon": -92.359819726439,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -368,7 +1160,7 @@
     "service": "PD",
     "lat": 38.9028177,
     "lon": -92.334926,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -380,7 +1172,7 @@
     "service": "PD",
     "lat": 38.9796924,
     "lon": -92.3261249,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -392,7 +1184,7 @@
     "service": "PD",
     "lat": 38.9596016,
     "lon": -92.3294445,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -404,7 +1196,7 @@
     "service": "PD",
     "lat": 38.967396,
     "lon": -92.323053,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -416,7 +1208,7 @@
     "service": "PD",
     "lat": 38.9489112,
     "lon": -92.3157216,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -428,7 +1220,7 @@
     "service": "PD",
     "lat": 38.8682085,
     "lon": -92.3838837,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -440,7 +1232,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -452,7 +1244,7 @@
     "service": "PD",
     "lat": 38.919653,
     "lon": -92.347194,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -464,7 +1256,7 @@
     "service": "PD",
     "lat": 38.9375459,
     "lon": -92.3324362,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -476,7 +1268,7 @@
     "service": "PD",
     "lat": 38.9676217,
     "lon": -92.3712517,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -488,7 +1280,7 @@
     "service": "PD",
     "lat": 38.960171,
     "lon": -92.3247,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -500,7 +1292,7 @@
     "service": "PD",
     "lat": 38.9498626,
     "lon": -92.2796599,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -512,7 +1304,7 @@
     "service": "PD",
     "lat": 38.929912,
     "lon": -92.387761,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -524,7 +1316,7 @@
     "service": "PD",
     "lat": 38.9494374,
     "lon": -92.3260454,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -536,7 +1328,7 @@
     "service": "PD",
     "lat": 38.965161,
     "lon": -92.324579,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -548,7 +1340,7 @@
     "service": "PD",
     "lat": 38.9594352,
     "lon": -92.3527372,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -560,7 +1352,7 @@
     "service": "PD",
     "lat": 38.953808,
     "lon": -92.321502,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -572,7 +1364,7 @@
     "service": "PD",
     "lat": 38.9638001,
     "lon": -92.290352,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -584,7 +1376,7 @@
     "service": "PD",
     "lat": 38.9611949,
     "lon": -92.3711975,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -596,7 +1388,7 @@
     "service": "PD",
     "lat": 38.9611949,
     "lon": -92.3711975,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -608,7 +1400,7 @@
     "service": "PD",
     "lat": 38.9611949,
     "lon": -92.3711975,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -620,7 +1412,7 @@
     "service": "PD",
     "lat": 38.9609672,
     "lon": -92.3689748,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -632,7 +1424,7 @@
     "service": "PD",
     "lat": 38.950494,
     "lon": -92.33404,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -644,7 +1436,7 @@
     "service": "PD",
     "lat": 38.9928188,
     "lon": -92.3028687,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -656,7 +1448,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -668,7 +1460,7 @@
     "service": "PD",
     "lat": 38.9527495,
     "lon": -92.3362465,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -680,7 +1472,7 @@
     "service": "PD",
     "lat": 38.9637673,
     "lon": -92.2910886,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -692,7 +1484,7 @@
     "service": "PD",
     "lat": 38.9342974,
     "lon": -92.3523284,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -704,7 +1496,7 @@
     "service": "PD",
     "lat": 38.895654,
     "lon": -92.337265,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -716,7 +1508,7 @@
     "service": "PD",
     "lat": 38.9524286,
     "lon": -92.3299821,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -728,7 +1520,7 @@
     "service": "PD",
     "lat": 38.93822,
     "lon": -92.3220857,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -740,7 +1532,7 @@
     "service": "PD",
     "lat": 38.9574113,
     "lon": -92.3341749,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -752,7 +1544,7 @@
     "service": "PD",
     "lat": 38.9621312,
     "lon": -92.3648579,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -764,7 +1556,7 @@
     "service": "PD",
     "lat": 38.949384,
     "lon": -92.327405,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -776,7 +1568,7 @@
     "service": "PD",
     "lat": 38.9515321,
     "lon": -92.3275507,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -788,7 +1580,7 @@
     "service": "PD",
     "lat": 38.987123,
     "lon": -92.25968,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -800,7 +1592,7 @@
     "service": "PD",
     "lat": 38.965916,
     "lon": -92.30939,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -812,7 +1604,7 @@
     "service": "PD",
     "lat": 38.9587006,
     "lon": -92.344994,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -824,7 +1616,7 @@
     "service": "PD",
     "lat": 38.9210243,
     "lon": -92.3999524,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -836,7 +1628,7 @@
     "service": "PD",
     "lat": 38.950494,
     "lon": -92.33404,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -848,7 +1640,7 @@
     "service": "PD",
     "lat": 38.97396,
     "lon": -92.33849,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -860,7 +1652,7 @@
     "service": "PD",
     "lat": 38.9588887,
     "lon": -92.3621798,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -872,7 +1664,7 @@
     "service": "PD",
     "lat": 38.9831064,
     "lon": -92.316733,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -884,7 +1676,7 @@
     "service": "PD",
     "lat": 38.983307,
     "lon": -92.333341,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -896,7 +1688,7 @@
     "service": "PD",
     "lat": 38.9800371,
     "lon": -92.3173991,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -908,7 +1700,7 @@
     "service": "PD",
     "lat": 38.9530706,
     "lon": -92.3296648,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -920,7 +1712,7 @@
     "service": "PD",
     "lat": 38.957517,
     "lon": -92.335743,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -932,7 +1724,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -944,7 +1736,7 @@
     "service": "PD",
     "lat": 38.9800371,
     "lon": -92.3173991,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -956,7 +1748,7 @@
     "service": "PD",
     "lat": 38.951353,
     "lon": -92.345789,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -968,7 +1760,7 @@
     "service": "PD",
     "lat": 38.956433,
     "lon": -92.3120166,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -980,7 +1772,7 @@
     "service": "PD",
     "lat": 38.9831064,
     "lon": -92.316733,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -992,7 +1784,7 @@
     "service": "PD",
     "lat": 38.9831064,
     "lon": -92.316733,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1004,7 +1796,7 @@
     "service": "PD",
     "lat": 38.9568306,
     "lon": -92.2941439,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1016,7 +1808,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1028,7 +1820,7 @@
     "service": "PD",
     "lat": 38.9621312,
     "lon": -92.3648579,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1040,7 +1832,7 @@
     "service": "PD",
     "lat": 38.9514576,
     "lon": -92.3795427,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1052,7 +1844,7 @@
     "service": "PD",
     "lat": 38.953597,
     "lon": -92.3274958,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1064,7 +1856,7 @@
     "service": "PD",
     "lat": 38.961187174536,
     "lon": -92.285515903891,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1076,7 +1868,7 @@
     "service": "PD",
     "lat": 38.9568306,
     "lon": -92.2941439,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1088,7 +1880,7 @@
     "service": "PD",
     "lat": 38.912793,
     "lon": -92.33061,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1100,7 +1892,7 @@
     "service": "PD",
     "lat": 38.9646924,
     "lon": -92.3338727,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1112,7 +1904,7 @@
     "service": "PD",
     "lat": 38.9650373,
     "lon": -92.3376479,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1124,7 +1916,7 @@
     "service": "PD",
     "lat": 38.992171,
     "lon": -92.251046,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1136,7 +1928,7 @@
     "service": "PD",
     "lat": 38.9622017,
     "lon": -92.3801777,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1148,7 +1940,7 @@
     "service": "PD",
     "lat": 38.9622749,
     "lon": -92.3604786,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1160,7 +1952,7 @@
     "service": "PD",
     "lat": 38.9709881,
     "lon": -92.3256378,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1172,7 +1964,7 @@
     "service": "PD",
     "lat": 38.9420008,
     "lon": -92.3172648,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1184,7 +1976,7 @@
     "service": "PD",
     "lat": 38.9637421,
     "lon": -92.3290009,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1196,7 +1988,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1208,7 +2000,7 @@
     "service": "PD",
     "lat": 38.9651491,
     "lon": -92.3386084,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1220,7 +2012,7 @@
     "service": "PD",
     "lat": 38.9664677,
     "lon": -92.3089791,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1232,7 +2024,7 @@
     "service": "PD",
     "lat": 38.9481075,
     "lon": -92.2976635,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1244,7 +2036,7 @@
     "service": "PD",
     "lat": 38.965161,
     "lon": -92.324579,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1256,7 +2048,7 @@
     "service": "PD",
     "lat": 38.966922,
     "lon": -92.2778999,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1268,7 +2060,7 @@
     "service": "PD",
     "lat": 38.911436,
     "lon": -92.3004472,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1280,7 +2072,7 @@
     "service": "PD",
     "lat": 38.9659,
     "lon": -92.3451302,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1292,7 +2084,7 @@
     "service": "PD",
     "lat": 38.984348,
     "lon": -92.320552,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1304,7 +2096,7 @@
     "service": "PD",
     "lat": 38.9622749,
     "lon": -92.3604786,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1316,7 +2108,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1328,7 +2120,7 @@
     "service": "PD",
     "lat": 38.909978,
     "lon": -92.3261059,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1340,7 +2132,7 @@
     "service": "PD",
     "lat": 38.986875,
     "lon": -92.307711,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1352,7 +2144,7 @@
     "service": "PD",
     "lat": 38.956433,
     "lon": -92.3120166,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1364,7 +2156,7 @@
     "service": "PD",
     "lat": 38.95974,
     "lon": -92.336829,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1376,7 +2168,7 @@
     "service": "PD",
     "lat": 38.95974,
     "lon": -92.336829,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1388,7 +2180,7 @@
     "service": "PD",
     "lat": 38.9639946,
     "lon": -92.3211797,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1400,7 +2192,7 @@
     "service": "PD",
     "lat": 38.9604946,
     "lon": -92.3363916,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1412,7 +2204,7 @@
     "service": "PD",
     "lat": 38.9567418,
     "lon": -92.3639121,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1424,7 +2216,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1436,7 +2228,7 @@
     "service": "PD",
     "lat": 38.9597161,
     "lon": -92.3364372,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1448,7 +2240,7 @@
     "service": "PD",
     "lat": 38.9124246,
     "lon": -92.2709201,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1460,7 +2252,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1472,7 +2264,7 @@
     "service": "PD",
     "lat": 38.9622749,
     "lon": -92.3604786,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1484,7 +2276,7 @@
     "service": "PD",
     "lat": 39.00477,
     "lon": -92.332948,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1496,7 +2288,7 @@
     "service": "PD",
     "lat": 38.980077,
     "lon": -92.257458,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1508,7 +2300,7 @@
     "service": "PD",
     "lat": 38.9524286,
     "lon": -92.3299821,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1520,7 +2312,115 @@
     "service": "PD",
     "lat": 38.815985556125,
     "lon": -92.223787001773,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 11:38:17 PM",
+    "incident": "2026005085",
+    "agency": "CFD",
+    "location_txt": "1709 TELLURIDE LN",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.908094217595,
+    "lon": -92.314644327531,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 11:08:29 PM",
+    "incident": "2026005072",
+    "agency": "CFD",
+    "location_txt": "N FAIRVIEW RD/W WORLEY ST",
+    "type": "Motor Vehicle Collision",
+    "service": "FIRE_EMS",
+    "lat": 38.9609007,
+    "lon": -92.3810827,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 9:48:45 PM",
+    "incident": "2026005039",
+    "agency": "CFD",
+    "location_txt": "1600 TUNDRA CT",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.980593,
+    "lon": -92.314306,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 9:39:05 PM",
+    "incident": "2026005031",
+    "agency": "CFD",
+    "location_txt": "917 SONDRA AVE",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9708036,
+    "lon": -92.3504367,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 9:35:57 PM",
+    "incident": "2026005026",
+    "agency": "CFD",
+    "location_txt": "1100-1208 KENNESAW RIDGE RD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9884959,
+    "lon": -92.3241199,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 8:35:45 PM",
+    "incident": "2026004983",
+    "agency": "CFD",
+    "location_txt": "1120 NORTHSHORE DR",
+    "type": "Smoke Alarm",
+    "service": "FIRE_EMS",
+    "lat": 38.9219961,
+    "lon": -92.3551158,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 8:33:41 PM",
+    "incident": "2026004982",
+    "agency": "CFD",
+    "location_txt": "4515 RICE RD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9731734,
+    "lon": -92.2689611,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 8:33:11 PM",
+    "incident": "2026004981",
+    "agency": "BCFD",
+    "location_txt": "1520 S DANIEL BOONE BLVD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.933748,
+    "lon": -92.2689042,
+    "generated_at": "2026-01-07 07:46:38 UTC",
+    "dispatch_date": "2026-01-06"
+  },
+  {
+    "datetime": "1/6/2026 8:10:45 PM",
+    "incident": "2026004963",
+    "agency": "BCFD",
+    "location_txt": "18901 N TUCKER SCHOOL RD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1532,7 +2432,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9620275,
     "lon": -92.2442988,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1544,7 +2444,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9637667,
     "lon": -92.3650797,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1556,7 +2456,7 @@
     "service": "FIRE_EMS",
     "lat": 38.953813,
     "lon": -92.325107,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1568,7 +2468,7 @@
     "service": "FIRE_EMS",
     "lat": 39.0059694,
     "lon": -92.3190513,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1580,7 +2480,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9704241,
     "lon": -92.3320931,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1592,7 +2492,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1604,7 +2504,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1616,7 +2516,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9530355,
     "lon": -92.2777865,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1628,7 +2528,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9538246,
     "lon": -92.3044712,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1640,7 +2540,7 @@
     "service": "FIRE_EMS",
     "lat": 39.0050171,
     "lon": -92.3065474,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1652,7 +2552,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9815054,
     "lon": -92.2916617,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1664,7 +2564,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9579416,
     "lon": -92.2950997,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1676,7 +2576,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9407062,
     "lon": -92.3662578,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1688,7 +2588,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9673994,
     "lon": -92.318785,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1700,7 +2600,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9531021,
     "lon": -92.3119054,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1712,7 +2612,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1724,7 +2624,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9472143,
     "lon": -92.2414215,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1736,7 +2636,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9368958,
     "lon": -92.2757812,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1748,7 +2648,7 @@
     "service": "FIRE_EMS",
     "lat": 38.945133,
     "lon": -92.37966,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1760,7 +2660,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1772,7 +2672,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9005585,
     "lon": -92.3594965,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1784,7 +2684,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9539086,
     "lon": -92.2098382,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1796,7 +2696,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9704241,
     "lon": -92.3320931,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1808,7 +2708,7 @@
     "service": "FIRE_EMS",
     "lat": 38.993111,
     "lon": -92.3225042,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1820,7 +2720,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1832,7 +2732,7 @@
     "service": "FIRE_EMS",
     "lat": 39.013652338939,
     "lon": -92.281447481436,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1844,7 +2744,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1856,7 +2756,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9572503,
     "lon": -92.3823517,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1868,7 +2768,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9666028,
     "lon": -92.3012455,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1880,7 +2780,7 @@
     "service": "FIRE_EMS",
     "lat": 38.961445,
     "lon": -92.373746,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1892,7 +2792,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9611949,
     "lon": -92.3711975,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1904,7 +2804,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9579416,
     "lon": -92.2950997,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1916,7 +2816,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9540761,
     "lon": -92.3391138,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1928,7 +2828,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9092421,
     "lon": -92.2903328,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1940,7 +2840,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1952,7 +2852,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9664677,
     "lon": -92.3089791,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1964,7 +2864,7 @@
     "service": "FIRE_EMS",
     "lat": 39.04322919591,
     "lon": -92.349853739491,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1976,7 +2876,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9596885,
     "lon": -92.3249249,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -1988,7 +2888,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9673994,
     "lon": -92.318785,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -2000,7 +2900,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9177271,
     "lon": -92.3982976,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -2012,7 +2912,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9359575,
     "lon": -92.3259745,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -2024,7 +2924,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9842702,
     "lon": -92.3258605,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -2036,7 +2936,7 @@
     "service": "FIRE_EMS",
     "lat": 38.964748,
     "lon": -92.2712913,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -2048,7 +2948,7 @@
     "service": "FIRE_EMS",
     "lat": 39.0059563,
     "lon": -92.3328988,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   },
   {
@@ -2060,7 +2960,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9375846,
     "lon": -92.3278448,
-    "generated_at": "2026-01-07 03:01:20 UTC",
+    "generated_at": "2026-01-07 07:46:38 UTC",
     "dispatch_date": "2026-01-06"
   }
 ]

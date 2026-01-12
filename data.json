@@ -1,5 +1,545 @@
 [
   {
+    "datetime": "1/11/2026 1:46:54 PM",
+    "incident": "2026009229",
+    "agency": "Columbia Police Department",
+    "location_txt": "1400 BLOCK  RANGE LINE ST",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.965161,
+    "lon": -92.324579,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:45:01 PM",
+    "incident": "2026009227",
+    "agency": "Columbia Police Department",
+    "location_txt": "E BUSINESS LOOP 70/N PROVIDENCE RD",
+    "type": "SUSPICIOUS VEHICLE",
+    "service": "PD",
+    "lat": 38.9646924,
+    "lon": -92.3338727,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:39:43 PM",
+    "incident": "2026009226",
+    "agency": "Columbia Police Department",
+    "location_txt": "AMMONETTE ST/N OLD 63",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9625882,
+    "lon": -92.3099701,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:36:49 PM",
+    "incident": "2026009225",
+    "agency": "Columbia Police Department",
+    "location_txt": "5000 BLOCK  CLARK LN",
+    "type": "PEACE DISTURBANCE",
+    "service": "PD",
+    "lat": 38.963321,
+    "lon": -92.260768,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:20:05 PM",
+    "incident": "2026009217",
+    "agency": "Columbia Police Department",
+    "location_txt": "VANDIVER DR/OAKLAND GRAVEL RD",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9733216,
+    "lon": -92.3033784,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:17:51 PM",
+    "incident": "2026009215",
+    "agency": "Columbia Police Department",
+    "location_txt": "CONNECTOR/CLARK LN",
+    "type": "STALLED VEHICLE",
+    "service": "PD",
+    "lat": 38.9426336,
+    "lon": -92.3374667,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:09:00 PM",
+    "incident": "2026009214",
+    "agency": "Columbia Police Department",
+    "location_txt": "1200 BLOCK  INTERNATIONAL DR",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 39.0057423,
+    "lon": -92.3226576,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:05:54 PM",
+    "incident": "2026009208",
+    "agency": "Columbia Police Department",
+    "location_txt": "E NIFONG BLVD/GRINDSTONE PKWY",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.9128707,
+    "lon": -92.2954761,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:51:58 PM",
+    "incident": "2026009202",
+    "agency": "Columbia Police Department",
+    "location_txt": "4000 BLOCK  ARCTIC FOX DR",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.991641186191,
+    "lon": -92.334776642096,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:49:21 PM",
+    "incident": "2026009198",
+    "agency": "Columbia Police Department",
+    "location_txt": "1400 BLOCK  GRINDSTONE PLAZA DR",
+    "type": "FRAUD",
+    "service": "PD",
+    "lat": 38.911013,
+    "lon": -92.320601,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:42:09 PM",
+    "incident": "2026009197",
+    "agency": "Columbia Police Department",
+    "location_txt": "1100 BLOCK  CLUB MEADOWS DR",
+    "type": "ASSIST OFFICER",
+    "service": "PD",
+    "lat": 38.912195,
+    "lon": -92.355216,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:37:46 PM",
+    "incident": "2026009195",
+    "agency": "Columbia Police Department",
+    "location_txt": "1700 BLOCK  W ASH ST",
+    "type": "SUSPICIOUS PERSON",
+    "service": "PD",
+    "lat": 38.9567418,
+    "lon": -92.3639121,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:37:35 PM",
+    "incident": "2026009194",
+    "agency": "Columbia Police Department",
+    "location_txt": "RANGE LINE ST/ELLETA BLVD",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9746375,
+    "lon": -92.3265558,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:36:51 PM",
+    "incident": "2026009193",
+    "agency": "Columbia Police Department",
+    "location_txt": "2900 BLOCK  PARIS RD",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9804806,
+    "lon": -92.2934846,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:33:29 PM",
+    "incident": "2026009191",
+    "agency": "Columbia Police Department",
+    "location_txt": "3800 BLOCK  RANGE LINE ST",
+    "type": "CHECK SUBJECT",
+    "service": "PD",
+    "lat": 38.988907,
+    "lon": -92.324576,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:30:36 PM",
+    "incident": "2026009189",
+    "agency": "Columbia Police Department",
+    "location_txt": "600 BLOCK  E WALNUT ST",
+    "type": "ASSIST OFFICER",
+    "service": "PD",
+    "lat": 38.9524286,
+    "lon": -92.3299821,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:17:54 PM",
+    "incident": "2026009185",
+    "agency": "Columbia Police Department",
+    "location_txt": "RANGE LINE ST/BIG BEAR BLVD",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9770582,
+    "lon": -92.3264114,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:01:27 PM",
+    "incident": "2026009182",
+    "agency": "Columbia Police Department",
+    "location_txt": "1400 BLOCK  GREENSBORO DR",
+    "type": "BURGLARY",
+    "service": "PD",
+    "lat": 39.007189,
+    "lon": -92.318139,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 11:55:25 AM",
+    "incident": "2026009180",
+    "agency": "Columbia Police Department",
+    "location_txt": "1600 BLOCK  N PROVIDENCE RD",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.970324,
+    "lon": -92.333498,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 11:55:12 AM",
+    "incident": "2026009179",
+    "agency": "Columbia Police Department",
+    "location_txt": "400 BLOCK  CONLEY RD",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.9568306,
+    "lon": -92.2941439,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 11:43:37 AM",
+    "incident": "2026009173",
+    "agency": "Columbia Police Department",
+    "location_txt": "100 BLOCK  MCBAINE AVE",
+    "type": "ASSIST CITIZEN",
+    "service": "PD",
+    "lat": 38.952885,
+    "lon": -92.3422042,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 11:42:06 AM",
+    "incident": "2026009171",
+    "agency": "Columbia Police Department",
+    "location_txt": "CONNECTOR/CLARK LN",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9426336,
+    "lon": -92.3374667,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 11:28:56 AM",
+    "incident": "2026009166",
+    "agency": "Columbia Police Department",
+    "location_txt": "VANDIVER DR/N PROVIDENCE RD",
+    "type": "DISTURBANCE",
+    "service": "PD",
+    "lat": 38.971947,
+    "lon": -92.3336706,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 11:27:17 AM",
+    "incident": "2026009164",
+    "agency": "Columbia Police Department",
+    "location_txt": "200 BLOCK  E BUSINESS LOOP 70",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9650344,
+    "lon": -92.3370616,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 11:12:35 AM",
+    "incident": "2026009160",
+    "agency": "Columbia Police Department",
+    "location_txt": "5400 BLOCK  CLARK LN",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.963121,
+    "lon": -92.255539,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 11:08:07 AM",
+    "incident": "2026009159",
+    "agency": "Columbia Police Department",
+    "location_txt": "N PROVIDENCE RD ONR EB/I70 E",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 10:59:42 AM",
+    "incident": "2026009156",
+    "agency": "Columbia Police Department",
+    "location_txt": "11300 BLOCK  S AIRPORT DR",
+    "type": "CHECK AREA",
+    "service": "PD",
+    "lat": 38.817242746978,
+    "lon": -92.223158405173,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 10:58:48 AM",
+    "incident": "2026009155",
+    "agency": "Columbia Police Department",
+    "location_txt": "900 BLOCK  BERNADETTE DR",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.9643395,
+    "lon": -92.3671761,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 10:38:24 AM",
+    "incident": "2026009145",
+    "agency": "Columbia Police Department",
+    "location_txt": "E NIFONG BLVD/S PROVIDENCE RD",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.9102082,
+    "lon": -92.3347415,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 10:29:39 AM",
+    "incident": "2026009140",
+    "agency": "Columbia Police Department",
+    "location_txt": "1600 BLOCK  E BROADWAY",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.9489112,
+    "lon": -92.3157216,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 9:55:54 AM",
+    "incident": "2026009122",
+    "agency": "Columbia Police Department",
+    "location_txt": "500 BLOCK  COOPER DRIVE NORTH",
+    "type": "LAW ALARM",
+    "service": "PD",
+    "lat": 38.9089571,
+    "lon": -92.3305914,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 9:48:23 AM",
+    "incident": "2026009114",
+    "agency": "Columbia Police Department",
+    "location_txt": "5200 BLOCK  HIGHLANDS PKWY",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.8993795,
+    "lon": -92.3591577,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 9:42:05 AM",
+    "incident": "2026009113",
+    "agency": "Columbia Police Department",
+    "location_txt": "I70 W/W BUSINESS LOOP 70",
+    "type": "STALLED VEHICLE",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 9:28:56 AM",
+    "incident": "2026009105",
+    "agency": "Columbia Police Department",
+    "location_txt": "2300 BLOCK  VANCOUVER CIR",
+    "type": "LAW ALARM",
+    "service": "PD",
+    "lat": 38.872561,
+    "lon": -92.376591,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 9:05:36 AM",
+    "incident": "2026009099",
+    "agency": "Columbia Police Department",
+    "location_txt": "1400 BLOCK  FORUM BLVD",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.9371241,
+    "lon": -92.3582898,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 8:44:30 AM",
+    "incident": "2026009085",
+    "agency": "Columbia Police Department",
+    "location_txt": "S COLLEGE AVE/BASS AVE",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.9490314,
+    "lon": -92.3219467,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 8:17:00 AM",
+    "incident": "2026009057",
+    "agency": "Columbia Police Department",
+    "location_txt": "1400 BLOCK  RANGE LINE ST",
+    "type": "LARCENY",
+    "service": "PD",
+    "lat": 38.965161,
+    "lon": -92.324579,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 8:12:09 AM",
+    "incident": "2026009054",
+    "agency": "Columbia Police Department",
+    "location_txt": "400 BLOCK  CLINKSCALES RD",
+    "type": "ACCIDENT",
+    "service": "PD",
+    "lat": 38.9588887,
+    "lon": -92.3621798,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 8:09:02 AM",
+    "incident": "2026009052",
+    "agency": "Columbia Police Department",
+    "location_txt": "200 BLOCK  DIEGO DR",
+    "type": "LAW ALARM",
+    "service": "PD",
+    "lat": 38.90833845262,
+    "lon": -92.341883279788,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 8:06:24 AM",
+    "incident": "2026009048",
+    "agency": "Columbia Police Department",
+    "location_txt": "4700 BLOCK  BRANDON WOODS ST",
+    "type": "911 CHECKS",
+    "service": "PD",
+    "lat": 38.8987082,
+    "lon": -92.3434251,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 8:02:50 AM",
+    "incident": "2026009045",
+    "agency": "Columbia Police Department",
+    "location_txt": "2000 BLOCK  E BROADWAY",
+    "type": "SUSPICIOUS VEHICLE",
+    "service": "PD",
+    "lat": 38.9483681,
+    "lon": -92.3089643,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 7:36:53 AM",
+    "incident": "2026009031",
+    "agency": "Columbia Police Department",
+    "location_txt": "I70 E/CONNECTOR",
+    "type": "TRAFFIC",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 7:36:50 AM",
+    "incident": "2026009030",
+    "agency": "Columbia Police Department",
+    "location_txt": "2000 BLOCK  W BUSINESS LOOP 70",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": 38.964903321919,
+    "lon": -92.361043301352,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 7:07:50 AM",
+    "incident": "2026009020",
+    "agency": "Columbia Police Department",
+    "location_txt": "I70 DR SW/KNIPP ST",
+    "type": "TRAFFIC STOP",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 7:03:37 AM",
+    "incident": "2026009018",
+    "agency": "Columbia Police Department",
+    "location_txt": "0 BLOCK  GRINDSTONE CREEK TRL",
+    "type": "FOOT PATROL",
+    "service": "PD",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
     "datetime": "1/11/2026 5:15:27 AM",
     "incident": "2026008995",
     "agency": "Columbia Police Department",
@@ -8,7 +548,7 @@
     "service": "PD",
     "lat": 38.9740606,
     "lon": -92.257948,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -20,7 +560,7 @@
     "service": "PD",
     "lat": 38.9773511,
     "lon": -92.2981951,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -32,7 +572,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -44,7 +584,7 @@
     "service": "PD",
     "lat": 38.952938,
     "lon": -92.311942,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -56,7 +596,7 @@
     "service": "PD",
     "lat": 38.964817408966,
     "lon": -92.356199276018,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -68,7 +608,7 @@
     "service": "PD",
     "lat": 38.9621312,
     "lon": -92.3648579,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -80,7 +620,7 @@
     "service": "PD",
     "lat": 38.9634197,
     "lon": -92.2631651,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -92,7 +632,7 @@
     "service": "PD",
     "lat": 38.9637673,
     "lon": -92.2910886,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -104,7 +644,7 @@
     "service": "PD",
     "lat": 38.9596726,
     "lon": -92.3303641,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -116,7 +656,7 @@
     "service": "PD",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -128,7 +668,7 @@
     "service": "PD",
     "lat": 38.9280645,
     "lon": -92.3098806,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -140,7 +680,7 @@
     "service": "PD",
     "lat": 38.973196,
     "lon": -92.335542,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -152,7 +692,7 @@
     "service": "PD",
     "lat": 38.9043487,
     "lon": -92.3448964,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -164,7 +704,7 @@
     "service": "PD",
     "lat": 38.9884959,
     "lon": -92.3241199,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -176,7 +716,7 @@
     "service": "PD",
     "lat": 38.9555056,
     "lon": -92.3388697,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -188,7 +728,7 @@
     "service": "PD",
     "lat": 38.951423,
     "lon": -92.326276,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -200,7 +740,7 @@
     "service": "PD",
     "lat": 38.9505943,
     "lon": -92.3229551,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -212,7 +752,7 @@
     "service": "PD",
     "lat": 38.9489112,
     "lon": -92.3157216,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -224,7 +764,7 @@
     "service": "PD",
     "lat": 38.9530381,
     "lon": -92.3275118,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -236,7 +776,7 @@
     "service": "PD",
     "lat": 38.9539617,
     "lon": -92.3027695,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -248,7 +788,7 @@
     "service": "PD",
     "lat": 38.9927492,
     "lon": -92.3232174,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -260,7 +800,7 @@
     "service": "PD",
     "lat": 38.975338,
     "lon": -92.3087935,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -272,7 +812,7 @@
     "service": "PD",
     "lat": 38.867088,
     "lon": -92.3845209,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -284,7 +824,7 @@
     "service": "PD",
     "lat": 38.9504967,
     "lon": -92.3286525,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -296,7 +836,7 @@
     "service": "PD",
     "lat": 38.9070842,
     "lon": -92.3309098,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -308,7 +848,7 @@
     "service": "PD",
     "lat": 38.952483,
     "lon": -92.327336,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -320,7 +860,7 @@
     "service": "PD",
     "lat": 38.956433,
     "lon": -92.3120166,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -332,7 +872,7 @@
     "service": "PD",
     "lat": 38.9494515,
     "lon": -92.3105884,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -344,7 +884,7 @@
     "service": "PD",
     "lat": 38.9515909,
     "lon": -92.33078,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -356,7 +896,151 @@
     "service": "PD",
     "lat": 38.9635251,
     "lon": -92.2858329,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 7:46:35 PM",
+    "incident": "2026009415",
+    "agency": "BCFD",
+    "location_txt": "N HWY 63 NB/E HWY 124",
+    "type": "Unknown Problem",
+    "service": "FIRE_EMS",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 7:17:50 PM",
+    "incident": "2026009400",
+    "agency": "CFD",
+    "location_txt": "7000-408C N BUCKINGHAM SQ",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 6:42:48 PM",
+    "incident": "2026009387",
+    "agency": "CFD",
+    "location_txt": "105 W BROADWAY",
+    "type": "Smoke Alarm",
+    "service": "FIRE_EMS",
+    "lat": 38.9516593,
+    "lon": -92.3392352,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 4:46:33 PM",
+    "incident": "2026009340",
+    "agency": "CFD",
+    "location_txt": "2400-A BERNADETTE DR",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9653528,
+    "lon": -92.3712777,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 3:41:47 PM",
+    "incident": "2026009297",
+    "agency": "CFD",
+    "location_txt": "1006 CLAUDELL LN",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9638027,
+    "lon": -92.3648747,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 3:25:30 PM",
+    "incident": "2026009278",
+    "agency": "CFD",
+    "location_txt": "2651 TRIMBLE RD",
+    "type": "Unknown Problem",
+    "service": "FIRE_EMS",
+    "lat": 38.9481075,
+    "lon": -92.2976635,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 3:21:36 PM",
+    "incident": "2026009274",
+    "agency": "SBFD",
+    "location_txt": "503 E BROADWAY",
+    "type": "Smoke Alarm",
+    "service": "FIRE_EMS",
+    "lat": 38.951712,
+    "lon": -92.3316467,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 2:59:14 PM",
+    "incident": "2026009259",
+    "agency": "CFD",
+    "location_txt": "3412 ZINNIA DR",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 38.9727539,
+    "lon": -92.386488,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 2:04:43 PM",
+    "incident": "2026009239",
+    "agency": "BCFD",
+    "location_txt": "433 E CLEARVIEW DR",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": 39.009572828628,
+    "lon": -92.334742047908,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:49:36 PM",
+    "incident": "2026009231",
+    "agency": "CFD",
+    "location_txt": "1510-A4 CHAPEL HILL RD",
+    "type": "Medical Response",
+    "service": "FIRE_EMS",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 1:03:41 PM",
+    "incident": "2026009206",
+    "agency": "SBFD",
+    "location_txt": "209 RED TAIL DR",
+    "type": "Smoke Alarm",
+    "service": "FIRE_EMS",
+    "lat": null,
+    "lon": null,
+    "generated_at": "2026-01-12 02:23:36 UTC",
+    "dispatch_date": "2026-01-11"
+  },
+  {
+    "datetime": "1/11/2026 12:39:53 PM",
+    "incident": "2026009196",
+    "agency": "CFD",
+    "location_txt": "RANGE LINE ST/ELLETA BLVD",
+    "type": "Motor Vehicle Collision",
+    "service": "FIRE_EMS",
+    "lat": 38.9746375,
+    "lon": -92.3265558,
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -368,7 +1052,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9416753,
     "lon": -92.3332222,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -380,7 +1064,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9528915,
     "lon": -92.3268771,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -392,7 +1076,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -404,7 +1088,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9324629,
     "lon": -92.3745331,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -416,7 +1100,7 @@
     "service": "FIRE_EMS",
     "lat": 38.998224474413,
     "lon": -92.23960197652,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -428,7 +1112,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -440,7 +1124,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9324629,
     "lon": -92.3745331,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -452,7 +1136,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9318656,
     "lon": -92.4012261,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -464,7 +1148,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9673994,
     "lon": -92.318785,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -476,7 +1160,7 @@
     "service": "FIRE_EMS",
     "lat": 38.8987162,
     "lon": -92.36152,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -488,7 +1172,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9630649,
     "lon": -92.3648885,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -500,7 +1184,7 @@
     "service": "FIRE_EMS",
     "lat": 38.963616,
     "lon": -92.2921357,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -512,7 +1196,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9735388,
     "lon": -92.3016089,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -524,7 +1208,7 @@
     "service": "FIRE_EMS",
     "lat": 38.9704241,
     "lon": -92.3320931,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -536,7 +1220,7 @@
     "service": "FIRE_EMS",
     "lat": null,
     "lon": null,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   },
   {
@@ -548,7 +1232,7 @@
     "service": "FIRE_EMS",
     "lat": 38.8157151,
     "lon": -92.2970122,
-    "generated_at": "2026-01-11 18:41:41 UTC",
+    "generated_at": "2026-01-12 02:23:36 UTC",
     "dispatch_date": "2026-01-11"
   }
 ]
